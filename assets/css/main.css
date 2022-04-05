@@ -1,0 +1,68 @@
+/*
+By Ivan Hanloth
+本文件为翰络云传界面美化文件
+2022/4/3
+*/
+*{
+    font-family: "微软雅黑";
+}
+.main{
+    margin:2%;
+    padding:1% 2%;
+}
+.dragbox{
+    margin:auto;
+    width:90%;
+    border-style:dashed;
+    border-width:2px;
+    border-radius:10px;
+    border-color:#eee0ee;
+    padding:1% 2%;
+    height:175px;
+    display:block;
+}
+.tab{
+    width:90%;
+    display:block;
+    margin:auto;
+    padding:10px;
+}
+.btn{
+    display:block;
+    margin:auto;
+}
+.info{
+    margin:20px;
+    text-align:center
+}
+.textarea{
+    overflow-y:auto;
+    resize:none;
+    height:175px;
+}
+.formbox{
+    margin:auto;
+    width:90%;
+    padding:1% 2%;
+    height:175px;
+    display:block;
+}
+.getbox{
+    margin: auto;
+    padding:85px 0px;
+}
+.get{
+    margin: auto;
+    width:25%;
+    padding-left: 0px;
+    text-align: center;
+    border:0px;
+    border-bottom:2px solid #00e9d2;
+    min-width: 200px;
+}
+.get:hover{
+    border-bottom:2px solid #00bdab !important;
+}
+.get:focus{
+    border-bottom:2px solid #02aa9a !important;
+}
