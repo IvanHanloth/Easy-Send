@@ -2,29 +2,30 @@
 /*
 By Ivan Hanloth
 本文件为翰络云传数据监控文件
-2022/4/4
+2022/4/9
 */
 require "./config.php";
 $db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
+if (mysqli_connect_errno($db)){ 
+    echo "连接 MySQL 失败: " . mysqli_connect_error(); 
+};
 $now=time();
-$num=mysqli_query($db,"SELECT count(*) FROM `data`");
-$num=mysqli_fetch_row($num);//sql对象转化为数组
-$list=mysqli_query($db,"SELECT `tillday` FROM `data`");
-$list=mysqli_fetch_row($list);//sql对象转化为数组
-$idlist=mysqli_query($db,"SELECT `id` FROM `data`");
-$idlist=mysqli_fetch_row($idlist);//sql对象转化为数组
-for($i=0;$i<=$num[0]-1;$i++){
-    if($list[$i]<=$now){
-    $dbinfo=mysqli_query($db,"SELECT * FROM `data` WHERE `id` = '{$idlist[$i]}'");
-    $dbinfo=mysqli_fetch_assoc($dbinfo);
-        if($dbinfo["type"]==1){
-            $delete_file=unlink($dbinfo["path"]);
+$num=mysqli_query($db,"SELECT * FROM `data`");
+$num=mysqli_num_rows($num);
+$result=mysqli_query($db,"SELECT * FROM `data` ORDER BY `id`");
+$result=mysqli_fetch_all($result,MYSQLI_BOTH);
+for($i=0;$i<=$num;$i++){
+    if($result[$i]["tillday"]<=$now){
+        if($result[$i]["type"]==1){
+            $delete_file=unlink($result[$i]["path"]);
             if($delete_file==TRUE){
-                mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$idlist[$i]}'");
+                mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$result[$i]['id']}'");
+            }else{
+                echo "";
             };
             
-        }elseif($dbinfo["type"]==2){
-                mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$idlist[$i]}'");
+        }elseif($result[$i]["type"]==2){
+                mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$result[$i]['id']}'");
             }
     };
 };
