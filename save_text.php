@@ -12,7 +12,6 @@ require "./common.php";
     $data=json_decode($r,true);
     $tillday=time()+864000;//剩余时长
     $tilltime=date('Y-m-d H:i:s', $tillday);
-    $times=10;//查看次数
     $check=array(1);//定义进行循环检查
     while ($check[0]>=1){//进行循环检查
         $key=random(4);//获得一个key
