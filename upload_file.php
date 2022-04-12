@@ -1,8 +1,8 @@
 <?php
 /*
 By Ivan Hanloth
-本文件为翰络云传文件存储接口文件
-2022/4/9
+本文件为易传文件存储接口文件
+2022/4/4
 */
 require "./config.php";
 require "./common.php";

@@ -1,7 +1,7 @@
 <?php
 /*
 By Ivan Hanloth
-本文件为翰络云传文件提取接口文件
+本文件为易传文件提取接口文件
 2022/4/3
 */
 require "./config.php";

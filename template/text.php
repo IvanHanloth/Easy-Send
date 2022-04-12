@@ -1,6 +1,6 @@
 <?php
 /* By Ivan Hanloth
-本文件为翰络云传文本存储模板文件
+本文件为易传文本存储模板文件
 2022/4/3 */
 ?>
   <form class="layui-form formbox" action="">

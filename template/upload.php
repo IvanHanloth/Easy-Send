@@ -1,6 +1,6 @@
 <?php
 /* By Ivan Hanloth
-本文件为翰络云传文件上传模板文件
+本文件为易传文件上传模板文件
 2022/4/3 */
 ?>
   <div class="layui-upload-drag layui-anim layui-anim-upbit dragbox" id="upload" data-anim="layui-anim-down">

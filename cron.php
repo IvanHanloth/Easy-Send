@@ -1,8 +1,8 @@
 <?php
 /*
 By Ivan Hanloth
-本文件为翰络云传数据监控文件
-2022/4/9
+本文件为易传数据监控文件
+2022/4/4
 */
 require "./config.php";
 $db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);

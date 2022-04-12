@@ -1,6 +1,6 @@
 /*
 By Ivan Hanloth
-本文件为翰络云传文件提取表单提交文件
+本文件为易传文件提取表单提交文件
 2022/4/3
 */
 layui.use(['form'], function(){

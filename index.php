@@ -1,7 +1,7 @@
 <?php 
 /*
 By Ivan Hanloth
-本文件为翰络云传首页文件
+本文件为易传首页文件
 2022/2/26
 */
 include "config.php";
