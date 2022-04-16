@@ -4,7 +4,7 @@ By Ivan Hanloth
 本文件为易传数据监控文件
 2022/4/4
 */
-require "./config.php";
+require "config.php";
 $db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
 if (mysqli_connect_errno($db)){ 
     echo "连接 MySQL 失败: " . mysqli_connect_error(); 

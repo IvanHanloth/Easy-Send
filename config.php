@@ -5,7 +5,7 @@ By Ivan Hanloth
 2022/2/26
 */
 //必填信息
-    $domain='https://';//网站首页地址（包括协议头http://或https://及结尾的"/"，如https://send.halnoth.cn/）
+    $domain='';//网站首页地址（包括协议头http://或https://及结尾的"/"，如https://send.halnoth.cn/）
     $webname='';//网站名称
     $footer='';//网站底部代码
     $header='';//网页头部代码
@@ -14,5 +14,7 @@ By Ivan Hanloth
     $dbaccount='';//数据库账号
     $dbpassword='';//数据库密码
     $dbname='';//数据库名称
+    $template='default';//模板文件名称，默认default
     $times=10;//单个文件可查看次数
+    $settime=864000//单个文件过期时间，单位：秒，默认864000既10天
 ?>

@@ -15,9 +15,12 @@ if ($dbpath == ""or $dbport == ""or $dbaccount == ""or $dbpassword == ""or $dbna
     if(!$db) {
         die('无法连接至数据库，请检查网站配置文件');
     } else {
-        require "./template/header.php";
-        require "./template/body.php";
-        require "./template/footer.php";
+        if(isset($template)==false or $template == "" or !is_dir("./template/".$template)){
+            $template="default";
+        }
+        require "./template/".$template."/header.php";
+        require "./template/".$template."/body.php";
+        require "./template/".$template."/footer.php";
   };
 };
 ?>
