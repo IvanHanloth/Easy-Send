@@ -18,6 +18,15 @@ By Ivan Hanloth
     <script src="/static/js/jquery2.2.4.min.js"></script>
     <script src="/static/layui/layui.js"></script>
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/function.js"></script>
   </head>
   <body>
+      <?php if($_REQUEST['key']!=""){//传入了key?>
+      <script>
+        layui.use(function () {
+        	var	element = layui.element;
+            element.tabChange('tab', 'get');
+        });
+      </script><?php
+      }?>
       <?php echo $header ?>

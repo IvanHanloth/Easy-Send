@@ -5,11 +5,11 @@ By Ivan Hanloth
 */
 ?>
     <div class="main">
-        <div class="layui-tab layui-tab-card" >
+        <div class="layui-tab layui-tab-card" lay-filter="tab">
          <ul class="layui-tab-title">
-          <li class="layui-this">文件传输</li>
-          <li>文字传输</li>
-          <li>数据提取</li>
+          <li class="layui-this" lay-id="file">文件传输</li>
+          <li lay-id="text">文字传输</li>
+          <li lay-id="get">数据提取</li>
          </ul>
          <div class="layui-tab-content" style="height: 275px;">
           <div class="layui-tab-item layui-show">

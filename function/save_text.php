@@ -20,6 +20,6 @@ require "../common.php";
         $check=mysqli_fetch_row($check);//sql对象转化为数组
         };
     mysqli_query($db,"INSERT INTO `data` (`id`, `gkey`, `type`, `data`, `tillday`, `times`) VALUES (NULL, '{$key}', '2', '{$data['text']}', '{$tillday}', '{$times}')");//插入数据
-    echo json_encode( array("code"=>"200","tip"=>"文本保存成功","key"=>$key,"tillday"=>$tilltime,"times"=>$times),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+    echo json_encode( array("code"=>"200","tip"=>"文本保存成功","key"=>$key,"tillday"=>$tilltime,"times"=>$times,"qrcode"=>"https://api.qrserver.com/v1/create-qr-code/?data=".$domain."?key=".$key),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
 
 ?>

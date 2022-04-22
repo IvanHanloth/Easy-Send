@@ -30,7 +30,7 @@ if(!is_dir($dir)){
                         $check=mysqli_fetch_row($check);//sql对象转化为数组
                     };
                     mysqli_query($db,"INSERT INTO `data` (`id`, `gkey`, `type`, `data`,`path`, `tillday`, `times`) VALUES (NULL, '{$key}', '1', '{$file_url}','{$file_path}', '{$tillday}', '{$times}')");//插入数据
-                echo json_encode( array("code"=>"200","tip"=>"文件上传成功","key"=>$key,"tillday"=>$tilltime,"times"=>$times),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+                echo json_encode( array("code"=>"200","tip"=>"文件上传成功","key"=>$key,"tillday"=>$tilltime,"times"=>$times,"qrcode"=>"https://api.qrserver.com/v1/create-qr-code/?data=".$domain."?key=".$key),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
             }else{
                 echo json_encode( array("code"=>"100","tip"=>"文件上传失败"),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
             }

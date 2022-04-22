@@ -5,9 +5,9 @@ By Ivan Hanloth
 */
 ?>
 <div id="input">
-    <form class="layui-form  getbox" action="">
+    <form class="layui-form getbox" action="">
          <div class="layui-form-item layui-anim layui-anim-upbit">
-           <input type="text" name="key" lay-verify="get" pattern="/^\s*|\s*$/g" autocomplete="off" placeholder="请输入4位提取码"  data-anim="layui-anim-down" class="layui-input get"onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
+           <input type="text" name="key" lay-verify="get" pattern="/^\s*|\s*$/g" autocomplete="off" placeholder="请输入4位提取码" id="get-input" value="<?php echo $_REQUEST['key']?>" data-anim="layui-anim-down" class="layui-input get"onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
            </div>
           <div class="info">
           <button type="submit" class="layui-btn btn layui-anim layui-anim-upbit" lay-submit="" lay-filter="getbtn" data-anim="layui-anim-down">立即提取</button>

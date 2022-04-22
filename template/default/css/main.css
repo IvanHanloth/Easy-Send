@@ -10,6 +10,9 @@ By Ivan Hanloth
     margin:2%;
     padding:1% 2%;
 }
+.qrcode{
+    width:120px;
+}
 .dragbox{
     margin:auto;
     width:90%;
