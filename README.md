@@ -1,3 +1,4 @@
+![version](https://img.shields.io/badge/version-v1.4-yellowgreen) ![License](https://img.shields.io/badge/License-MIT-red)
 # 易传
 Easy-Send
 ## 简介
