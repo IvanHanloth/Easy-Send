@@ -1,6 +1,6 @@
+![](https://ivan.hanloth.cn/usr/uploads/2022/04/1858371694.png)
 ![version](https://img.shields.io/badge/version-v1.4-yellowgreen) ![License](https://img.shields.io/badge/License-MIT-red)
-# 易传
-Easy-Send
+
 ## 简介
 一个简易的用于跨设备、跨平台传输文件或文本的程序。
 ## 演示站
