@@ -1,6 +1,10 @@
-<img src="https://ivan.hanloth.cn/usr/uploads/2022/04/1858371694.png" style="width:30%">  
+<p align="center">
+ 
+ <img src="https://ivan.hanloth.cn/usr/uploads/2022/04/1858371694.png" style="width:30%">  
+<br><img src="https://img.shields.io/github/v/release/IvanHanloth/Easy-Send">
+<img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
-![version](https://img.shields.io/github/v/release/IvanHanloth/Easy-Send) ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 简介
 一个简易的用于跨设备、跨平台传输文件或文本的程序。
