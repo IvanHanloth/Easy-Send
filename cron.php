@@ -5,7 +5,7 @@ By Ivan Hanloth
 2022/4/4
 */
 require "config.php";
-$db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
+$db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
 if (mysqli_connect_errno($db)){ 
     echo "连接 MySQL 失败: " . mysqli_connect_error(); 
 };
@@ -25,7 +25,13 @@ for($i=0;$i<=$num;$i++){
             };
         }elseif($result[$i]["type"]==2){
                 mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$result[$i]['id']}'");
-            }
+            }elseif($result[$i]["method"]==2){
+            $delete_file=unlink($result[$i]["data"]);
+            if($delete_file==TRUE){
+                mysqli_query($db,"DELETE FROM `{$dbname}`.`data` WHERE `data`.`id`='{$result[$i]['id']}'");
+            }else{
+                echo"Wrong";
+            };};
     };
 };
 echo "Finish";

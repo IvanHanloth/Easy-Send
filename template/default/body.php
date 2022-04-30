@@ -11,7 +11,7 @@ By Ivan Hanloth
           <li lay-id="text">文字传输</li>
           <li lay-id="get">数据提取</li>
          </ul>
-         <div class="layui-tab-content" style="height: 275px;">
+         <div class="layui-tab-content" style="height: 330px;">
           <div class="layui-tab-item layui-show">
            <?php
            require "file.php";

@@ -5,8 +5,10 @@ By Ivan Hanloth
 2022/4/3
 */
 header("Access-Control-Allow-Origin:*");
+
+require "../info.php";
 require "../config.php";
-$db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
+$db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
 $r=$_REQUEST["key"];
 $key=json_decode($r,true);
 $key=$key["key"];
@@ -22,11 +24,16 @@ if($dbcount[0]==0) {
 	if($times<0) {
 		echo json_encode(array("code"=>"100","tip"=>"不存在此提取码或提取码已过期"),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
 	} else {
-		echo json_encode( array("code"=>"200","times"=>$times,"type"=>$dbinfo["type"],"data"=>$dbinfo["data"],"tillday"=>$tillday),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
+	    if($dbinfo["method"]==2){
+	        $rdata=file_get_contents($dbinfo["data"]);
+	    }else{
+	        $rdata=$dbinfo["data"];
+	    }
+		echo json_encode( array("code"=>"200","times"=>$times,"type"=>$dbinfo["type"],"data"=>$rdata,"tillday"=>$tillday),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
 		if($times>0) {
 			mysqli_query($db,"UPDATE `{$dbname}`.`data` SET `times` = '{$times}' WHERE `gkey` = '{$key}'");
 		} else {
-			if($dbinfo["type"]==1) {
+			if($dbinfo["type"]==1 or $dbinfo["method"]==2) {
 				$now=time();
 				$deletetime=$now + 1800;
 				mysqli_query($db,"UPDATE `{$dbname}`.`data` SET `tillday` = '{$deletetime}' WHERE `gkey` = '{$key}'");

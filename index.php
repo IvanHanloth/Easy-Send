@@ -8,10 +8,10 @@ include "config.php";
 include "common.php";
 
 //检查是否配置数据库
-if ($dbpath == ""or $dbport == ""or $dbaccount == ""or $dbpassword == ""or $dbname == "") {
-    echo("数据库配置错误，请检查网站配置文件");
+if ($dbconfig['host']=="" or $dbconfig['account']=="" or $dbconfig['password']=="" or $dbconfig['name']=="" or $dbconfig['port']=="") {
+    echo("<script>window.location.href='/install'</script>");
 } else{
-     $db = mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
+     $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
     if(!$db) {
         die('无法连接至数据库，请检查网站配置文件');
     } else {

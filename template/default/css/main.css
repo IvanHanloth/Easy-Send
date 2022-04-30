@@ -21,7 +21,7 @@ By Ivan Hanloth
     border-radius:10px;
     border-color:#eee0ee;
     padding:1% 2%;
-    height:175px;
+    height:200px;
     display:block;
 }
 .tab{
@@ -41,13 +41,13 @@ By Ivan Hanloth
 .textarea{
     overflow-y:auto;
     resize:none;
-    height:175px;
+    height:200px;
 }
 .formbox{
     margin:auto;
     width:90%;
     padding:1% 2%;
-    height:175px;
+    height:200px;
     display:block;
 }
 .getbox{

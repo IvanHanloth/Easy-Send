@@ -5,21 +5,22 @@ By Ivan Hanloth
 2022/4/4
 */
 header("Access-Control-Allow-Origin:*");
+require "../info.php";
 require "../config.php";
 require "../common.php";
 $date=date("Y/m/");
-$dir =$_SERVER['DOCUMENT_ROOT']."/upload/".$date;
+$dir =$_SERVER['DOCUMENT_ROOT']."/upload/files/".$date;
 if(!is_dir($dir)){
     mkdir($dir,0777,true);
 }
     if ($_FILES["file"]["error"] > 0){
         echo json_encode( array("code"=>"0","tip"=>"错误".$_FILES["file"]["error"]),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
     }else{
-            $db=mysqli_connect($dbpath, $dbaccount, $dbpassword, $dbname);
+            $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
             $file_name=random(6)."_".$_FILES["file"]["name"];
             $mov=move_uploaded_file($_FILES["file"]["tmp_name"], $dir.$file_name);
             if($mov==TRUE){
-                    $file_url=$domain."upload/".$date.$file_name;
+                    $file_url=$domain."upload/files/".$date.$file_name;
                     $file_path=$dir.$file_name;
                     $tillday=time()+$settime;//剩余时长
                     $tilltime=date('Y-m-d H:i:s', $tillday);

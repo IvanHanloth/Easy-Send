@@ -11,130 +11,23 @@ layui.use(function () {
 		upload = layui.upload,
 		layer = layui.layer;
 
-	$.getJSON("/function/set_info.php", function (result) {
+	$.getJSON("/function/set_info.php", function (result) { //获取文件上传大小等
 		var uploadsize = result.filesize,
-		textsize = result.textsize;
+			textsize = result.textsize;
 
 		$("#upload-size-info")
-			.html("<p>文件最大" + uploadsize / (1024*1024) + "MB</p>");
-		//自定义验证规则
-		form.verify({
-			get: function (value) {
-				if (value.length != 4) {
-					return '提取码为4位';
-				}
-			}
-		});
-		//监听提交
-		form.on('submit(getbtn)', function (data) {
-			$.ajax({
-				//定义提交的方式
-				type: "POST",
-				//定义要提交的URL
-				url: '/function/get_data.php',
-				//定义提交的数据类型
-				dataType: 'json',
-				async: false,
-				//要传递的数据
-				data: {
-					'key': JSON.stringify(data.field)
-				},
-				//服务器处理成功后传送回来的json格式的数据
-				success: function (res) {
-					if (res.code == 200) { //返回存在该提取码
-						$("#input")
-							.addClass("layui-hide");
-						layer.msg("获取成功", {
-							icon: 1
-						});
-						$("#result")
-							.removeClass("layui-hide");
-						$("#result-info")
-							.html('<span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span>')
-						if (res.type == 1) { //为文件型s
-							$("#result-download-btn")
-								.removeClass("layui-hide");
-							$("#result-file")
-								.removeClass("layui-hide");
-							$("#result-url")
-								.attr("value", res.data);
-							$("#result-download")
-								.attr("href", res.data);
-						} else {
-							if (res.type == 2) { //为文本型
-								$("#result-text")
-									.removeClass("layui-hide");
-								$("#result-value")
-									.val(res.data);
-							}
-						}
-					} else { //返回不存在该提取码
-						layer.msg(res.tip, {
-							icon: 2
-						});
-					}
-				},
+			.html("<p>文件最大" + uploadsize / (1024 * 1024) + "MB</p>");
 
-				error: function () {
-					layer.msg('出现异常，请重试', {
-						icon: 2
-					});
-				}
-			});
-			return false;
-		});
-
-		//自定义验证规则
-		form.verify({
-			text: function (value) {
-				if (value.length > textsize) {
-					return '文本不能超过'+textsize+'字符';
-				}
-			}
-		});
-		//监听提交
-		form.on('submit(save)', function (data) {
-			$.ajax({
-				//定义提交的方式
-				type: "POST",
-				//定义要提交的URL
-				url: '/function/save_text.php',
-				//定义提交的数据类型
-				dataType: 'json',
-				async: false,
-				//要传递的数据
-				data: {
-					'data': JSON.stringify(data.field)
-				},
-				//服务器处理成功后传送回来的json格式的数据
-				success: function (res) {
-					if (res.code == 200) {
-						$("#textinfo")
-							.html('<span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span>')
-						$('#text')
-							.addClass('layui-hide');
-						$('#textbtn')
-							.addClass('layui-hide');
-						layer.msg('上传完毕', {
-							icon: 1
-						});
-					}
-				},
-
-				error: function () {
-					layer.msg('出现异常，请重试', {
-						icon: 2
-					});
-				}
-			});
-			return false;
-		});
-
+		/*
+		上传文件
+		*/
+		
+		
 		var uploader = upload.render({
 			elem: '#upload',
 			auto: false,
 			accept: 'file',
-			bindAction: '#uploadAction',
+			bindAction: '#upload-Action',
 			size: uploadsize,
 			url: '/function/upload_file.php',
 			choose: function (obj) {
@@ -148,16 +41,14 @@ layui.use(function () {
 					} else {
 						var filename = file.name;
 					}
-					$("#localinfo")
+					$("#local-info")
 						.html('文件名称：' + filename + '&nbsp;&nbsp;文件大小：' + (file.size / 1048517)
 							.toFixed(1) + 'Mb');
 				});
-				layui.$('#uploadinfo')
+				$('#upload-info')
 					.removeClass('layui-hide');
-				layui.$('#uploadprogress')
+				$('#upload-progress')
 					.removeClass('layui-hide');
-				$('#key')
-					.html('');
 			},
 			before: function (obj) {
 				element.progress('progress', '0%'); //进度条复位
@@ -165,9 +56,9 @@ layui.use(function () {
 					icon: 16,
 					time: 0
 				});
-				layui.$('#uploadprogress')
+				layui.$('#upload-progress')
 					.removeClass('layui-hide');
-				$('#uploadAction')
+				$('#upload-Action')
 					.addClass('layui-hide');
 				$('#key')
 					.html('');
@@ -175,16 +66,14 @@ layui.use(function () {
 			done: function (res, index, upload) {
 				//假设code=0代表上传成功
 				if (res.code == 200) {
-					$('#tip')
-						.html('');
 					$('#upload')
 						.addClass('layui-hide');
-					$('#uploadAction')
+					$('#upload-Action')
 						.addClass('layui-hide');
 					$('#reload-tip')
 						.addClass('layui-hide');
-					$("#fileinfo")
-						.html('<span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span>')
+					$("#file-info")
+						.html('<img src="' + res.qrcode + '" id="file-qrcode" class="qrcode"><br><span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="FileContinue()">继续上传</button>')
 					layer.msg('上传完毕', {
 						icon: 1
 					});
@@ -208,6 +97,136 @@ layui.use(function () {
 			progress: function (n, elem, e) {
 				element.progress('progress', n + '%'); //可配合 layui 进度条元素使用
 			}
+		}
+		);
+
+		/*
+		保存文本
+		*/
+		
+		
+		form.verify({
+			text: function (value) {
+				if (value.length > textsize) {
+					return '文本不能超过' + textsize + '字符';
+				}
+			}
+		});
+		//监听提交
+		form.on('submit(save)', function (data) {
+			$.ajax({
+				//定义提交的方式
+				type: "POST",
+				//定义要提交的URL
+				url: '/function/save_text.php',
+				//定义提交的数据类型
+				dataType: 'json',
+				async: false,
+				//要传递的数据
+				data: {
+					'data': JSON.stringify(data.field)
+				},
+				//服务器处理成功后传送回来的json格式的数据
+				success: function (res) {
+					if (res.code == 200) {
+						$("#text-info")
+							.html('<img src="' + res.qrcode + '" id="text-qrcode" class="qrcode"><br><span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="TextContinue()">继续上传</button>')
+						$('#text')
+							.addClass('layui-hide');
+						$('#text-btn')
+							.addClass('layui-hide');
+						layer.msg('上传完毕', {
+							icon: 1
+						});
+					}
+				},
+
+				error: function () {
+					layer.msg('出现异常，请重试', {
+						icon: 2
+					});
+				}
+			});
+			return false;
 		});
 	});
+
+	/*
+	获取数据
+	*/
+	
+	
+	form.verify({
+		get: function (value) {
+			if (value.length != 4) {
+				return '提取码为4位';
+			}
+		}
+	});
+	//监听提交
+	form.on('submit(getbtn)', function (data) {
+		$.ajax({
+			//定义提交的方式
+			type: "POST",
+			//定义要提交的URL
+			url: '/function/get_data.php',
+			//定义提交的数据类型
+			dataType: 'json',
+			async: false,
+			//要传递的数据
+			data: {
+				'key': JSON.stringify(data.field)
+			},
+			//服务器处理成功后传送回来的json格式的数据
+			success: function (res) {
+				if (res.code == 200) { //返回存在该提取码
+					$("#input")
+						.addClass("layui-hide");
+					layer.msg("获取成功", {
+						icon: 1
+					});
+					$("#result")
+						.removeClass("layui-hide");
+					if (res.times <= 0 && res.type == 1) {
+						$("#result-info")
+							.html('<span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br>文件将在<span style="color: #FF5722;">30分钟</span>后删除，请及时保存<br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="GetContinue()">继续提取</button>')
+
+					} else {
+						$("#result-info")
+							.html('<span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="GetContinue()">继续提取</button>')
+					};
+					if (res.type == 1) { //为文件型s
+						$("#result-download-btn")
+							.removeClass("layui-hide");
+						$("#result-file")
+							.removeClass("layui-hide");
+						$("#result-url")
+							.attr("value", res.data);
+						$("#result-download")
+							.attr("href", res.data);
+					} else {
+						if (res.type == 2) { //为文本型
+							$("#result-text")
+								.removeClass("layui-hide");
+							$("#result-value")
+								.val(res.data);
+						}
+					}
+				} else { //返回不存在该提取码
+					layer.msg(res.tip, {
+						icon: 2
+					});
+				}
+			},
+
+			error: function () {
+				layer.msg('出现异常，请重试', {
+					icon: 2
+				});
+			}
+		});
+		return false;
+	});
+	
+	
 });

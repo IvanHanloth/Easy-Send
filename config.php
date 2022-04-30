@@ -2,21 +2,13 @@
 /*
 By Ivan Hanloth
 本文件为易传数据库配置文件
-2022/2/26
+2022/5/1
 */
-//必填信息
-    $domain='';//网站首页地址（包括协议头http://或https://及结尾的"/"，如https://send.halnoth.cn/）
-    $webname='';//网站名称
-    $footer='';//网站底部代码
-    $header='';//网页头部代码
-    $dbpath='127.0.0.1';//数据库地址
-    $dbport='3306';//数据库端口
-    $dbaccount='';//数据库账号
-    $dbpassword='';//数据库密码
-    $dbname='';//数据库名称
-    $template='default';//模板文件名称，默认default
-    $times=10;//单个文件可查看次数
-    $settime=864000;//单个文件过期时间，单位：秒，默认864000既10天
-    $uploadsize=104857600;//单个文件上传限制,单位：B，默认104857600既100MB
-    $textsize=5000;//单个文本大小限制，单位：个，默认5000
+$dbconfig=array(
+    "host" => "localhost", //数据库服务器
+    "port" => 3306, //数据库端口
+    "account" => "", //数据库用户名
+    "password" => "", //数据库密码
+    "name" => "", //数据库名
+);
 ?>
