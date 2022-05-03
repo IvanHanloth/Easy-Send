@@ -1,5 +1,10 @@
 <?php
 session_start();
+/*
+BY Ivan Hanloth
+本文件为易传后台登录页
+2022/5/3
+*/
 require "../info.php";
 if($_SESSION["admin"]==$admintoken){
     echo "<script>window.location.href='/admin/index.php'</script>";
@@ -11,7 +16,7 @@ if($_SESSION["admin"]==$admintoken){
 <meta charset="utf-8">
 <title>后台管理-登录</title>
 
-<link type="text/css" href="./style/css/style.css" rel="stylesheet" />
+<link type="text/css" href="./style/login.css" rel="stylesheet" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     
 </head>
