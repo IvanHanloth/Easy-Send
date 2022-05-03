@@ -1,6 +1,11 @@
 <?php
 session_start();
 require "../info.php";
+/*
+By Ivan Hanloth
+本文件为易传后台管理首页
+2022/5/3
+*/
 if($_SESSION["admin"]!=$admintoken){
     echo "<script>window.location.href='/admin/login.php'</script>";
 }else{
@@ -11,7 +16,7 @@ if($_SESSION["admin"]!=$admintoken){
     <head>
         <meta charset="utf-8">
         <title>后台管理-首页</title>
-        <link rel="stylesheet" type="text/css" href="./style/css/main.css">
+        <link rel="stylesheet" type="text/css" href="./style/main.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     </head>
     <body>
