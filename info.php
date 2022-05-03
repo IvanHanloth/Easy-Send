@@ -17,4 +17,7 @@ $result=mysqli_fetch_assoc($result);
     $uploadsize=$result["uploadsize"];
     $textsize=$result["textsize"];
     $textmethod=$result["textmethod"];
+    $adminaccount=$result["account"];
+    $adminpassword=$result["password"];
+    $admintoken=md5($result["account"]).$result["password"];
 ?>
