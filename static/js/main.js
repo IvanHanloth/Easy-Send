@@ -14,7 +14,9 @@ layui.use(function () {
 	$.getJSON("/function/set_info.php", function (result) { //获取文件上传大小等
 		var uploadsize = result.filesize,
 			textsize = result.textsize,
-		    	webname=result.webname;
+			header=result.header,
+			footer=result.footer,
+		    webname=result.webname;
 
 		$("#upload-size-info")
 			.html("<p>文件最大" + uploadsize / (1024 * 1024) + "MB</p>");
@@ -22,6 +24,10 @@ layui.use(function () {
 		
 		$("title")
 			.html(webname);
+		$("footer")
+			.html(footer);
+		$("header")
+			.html(header);
 		/*
 		上传文件
 		*/
