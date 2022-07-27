@@ -180,11 +180,14 @@ $dbconfig=array(
                     };?>
             </div>
             <?php
-            }elseif($_REQUEST['step']==5){ 
-	            @file_put_contents("install.lock",'安装锁，防止重复安装，删除后即可继续使用安装程序');
-            ?>
+            }elseif($_REQUEST['step']==5){ ?>
                 <div class="input-pack">
-                    <?php require "./end.html";?>
+            <?php
+                if(file_put_contents("install.lock",'安装锁，防止重复安装，删除后即可继续使用安装程序')){
+                }else{
+	                echo "<h2>无法正常创建install/install.lock，为保证数据的安全，请在安装程序所在目录下手动创建install.lock</h2>";
+            	};
+	            require "./end.html";?>
                 </div>
                 <?php
             }else{
