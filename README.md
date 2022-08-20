@@ -1,6 +1,6 @@
 <p align="center">
  
- <img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send logo1.png" style="width:30%">  
+ <img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:30%">  
 <br><img src="https://img.shields.io/github/v/release/IvanHanloth/Easy-Send">
 <img src="https://img.shields.io/badge/License-MIT-green">
 </p>
@@ -23,9 +23,9 @@ PHP 5.6+  MySQL 5.5+
 * 访问install目录一键安装
 * 如需实现文件过期自动清理，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
 ## 演示
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send preview 1.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send preview 2.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send preview 3.png)
+![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
+![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
+![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
 ## ToDo
  - [x] 自定义文件大小限制
  - [x] 提取时禁止输入空格
@@ -81,5 +81,5 @@ PHP 5.6+  MySQL 5.5+
 
 
 <p align="center">
-<img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send logo2.png" style="width:30%">  
+<img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-2.png" style="width:30%">  
 </p>
