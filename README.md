@@ -25,7 +25,7 @@ PHP 5.6+  MySQL 5.5+
 ## 演示
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
+![](https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-preview-3.png)
 ## ToDo
  - [x] 自定义文件大小限制
  - [x] 提取时禁止输入空格
