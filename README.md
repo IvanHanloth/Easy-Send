@@ -1,6 +1,6 @@
 <p align="center">
  
- <img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:30%">  
+ <img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:40%">  
 <br><img src="https://img.shields.io/github/v/release/IvanHanloth/Easy-Send">
 <img src="https://img.shields.io/badge/License-MIT-green">
 </p>
@@ -20,6 +20,7 @@ PHP 5.6+  MySQL 5.5+
 * 多端适用，网站自适应
 ## 使用方法
 * 上传源码至根目录
+* 配置权限755以上
 * 访问install目录一键安装
 * 如需实现文件过期自动清理，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
 ## 注意！
@@ -50,7 +51,11 @@ PHP 5.6+  MySQL 5.5+
 - 新增APP端(见IvanHanloth/Easy-Send-App-Mobile)
 - 修复部分文件上传漏洞
 - 修复剩余次数不会自动减少的问题
+- 修复后台无法保存footer的问题
+- 修复后台自定义header和footer显示出错的问题
 - 优化提取码验证机制
+- 优化安装机制(使用IvanHanloth/php-installer v1.1版本)
+- 优化数据保护机制
 #### V2.1 (更新于2022/5/3)
 - 新增后台管理功能
 - 修复网站设置难以更改问题
