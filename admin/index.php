@@ -27,9 +27,9 @@ if($_SESSION["admin"]!=$admintoken){
                     <input name="webname" type="text" placeholder="请输入网站名称" value="<?php echo $webname?>"require>
                     
                     <label>头部代码</label>
-                    <input name="header" type="text" placeholder="请输入网站头部代码" value="<?php echo $header?>">
+                    <textarea name="header" type="text" placeholder="请输入网站头部代码"><?php echo $header?></textarea>
                     <label>底部代码</label>
-                    <input name="footer" type="text" placeholder="请输入网站底部代码" value="<?php echo $footer?>">
+                    <textarea name="footer" type="text" placeholder="请输入网站底部代码"><?php echo $footer?></textarea>
                     <label>网站模板名称</label>
                     <input name="template" type="text" placeholder="请输入网站模板名称" value="<?php echo $template?>"require>
                     <label>提取次数</label>
@@ -80,7 +80,7 @@ $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],
 if (mysqli_connect_errno($db)){ 
     echo "连接 MySQL 失败: " . mysqli_connect_error(); 
 };
-$sql="UPDATE `setting` SET `webname`='".$webname."',`footer`='".$foote."',`header`='".$header."',`template`='".$template."',`times`='".$times."',`settime`='".$settime."',`uploadsize`='".$uploadsize."',`textsize`='".$textsize."',`textmethod`='".$textmethod."',`account`='".$adminaccount."',`password`='".$adminpassword."' WHERE `id`=1";
+$sql="UPDATE `setting` SET `webname`='".$webname."',`footer`='".$footer."',`header`='".$header."',`template`='".$template."',`times`='".$times."',`settime`='".$settime."',`uploadsize`='".$uploadsize."',`textsize`='".$textsize."',`textmethod`='".$textmethod."',`account`='".$adminaccount."',`password`='".$adminpassword."' WHERE `id`=1";
 $query=mysqli_query($db,$sql);
 if($query==TRUE){
     echo "<script>alert('保存成功！')</script>";
