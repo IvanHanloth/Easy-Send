@@ -22,6 +22,9 @@ PHP 5.6+  MySQL 5.5+
 * 上传源码至根目录
 * 访问install目录一键安装
 * 如需实现文件过期自动清理，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
+## 注意！
+* 升级请先删除install/install.lock文件，备份好数据再进行
+* 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决)
 ## 演示
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
