@@ -6,6 +6,7 @@ By Ivan Hanloth
 */
 include "config.php";
 include "common.php";
+include "info.php";
 
 //检查是否配置数据库
 if ($dbconfig['host']=="" or $dbconfig['account']=="" or $dbconfig['password']=="" or $dbconfig['name']=="" or $dbconfig['port']=="") {
