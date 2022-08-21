@@ -41,7 +41,7 @@ PHP 5.6+  MySQL 5.5+
 ## 联系作者
 * QQ:1580272392
 * Email:ivan@hanloth.com
-* Blog:https://ivan.hanloth.cn/（https://ivan.o5g.top/）
+* Blog:https://ivan.hanloth.cn/  （https://ivan.o5g.top/）
 ## 引用
 程序中使用了layui框架中的部分模块
 ## 更新日志
