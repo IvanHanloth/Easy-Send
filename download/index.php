@@ -25,7 +25,7 @@ if($dbcount[0]==0) {
 	    if($times==0){
 	        $info='<span>剩余下载次数:</span><span style="color: #FF5722;">'.$times.'</span><br>文件将在<span style="color: #FF5722;">30分钟</span>后删除，请及时保存';
 	    }else{
-	        $info='<span>剩余查看次数:</span><span style="color: #FF5722;">'.$times.'</span><br><span>到期时间:</span><span style="color: #FF5722;">'.$tillday.'</span>';
+	        $info='<span>剩余下载次数:</span><span style="color: #FF5722;">'.$times.'</span><br><span>到期时间:</span><span style="color: #FF5722;">'.$tillday.'</span>';
 	    }
 		if($times>0) {
 			mysqli_query($db,"UPDATE `data` SET `times` = '{$times}' WHERE binary `gkey` = '{$key}'");
@@ -68,7 +68,7 @@ if($dbcount[0]==0) {
 				<div class="box">
 					正在为您下载……<br>
 					<?php echo $info?>
-					<div class="layui-progress layui-progress-big" lay-filter="download">
+					<div class="layui-progress layui-progress-big" lay-filter="download" lay-showPercent="true">
 						<div class="layui-progress-bar" lay-percent="0%">
 						</div>
 					</div>
