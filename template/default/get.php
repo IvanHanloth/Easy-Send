@@ -22,7 +22,7 @@ By Ivan Hanloth
         <input type="text" value="" autocomplete="off" id="result-url" class="layui-input get" data-anim="layui-anim-down">
     </div>
     <div class="info layui-hide" id="result-download-btn">
-        <a id="result-download" origin="" onclick="download_result()">
+        <a id="result-download" href="" target="_blank">
         <button type="button" class="layui-btn btn layui-anim layui-anim-upbit" data-anim="layui-anim-down">立即下载</button>
         </a>
     </div>

@@ -197,15 +197,10 @@ layui.use(function () {
 					});
 					$("#result")
 						.removeClass("layui-hide");
-					if (res.times <= 0 && res.type == 1) {
-						$("#result-info")
-							.html('<span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br>文件将在<span style="color: #FF5722;">30分钟</span>后删除，请及时保存<br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="GetContinue()">继续提取</button>')
-
-					} else {
 						$("#result-info")
 							.html('<span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="GetContinue()">继续提取</button>')
-					};
-					if (res.type == 1) { //为文件型s
+					
+					if (res.type == 1) { //为文件型
 						$("#result-download-btn")
 							.removeClass("layui-hide");
 						$("#result-file")
@@ -213,7 +208,7 @@ layui.use(function () {
 						$("#result-url")
 							.attr("value", res.data);
 						$("#result-download")
-							.attr("origin", res.origin);
+							.attr("href", res.data);
 					} else {
 						if (res.type == 2) { //为文本型
 							$("#result-text")

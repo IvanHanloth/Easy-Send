@@ -7,7 +7,7 @@
     <div class="info">
       <i class="layui-icon layui-anim layui-anim-upbit" data-anim="layui-anim-down"></i>
       <p>点击上传，或将文件拖拽到此处</p>
-      <div id="upload-size-info"></div>
+      <div id="upload-size-info">Loading……</div>
       <div class="layui-hide info" id="upload-progress">
         <div class="layui-progress layui-progress-big" lay-showpercent="yes" lay-filter="progress">
           <div class="layui-progress-bar" lay-percent=""></div>

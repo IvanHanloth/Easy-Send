@@ -27,5 +27,5 @@ By Ivan Hanloth
             element.tabChange('tab', 'get');
         });
       </script><?php
-      }?>
-      <?php echo $header ?>
+      }; ?>
+        <?php echo $header?>

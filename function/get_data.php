@@ -19,7 +19,10 @@ if($dbcount[0]==0) {
 } else {
 	$dbinfo=mysqli_query($db,"SELECT * FROM `data` WHERE binary `gkey` = '{$key}'");
 	$dbinfo=mysqli_fetch_assoc($dbinfo);
-	$times=$dbinfo["times"]-1;
+    $times=$dbinfo["times"]-1;
+	if($dbinfo["type"]==1){
+    	$times=$dbinfo["times"];
+	}
 	$tillday=date('Y-m-d H:i:s', $dbinfo["tillday"]);
 	if($times<0) {
 		echo json_encode(array("code"=>"100","tip"=>"不存在此提取码或提取码已过期"),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
@@ -27,10 +30,10 @@ if($dbcount[0]==0) {
 	    if($dbinfo["method"]==2){
 	        $rdata=file_get_contents($dbinfo["data"]);
 	    }else{
-	        $rdata=$dbinfo["data"];
+	        $rdata=$domain."download/?key=".$dbinfo["gkey"];
 	    }
 		echo json_encode( array("code"=>"200","times"=>$times,"type"=>$dbinfo["type"],"data"=>$rdata,"origin"=>$dbinfo["origin"],"tillday"=>$tillday),  JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK);
-		if($times>0) {
+		if($times>0 and $dbinfo["type"]==2) {
 			mysqli_query($db,"UPDATE `data` SET `times` = '{$times}' WHERE binary `gkey` = '{$key}'");
 		} else {
 			if($dbinfo["type"]==1 or $dbinfo["method"]==2) {

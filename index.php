@@ -2,7 +2,7 @@
 /*
 By Ivan Hanloth
 本文件为易传首页文件
-2022/8/21
+2022/2/26
 */
 include "config.php";
 include "common.php";

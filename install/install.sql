@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
 --
 
 INSERT INTO `setting` (`id`, `account`, `password`, `webname`, `header`, `footer`, `template`, `times`, `settime`, `uploadsize`, `textsize`, `textmethod`) VALUES
-(1, 'admin', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '易传', '', '', 'default', '10', '864000', '104857600', '5000', '2');
+(1, 'admin', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '易传', '<div align="center"><br><img src="https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:30%">  </div>', '<div style="text-align:center;font-color:#000000"><small>©2022 Ivan Hanloth 版权所有<br><a href="https://github.com/IvanHanloth/Easy-Send/">项目地址(Github)</a> || <a href="https://gitee.com/IvanHanloth/Easy-Send/">项目地址(Gitee)</a> || <a href="https://ivan.hanloth.cn/">博客地址</a><br>备案号：<a href="https://beian.miit.gov.cn/">XICP备XXXXXXXXXX号</a></small></div>', 'default', '10', '864000', '104857600', '5000', '2');
 
 --
 -- Indexes for dumped tables
