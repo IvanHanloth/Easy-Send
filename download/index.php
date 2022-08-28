@@ -66,7 +66,7 @@ if($dbcount[0]==0) {
 		<table>
 			<td>
 				<div class="box">
-					正在为您下载……
+					正在为您下载……<br>
 					<?php echo $info?>
 					<div class="layui-progress layui-progress-big" lay-filter="download">
 						<div class="layui-progress-bar" lay-percent="0%">
