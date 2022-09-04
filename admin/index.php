@@ -32,6 +32,7 @@ if($_SESSION["admin"]!=$admintoken){
                     <textarea name="footer" type="text" placeholder="请输入网站底部代码"><?php echo $footer?></textarea>
                     <label>网站模板名称</label>
                     <input name="template" type="text" placeholder="请输入网站模板名称" value="<?php echo $template?>"require>
+                    <small>*主要，使用blue模板时，网站名称将会显示在logo下方，头部代码将变为logo链接地址</small>
                     <label>提取次数</label>
                     <input name="times" type="number" placeholder="请输入提取码可用次数" value="<?php echo $times?>"require>
                     <label>过期时长</label>

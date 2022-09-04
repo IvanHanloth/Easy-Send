@@ -83,7 +83,7 @@ layui.use(function () {
 					$('#reload-tip')
 						.addClass('layui-hide');
 					$("#file-info")
-						.html('<img src="' + res.qrcode + '" id="file-qrcode" class="qrcode"><br><span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="FileContinue()">继续上传</button>')
+						.html('<img src="' + res.qrcode + '" id="file-qrcode" class="qrcode"><br><span id="code">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="FileContinue()">继续上传</button>')
 					layer.msg('上传完毕', {
 						icon: 1
 					});
@@ -140,7 +140,7 @@ layui.use(function () {
 				success: function (res) {
 					if (res.code == 200) {
 						$("#text-info")
-							.html('<img src="' + res.qrcode + '" id="text-qrcode" class="qrcode"><br><span>提取码:</span><span style="color: #FF5722;">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="TextContinue()">继续上传</button>')
+							.html('<img src="' + res.qrcode + '" id="text-qrcode" class="qrcode"><br><span id="code">' + res.key + '</span><br><span>剩余查看次数:</span><span style="color: #FF5722;">' + res.times + '</span><br><span>到期时间:</span><span style="color: #FF5722;">' + res.tillday + '</span><br><br><button type="button" class="layui-btn btn" class="layui-hide" onclick="TextContinue()">继续上传</button>')
 						$('#text')
 							.addClass('layui-hide');
 						$('#text-btn')
