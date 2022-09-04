@@ -1,0 +1,28 @@
+  .textarea::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  }
+  .textarea::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius   : 8px;
+  background-color: #4ab2ff;
+  background-image: -webkit-linear-gradient(
+      45deg,
+      #1e78dd 10%,
+      transparent 10%,
+      transparent 30%,
+      #1e78dd 30%,
+    
+      #1e78dd 50%,
+      transparent 50%,
+      transparent 70%,
+      #1e78dd 70%,
+    
+      #1e78dd 90%,
+      transparent 90%,
+      transparent 100%,
+      #1e78dd 100%,
+      transparent
+  );
+  }
