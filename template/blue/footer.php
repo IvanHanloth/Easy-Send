@@ -9,10 +9,12 @@ By Ivan Hanloth
     <?php echo $footer;  ?>
 </footer>
 <?php
-if(empty($_REQUEST["key"])==false){
+if($_REQUEST['key']!=""){
 ?>
 <script>
-planecss($("#get_panel"));  //校正样式
+      if(document.body.clientWidth < 600){
+        $("#get_panel").attr("style","margin-left:"+parseInt(document.body.clientWidth*0.94)/2*-1+"px")
+      }
 $("#get_panel").addClass("layui-show")
 $("#fixed").addClass("layui-show")
 </script>
