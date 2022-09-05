@@ -4,9 +4,12 @@
 <P id="des">简约跨平台数据传输</P>
   <!-- 操作功能按钮 -->
   <div id="button">
-    <button id="file-tab"class="button tab-b">文件传输</button>
-    <button id="text-tab" class="button tab-b">文本传输</button>
-    <button id="get-tab" class="button button2 tab-w">数据提取</button>
+    <div class="button layui-hide" id="send-box">
+        <button id="file-tab" class="button tab-b button-l">文件传输</button>
+        <button id="text-tab" class="button tab-b button-r">文本传输</button>
+    </div>
+    <button id="send-tab" class="button tab-b">发送</button>
+    <button id="get-tab" class="button tab-w">接收</button>
   </div>
   
   <!-- 文件面板 -->
