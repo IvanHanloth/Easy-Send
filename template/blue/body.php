@@ -10,21 +10,21 @@
   </div>
   
   <!-- 文件面板 -->
-  <div id="file_panel" class="panel">
+  <div id="file_panel" class="panel layui-anim layui-anim-upbit" data-anim="layui-anim-down">
     <p class="panel_title">文件传输</p>
 
         <?php include"file.php"?>
     <b class="close"><span style="font-size: 20px;" class="iconfont icon-close_cricle"></span></b>
   </div>  
   <!-- 文件面板 -->
-  <div id="text_panel" class="panel">
+  <div id="text_panel" class="panel layui-anim layui-anim-upbit" data-anim="layui-anim-down">
     <p class="panel_title">文本传输</p>
 
         <?php include"text.php"?>
     <b class="close"><span style="font-size: 20px;" class="iconfont icon-close_cricle"></span></b>
   </div>  
   <!-- 提取面板 -->
-  <div id="get_panel" class="panel">
+  <div id="get_panel" class="panel layui-anim layui-anim-upbit" data-anim="layui-anim-down">
     <p class="panel_title">数据提取</p>
 
         <?php include"get.php"?>
