@@ -239,6 +239,11 @@ layui.use(function () {
       }
     }
 
+    $("#send-tab").click(function(){
+        $("#send-box").removeClass("layui-hide")
+        $("#send-tab").addClass("layui-hide")
+        
+    })
    
     $('.close').click(function(){
       $(".panel").removeClass("layui-show")
@@ -260,16 +265,7 @@ layui.use(function () {
       planecss($("#get_panel"));  //校正样式
       $("#get_panel").addClass("layui-show")
       $("#fixed").addClass("layui-show")
+      $("#send-tab").removeClass("layui-hide")
+      $("#send-box").addClass("layui-hide")
+      
     })
-    /*
-    download.onclick = function(){
-      planecss()
-      downlaod_plane.addClass("layui-show")
-      fixed.addClass("layui-show")
-    }
-    
-    document.getElementById('btnDone2').onclick = function(){
-      $('#get_pwd').css('z-index','-1');
-      $('#get_pwd').css('display','none');
-    }
-    */
