@@ -5,11 +5,11 @@
   <!-- 操作功能按钮 -->
   <div id="button">
     <div class="button layui-hide" id="send-box">
-        <button id="file-tab" class="button tab-b button-l">文件传输</button>
-        <button id="text-tab" class="button tab-b button-r">文本传输</button>
+        <button id="file-tab" class="button tab-b button-l"><b>文&nbsp;件</b></button>
+        <button id="text-tab" class="button tab-b button-r"><b>文&nbsp;本</b></button>
     </div>
-    <button id="send-tab" class="button tab-b">发送</button>
-    <button id="get-tab" class="button tab-w">接收</button>
+    <button id="send-tab" class="button tab-b"><b>发&nbsp;送</b></button>
+    <button id="get-tab" class="button tab-w"><b>接&nbsp;收</b></button>
   </div>
   
   <!-- 文件面板 -->
