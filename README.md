@@ -12,7 +12,7 @@
 https://send.hanloth.cn/
 https://send.o5g.top/
 ## 环境依赖
-PHP 5.6+  MySQL 5.5+
+PHP 7.0+  MySQL 5.5+
 ## 功能
 * 上传文件、文本至服务器临时保存
 * 通过提取码提取临时存储的文本
@@ -46,8 +46,12 @@ PHP 5.6+  MySQL 5.5+
 * QQ:1580272392
 * Email:ivan@hanloth.com
 * Blog:https://ivan.hanloth.cn/  （ https://ivan.o5g.top/ ）
+* 交流群:390108536(QQ群)
 ## 引用
-* 程序中使用了layui框架中的部分模块
+* 使用了layui框架中的部分模块
+* blue模板使用了shuyudao/wenchuan开源项目的视觉设计
+## 更新预告
+将在近期推送Easy-Send V3.0版本。此版本对项目整体结构进行了重构，能够有效提高模板开发速度。将对后台进行深度优化开发，也会新增许多全新功能，敬请期待！
 ## 更新日志
 #### V2.2.2 (更新于2022/9/7)
 - 新增一套模板（blue）
