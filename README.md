@@ -1,6 +1,6 @@
 <p align="center">
  
- <img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:40%">  
+ <img src="https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-logo-1.png" style="width:40%">  
 <br><img src="https://img.shields.io/github/v/release/IvanHanloth/Easy-Send">
 <img src="https://img.shields.io/badge/License-MIT-green">
 </p>
@@ -103,5 +103,5 @@ PHP 7.0+  MySQL 5.5+
 
 
 <p align="center">
-<img src="https://ivan.hanloth.cn/usr/uploads/2022/08/Easy-Send-logo-2.png" style="width:30%">  
+<img src="https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-logo-2.png" style="width:30%">  
 </p>
