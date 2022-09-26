@@ -1,4 +1,12 @@
-{"announcement":"hello World",
-"update":[
-{"version":300}]
+{
+	"announcement":"欢迎使用Easy-Send V3.0 目前还没有公告哦",
+	"update":[
+		{
+			"version_num":300,
+			"version":"V3.0.0",
+			"description":"",
+			"sql_url":"",
+			"code_url":"",
+			"all_url":""
+		}]
 }
