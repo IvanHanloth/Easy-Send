@@ -1,12 +1,116 @@
 {
-	"announcement":"欢迎使用Easy-Send V3.0 目前还没有公告哦",
-	"update":[
-		{
-			"version_num":300,
-			"version":"V3.0.0",
-			"description":"",
-			"sql_url":"",
-			"code_url":"",
-			"all_url":""
-		}]
+    "announcement": "欢迎使用Easy-Send V3.0 目前还没有公告哦",
+    "update": [
+        {
+            "version_num": 300,
+            "version": "V3.0.0",
+            "description": "",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": ""
+        },
+        {
+            "version_num": 222,
+            "version": "V2.2.2",
+            "description": "新增一套模板（blue）
+            优化提取码显示",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v2.2.2.zip"
+        },{
+            "version_num": 221,
+            "version": "V2.2.2",
+            "description": "新增文件直链下载功能
+            修复利用文件链接突破下载次数限制的问题
+            优化文件下载体验",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v2.2.1.zip"
+        },
+        {
+            "version_num": 220,
+            "version": "V2.2.0",
+            "description": "新增自动获取域名功能
+            新增APP端(见IvanHanloth/Easy-Send-App-Mobile)
+            修复部分文件上传漏洞
+            修复剩余次数不会自动减少的问题
+            修复后台无法保存footer的问题
+            修复后台自定义header和footer显示出错的问题
+            优化提取码验证机制
+            优化安装机制(使用IvanHanloth/php-installer v1.1版本)
+            优化数据保护机制",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.2.zip"
+        },
+        {
+            "version_num": 210,
+            "version": "V2.1.0",
+            "description": "新增后台管理功能
+            修复网站设置难以更改问题",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.1.zip"
+        },
+        {
+            "version_num": 200,
+            "version": "V2.0.0",
+            "description": "新增一键安装功能
+            新增文本文件化存储功能
+            新增环境依赖检测功能
+            优化文件及文本存储机制
+            配置文件改为数据库存储",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.0.zip"
+        },
+        {
+            "version_num": 130,
+            "version": "V1.3.0",
+            "description": "新增提取页面二维码功能
+            新增直接传入key功能
+            新增robot.txt
+            新增自定义文件上传大小限制、文本上传大小限制
+            新增提取码输入框禁止输入空格功能
+            新增过期文件延缓删除功能
+            修复文件达到查看次数时，最后一次无法访问的Bug
+            优化部分代码命名",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.3.zip"
+        },
+        {
+            "version_num": 120,
+            "version": "V1.2.0",
+            "description": "全面重构目录结构，便于后续开发
+            新增模板设置功能
+            新增对于多平台客户端的适配
+            新增自定义文件过期时间
+            修复sql不区分大小写查询的问题
+            合并原按功能分类的js",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.2.zip"
+        },
+        {
+            "version_num": 110,
+            "version": "V1.1.0",
+            "description": "更名为Easy-Send
+            修复监控无效问题
+            修复上传失败返回状态码“200”导致提示出错问题
+            新增自定义文件可查看次数功能
+            新增文件分月存储功能",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.1.zip"
+        },
+        {
+            "version_num": 100,
+            "version": "V1.0.0",
+            "description": "Online-ClipBoard v1.0.0",
+            "sql_url": "",
+            "code_url": "",
+            "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.0.0.zip"
+        }
+    ]
 }
