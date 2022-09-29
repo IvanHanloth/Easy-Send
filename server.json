@@ -12,14 +12,14 @@
         {
             "version_num": 222,
             "version": "V2.2.2",
-            "description": "新增一套模板（blue）\r优化提取码显示",
+            "description": "新增一套模板（blue）\u000d优化提取码显示",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v2.2.2.zip"
         },{
             "version_num": 221,
             "version": "V2.2.2",
-            "description": "新增文件直链下载功能\r修复利用文件链接突破下载次数限制的问题\r优化文件下载体验",
+            "description": "新增文件直链下载功能\u000d修复利用文件链接突破下载次数限制的问题\u000d优化文件下载体验",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v2.2.1.zip"
@@ -27,7 +27,7 @@
         {
             "version_num": 220,
             "version": "V2.2.0",
-            "description": "新增自动获取域名功能\r新增APP端(见IvanHanloth/Easy-Send-App-Mobile)\r修复部分文件上传漏洞\r修复剩余次数不会自动减少的问题\r修复后台无法保存footer的问题\r修复后台自定义header和footer显示出错的问题\r优化提取码验证机制\r优化安装机制(使用IvanHanloth/php-installer v1.1版本)\r优化数据保护机制",
+            "description": "新增自动获取域名功能\u000d新增APP端(见IvanHanloth/Easy-Send-App-Mobile)\u000d修复部分文件上传漏洞\u000d修复剩余次数不会自动减少的问题\u000d修复后台无法保存footer的问题\u000d修复后台自定义header和footer显示出错的问题\u000d优化提取码验证机制\u000d优化安装机制(使用IvanHanloth/php-installer v1.1版本)\u000d优化数据保护机制",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.2.zip"
@@ -35,7 +35,7 @@
         {
             "version_num": 210,
             "version": "V2.1.0",
-            "description": "新增后台管理功能\r修复网站设置难以更改问题",
+            "description": "新增后台管理功能\u000d修复网站设置难以更改问题",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.1.zip"
@@ -43,7 +43,7 @@
         {
             "version_num": 200,
             "version": "V2.0.0",
-            "description": "新增一键安装功能\r新增文本文件化存储功能\r新增环境依赖检测功能\r优化文件及文本存储机制\r配置文件改为数据库存储",
+            "description": "新增一键安装功能\u000d新增文本文件化存储功能\u000d新增环境依赖检测功能\u000d优化文件及文本存储机制\u000d配置文件改为数据库存储",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/V2.0.zip"
@@ -51,7 +51,7 @@
         {
             "version_num": 130,
             "version": "V1.3.0",
-            "description": "新增提取页面二维码功能\r新增直接传入key功能\r新增robot.txt\r新增自定义文件上传大小限制、文本上传大小限制\r新增提取码输入框禁止输入空格功能\r新增过期文件延缓删除功能\r修复文件达到查看次数时，最后一次无法访问的Bug\r优化部分代码命名",
+            "description": "新增提取页面二维码功能\u000d新增直接传入key功能\u000d新增robot.txt\u000d新增自定义文件上传大小限制、文本上传大小限制\u000d新增提取码输入框禁止输入空格功能\u000d新增过期文件延缓删除功能\u000d修复文件达到查看次数时，最后一次无法访问的Bug\u000d优化部分代码命名",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.3.zip"
@@ -59,7 +59,7 @@
         {
             "version_num": 120,
             "version": "V1.2.0",
-            "description": "全面重构目录结构，便于后续开发\r新增模板设置功能\r新增对于多平台客户端的适配\r新增自定义文件过期时间\r修复sql不区分大小写查询的问题\r合并原按功能分类的js",
+            "description": "全面重构目录结构，便于后续开发\u000d新增模板设置功能\u000d新增对于多平台客户端的适配\u000d新增自定义文件过期时间\u000d修复sql不区分大小写查询的问题\u000d合并原按功能分类的js",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.2.zip"
@@ -67,7 +67,7 @@
         {
             "version_num": 110,
             "version": "V1.1.0",
-            "description": "更名为Easy-Send\r修复监控无效问题\r修复上传失败返回状态码“200”导致提示出错问题\r新增自定义文件可查看次数功能\r新增文件分月存储功能",
+            "description": "更名为Easy-Send\u000d修复监控无效问题\u000d修复上传失败返回状态码“200”导致提示出错问题\u000d新增自定义文件可查看次数功能\u000d新增文件分月存储功能",
             "sql_url": "",
             "code_url": "",
             "all_url": "https://github.com/IvanHanloth/Easy-Send/archive/refs/tags/v1.1.zip"
