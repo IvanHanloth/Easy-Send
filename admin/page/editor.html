@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>富文本编辑器</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/public.css" media="all">
+    <link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+<style>
+  #editor—wrapper {
+    border: 1px solid #ccc;
+    z-index: 100; /* 按需定义 */
+  }
+  #toolbar-container { border-bottom: 1px solid #ccc; }
+  #editor-container { height: 500px; }
+</style>
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <blockquote class="layui-elem-quote">
+            富文本编辑器使用开源项目：wangEditor<br>
+            <a href="http://www.wangeditor.com" target="_blank" class="layui-btn layui-btn-danger">wangEditor</a>
+        </blockquote>
+
+<div id="editor—wrapper">
+    <div id="toolbar-container"><!-- 工具栏 --></div>
+    <div id="editor-container"><!-- 编辑器 --></div>
+</div>
+<br>
+<strong>代码：</strong>
+<br><br>
+        <textarea id='source_code' class="layui-elem-quote" style="width:96%;height:200px">
+        </textarea>
+    </div>
+</div>
+
+<!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script src="../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+<script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+
+<script type="text/javascript">
+layui.use(function(){
+    var $=layui.$
+const { createEditor, createToolbar } = window.wangEditor
+
+const editorConfig = {
+    placeholder: 'Type here...',
+    onChange(editor) {
+      const html = editor.getHtml()
+      $("#source_code").html(html)
+      // 也可以同步到 <textarea>
+    }
+}
+
+const editor = createEditor({
+    selector: '#editor-container',
+    html: '<p><br></p>',
+    config: editorConfig,
+    mode: 'default', // or 'simple'
+})
+
+const toolbarConfig = {}
+
+const toolbar = createToolbar({
+    editor,
+    selector: '#toolbar-container',
+    config: toolbarConfig,
+    mode: 'default', // or 'simple'
+})
+})
+</script>
+</body>
+</html>
