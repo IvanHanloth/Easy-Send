@@ -1,0 +1,105 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/panel.php"
+  },
+  "logoInfo": {
+    "title": "后台管理",
+    "image": "/favicon.ico",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "后台管理",
+      "icon": "fa fa-puzzle-piece",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "后台首页",
+          "icon": "fa fa-tachometer",
+          "href": "page/panel.php",
+          "target": "_self"
+        },
+        {
+          "title": "数据管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "文件数据",
+              "href": "page/file_data.php",
+              "icon": "fa fa-file",
+              "target": "_self"
+            },
+            {
+              "title": "文本数据",
+              "href": "page/text_data.php",
+              "icon": "fa fa-list-alt",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "网站设置",
+          "href": "",
+          "icon": "fa fa-gears",
+          "target": "_self",
+          "child": [
+            {
+              "title": "系统设置",
+              "href": "page/web_setting.php",
+              "icon": "fa fa-cog",
+              "target": "_self"
+            },
+            {
+              "title": "上传设置",
+              "href": "page/upload_setting.php",
+              "icon": "fa fa-cloud-upload",
+              "target": "_self"
+            },
+            {
+              "title": "客户端设置",
+              "href": "page/app_setting.php",
+              "icon": "fa fa-location-arrow",
+              "target": "_self"
+            },
+            {
+              "title": "网站升级",
+              "href": "page/update.php",
+              "icon": "fa fa-arrow-circle-up",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "工具箱",
+      "icon": "fa fa-wrench",
+      "href": "",
+      "target": "_self",
+      "child":[
+          {
+              "title":"全部图标",
+              "icon":"fa fa-magic",
+              "href":"page/icon.html",
+              "target":"_self"
+          },
+          {
+              "title":"颜色选择",
+              "icon":"fa fa-eyedropper",
+              "href":"page/color-select.html",
+              "target":"_self"
+          },
+          {
+              "title":"富文本编辑器",
+              "icon":"fa fa-edit",
+              "href":"page/editor.html",
+              "target":"_self"
+          }
+          ]
+    }
+  ]
+}
