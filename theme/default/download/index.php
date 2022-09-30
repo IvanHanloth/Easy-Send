@@ -1,0 +1,1 @@
+<?php tem_download_big_showpercent()?>

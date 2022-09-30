@@ -1,0 +1,257 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline:none;
+}
+body,html{
+height: 100%;
+overflow: hidden;
+font-family: "Microsoft Yahei Light","Microsoft Yahei",Helvetica,sans-serif,"等线";
+}
+a{
+  text-decoration: none;
+  color: #4ecdff;
+}
+h1{
+  color: #4ecdff;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 120px;
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+#button{
+  width: 250px;
+    height: auto;
+    margin: 40px auto;
+    text-align: center;
+}
+.button{
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    width: 224px;
+    text-align: center;
+}
+.button-l{
+    -webkit-border-radius: 30px 0px 0px 30px;    
+    -moz-border-radius: 30px 0px 0px 30px;    
+    border-radius: 30px 0px 0px 30px;
+    width:110px;
+    float:left;
+    margin-top:-4px;
+}
+.button-r{
+    -webkit-border-radius: 0px 30px 30px 0px;
+    -webkit-border-radius: 0px 30px 30px 0px;
+    border-radius: 0px 30px 30px 0px;
+    width:110px;
+    float:right;
+    margin-top: -4px;
+}
+.tab-b{
+  border: none;
+    color: white;
+    background-color: rgb(65,145,245);
+    -webkit-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    -moz-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+}
+.tab-w{
+  border: none;
+    color: rgb(65,145,245);
+    background-color: white;
+    -webkit-box-shadow: rgba(65,145,245,0.2) 0px 5px 20px;
+    -moz-box-shadow: rgba(65,145,245,0.2) 0px 5px 20px;
+    box-shadow: rgba(65,145,245,0.2) 0px 5px 20px;
+}
+.panel{
+  position: relative;
+  width: 500px;
+  height: 330px;
+  position: absolute;
+  z-index: 99;
+  top: 200px;
+  left: 50%;
+  margin-left: -250px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  display: none;
+  -webkit-box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
+    -moz-box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
+    box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+}
+#fixed{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #444444;
+  opacity: .6;  
+  z-index: 98;
+  top: 0;
+  display: none;
+}
+.panel_title{
+  font-size: 20px;
+  text-align: center;
+  line-height: 34px;
+}
+.close{
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+@font-face {font-family: 'webfont';
+  src: url('//at.alicdn.com/t/webfont_4g9eajr4war.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_4g9eajr4war.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_4g9eajr4war.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_4g9eajr4war.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_4g9eajr4war.svg#站酷小薇体') format('svg'); /* iOS 4.1- */
+}
+
+#name{
+  text-align: center;
+    font-size: 30px;
+    color: #00b7ff;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+#des{
+  font-size: 18px;
+  text-align: center;
+  color: #464646;
+  line-height: 70px;
+}
+
+.main{
+    margin:2%;
+    padding:1% 2%;
+}
+.qrcode{
+    width:120px;
+}
+.dragbox{
+    margin:auto;
+    height: 250px;
+    border-style:dashed;
+    border-width:2px;
+    border-radius:10px;
+    border-color:#eee0ee;
+    padding:1% 2%;
+    height:200px;
+    display:block;
+}
+.tab{
+    width:90%;
+    display:block;
+    margin:auto;
+    padding:10px;
+}
+.btn{
+    display:block;
+    margin:auto;
+}
+.info{
+    margin:20px;
+    text-align:center
+}
+.textarea{
+    overflow-y:auto;
+    resize:none;
+    height:150px;
+}
+.formbox{
+    margin:auto;
+    width:90%;
+    padding:1% 2%;
+    height:200px;
+    display:block;
+}
+.getbox{
+    margin: auto;
+    padding:85px 0px;
+}
+.get{
+    margin: auto;
+    width:25%;
+    padding-left: 0px;
+    text-align: center;
+    border:0px;
+    border-bottom:2px solid #1e78bb!important;
+    min-width: 200px;
+}
+.get:hover{
+    border-bottom:2px solid #4ab2ff!important;
+}
+.get:focus{
+    border-bottom:2px solid #4ab2ee!important;
+}
+#file-panel-choose-send{
+    width:40%;
+    border-radius: 20px;
+    float:left;
+    height: 220px;
+    margin:25px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(65,145,245);
+    -webkit-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    -moz-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+}
+#file-panel-choose-room{
+    width:40%;
+    border-radius: 20px;
+    float:right;
+    height: 220px;
+    margin:25px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(65,145,245);
+    -webkit-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    -moz-box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+    box-shadow: rgba(65,145,245,0.3) 0px 5px 20px;
+}
+@media screen and (max-width: 600px) {
+    .panel,.dragbox{
+      width: 94%!important;
+    }
+    
+    #file-panel-choose-send,#file-panel-choose-room{
+        width:42.5%!important;
+        margin: 25px 10px;
+    }
+}
+
+#code{
+  font-size: 35px;
+    font-family: "Microsoft Yahei";
+    font-weight: bold;
+    line-height: 30px;
+    letter-spacing: 10px;
+    color:#4ab2ff;
+}

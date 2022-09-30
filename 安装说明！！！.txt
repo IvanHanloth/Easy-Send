@@ -1,0 +1,11 @@
+直接访问/install即可安装
+注意，需要配置伪静态才能正常使用！
+
+Apache：
+RewriteRule ^/download/(.*)$ /index.php?mode=download&$1;
+
+
+
+Nginx（推荐）：
+rewrite ^/download/(.*)$ /index.php?mode=download&$1;
+

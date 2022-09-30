@@ -4,18 +4,15 @@ By Ivan Hanloth
 本文件为易传数据监控文件
 2022/4/4
 */
-require "config.php";
-$db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
-if (mysqli_connect_errno($db)){ 
-    echo "连接 MySQL 失败: " . mysqli_connect_error(); 
-};
+
+include dirname(__FILE__)."/./common.php";
 $now=time();
 $num=mysqli_query($db,"SELECT * FROM `data`");
 $num=mysqli_num_rows($num);
 $result=mysqli_query($db,"SELECT * FROM `data` ORDER BY `id`");
 $result=mysqli_fetch_all($result,MYSQLI_BOTH);
 for($i=0;$i<=$num;$i++){
-    if($result[$i]["tillday"]<=$now){
+    if(strtotime($result[$i]["tillday"])<=$now){
         if($result[$i]["type"]==1){
             $delete_file=unlink($result[$i]["path"]);
             if($delete_file==TRUE){

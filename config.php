@@ -1,4 +1,3 @@
-
 <?php
 /*数据库配置*/
 $dbconfig=array(
