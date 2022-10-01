@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 $check_num=6;//定义检查的项目数
-$php_version="5.6.0";//定义php需要的版本
+$php_version="7.0.0";//定义php需要的版本
 $sql_version="5.5";//定义sql需要的版本
 if(file_exists('update.lock')){
 	exit('您已经升级过，如需重新升级请删除<font color=red> update/update.lock </font>文件后再升级！');
@@ -66,7 +66,7 @@ $check=0;//初始化检查项目
                 	</thead>
                 	<tbody>
                 		<tr>
-                			<td>php 5.6+</td>
+                			<td>php 7.0+</td>
                 			<td>必须</td>
                 			<td><?php check(checkversion($php_version)) ?></td>
                 		</tr>
