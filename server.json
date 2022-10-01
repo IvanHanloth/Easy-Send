@@ -4,11 +4,11 @@
         {
             "version_num": 300,
             "version": "V3.0.0",
-            "description": "",
+            "description": "对于项目进行了重构\u000d新增文件直传功能\u000d新增二维码懒加载\u000d新增windows电脑端(见IvanHanloth/Easy-Send-APP-PC)\u000d后台新增客户端配置\u000d后台新增网站公告配置\u000d后台新增SEO优化配置\u000d后台新增工具箱功能\u000d后台新增数据管理功能\u000d后台新增在线升级功能\u000d优化后台视觉设计\u000d优化模板开发流程，缩短开发时间\u000d修复文件继续上传不显示本地文件信息的问题\u000d修复文件在提取一次后剩余时间仅有15分钟的问题\u000d修复部分机型模板显示错误的问题\u000d修复前端无法获取header和footer代码的问题\u000d修复部分接口数据类型返回错误问题\u000d修复文件多重引用路径出错问题",
             "sql_url": "",
             "code_url": "",
-            "time":"",
-            "all_url": ""
+            "time":"2022/10/1",
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.0.0-all.zip"
         },
         {
             "version_num": 222,
