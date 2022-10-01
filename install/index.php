@@ -66,7 +66,7 @@ $check=0;//初始化检查项目
                 	</thead>
                 	<tbody>
                 		<tr>
-                			<td>php 5.6+</td>
+                			<td>php 7.0+</td>
                 			<td>必须</td>
                 			<td><?php check(checkversion($php_version)) ?></td>
                 		</tr>
