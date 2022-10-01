@@ -87,7 +87,7 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '管理员密码'),
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
 (4, 'header', '', '网站header'),
-(5, 'footer', '<div style="text-align:center;font-color:#000000" id="footer"><small>©2022 Ivan Hanloth 版权所有<br><a href="https://github.com/IvanHanloth/Easy-Send/">项目地址(Github)</a> || <a href="https://gitee.com/IvanHanloth/Easy-Send/">项目地址(Gitee)</a> || <a href="https://ivan.hanloth.cn/">博客地址</a><br>备案号：<a href="https://beian.miit.gov.cn/">辽ICP备20007531号</a></small></div>', '网站footer'),
+(5, 'footer', '', '网站footer'),
 (6, 'theme', 'default', '网站模板'),
 (7, 'times', '10', ''),
 (8, 'settime', '864000', ''),
