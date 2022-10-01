@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 $check_num=5;//定义检查的项目数
-$php_version="5.6.0";//定义php需要的版本
+$php_version="7.0.0";//定义php需要的版本
 $sql_version="5.5";//定义sql需要的版本
 if(file_exists('install.lock')){
 	exit('您已经安装过，如需重新安装请删除<font color=red> install/install.lock </font>文件后再安装！');
