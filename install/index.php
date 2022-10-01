@@ -168,20 +168,22 @@ $dbconfig=array(
                         $sql = explode(';', $sql);
                     	$success_num=0;
                     	$fail_num=0;
-                    	for($i=0;$i<count($sql);$i++) {
-                    		if (trim($sql[$i])=='')continue;
-                    		if(mysqli_query($db, $sql[$i])) {
-                    			++$success_num;
+                    	foreach ($sql as $value){
+                    		if (trim($value)==''){
+                    		    continue;
+                    		}
+                    		if(mysqli_query($db, $value)){
+                    			$success_num++;
                     		} else {
-                    			++$fail_num;
+                    			$fail_num++;
                     			$error.=mysqli_error($db).'<br/>';
                     		}
-                    	};
-                        };
-                    if($e==0) {
+                    	}
+                    };
+                    if($fail_num==0) {
                     	echo '安装成功！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br><br><div class="button"><a href="./?step=5"><button>下一步</button></a></div>';
                     } else {
-                    	echo '安装失败！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br><br><div class="button"><a href="./?step=2"><button>重新配置</button></a></div>';
+                    	echo '安装失败！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br>'.$error.'<br><div class="button"><a href="./?step=2"><button>重新配置</button></a></div>';
                     };?>
             </div>
             <?php
