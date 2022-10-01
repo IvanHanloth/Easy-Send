@@ -233,8 +233,8 @@ function data_check() {
 			}
 			$("#room_type").html(mytype);
 			$("#room_state").html(data.state)
-			if($("#room_qrcode").attr("src")!=data.qrcode){
-				$("#room_qrcode").attr("src",data.qrcode)
+			if($("#room_qrcode").attr("src") != data.qrcode) {
+				$("#room_qrcode").attr("src", data.qrcode)
 			}
 			if(data.type == "send") {
 				if(data.state == "connected" && $("#room_send_file").val() == "") {
@@ -275,74 +275,7 @@ function data_check() {
 		data_check()
 	}, 3000);
 }
-    function update(version_num){
-        layui.use(function(){
-            var layer=layui.layer
-            layer.prompt({title:"请输入后台密码以确认升级",formType: 1},function(value, index, elem){
-                layer.close(index);
-                layer.msg("正在提交……",{icon:22,time:2000,shade:0.3})
-                $.ajax({
-                    type:"POST",
-                    url:"/admin/api/update_action.php",
-                    data:{"password":value,"version_num":version_num},
-                    success:function(res){
-                        if(res.code==200){
-                            layer.msg(res.tip,{icon:1,shade:0.3,time:0})
-                        }else{
-                            layer.msg(res.tip,{icon:2,shade:0.3,time:2000})
-                        }
-                    },
-                    error:function(){
-                        layer.msg("服务器出现错误，请检查/admin/api/update_action.php",{icon:2,shade:0.3,time:2000})
-                    }
-                })
-                });
-        })
-    }
-    $("#total-reinstall").click(function(){
-        console.log("a")
-            $.getJSON("/admin/api/update_info.php/?type=info",function(res){
-                update(res.newest_version_num)
-            })
-        })
-    layui.use(function () {
-        var form = layui.form
-            , layer = layui.layer
-            , element = layui.element;
-            $("#update_get_btn").click(function(){
-                layer.msg("正在获取更新信息",{icon:22,time:2000,shade:0.3})
-                $.getJSON("/admin/api/update_info.php/?type=info",function(res){
-                    $("#update_info").removeClass("layui-hide")
-                    $("#now_version").html(res.now_version)
-                    $("#newest_version").html(res.newest_version)
-                    if(res.info.length!=0){
-                        res.info.forEach(function(value){
-                            $("#version_info").append('<div class="layui-colla-item"><h2 class="layui-colla-title">'+value.version+'</h2><div class="layui-colla-content layui-show"><p><span>更新时间：</span>'+value.time+'</p><p><span>更新内容：</span>'+value.description+'</p><button class="layui-btn layui-btn-normal" onclick="update('+value.version_num+'")>更新至此版本</button></div></div>')
-                        })
-                    }else{
-                        $("#version_info").append('<div class="layui-colla-content layui-show"><strong>恭喜，您的程序处于最新版本，并不需要更新</strong></div>')
-                    }
-                    
-                    $("#version_info").append('<div class="layui-colla-content layui-show">您也可以选择重装本程序<br><button class="layui-btn layui-btn-danger" id="total-reinstall" type="button">完全重装</button></div>')
-                })
-            })
-            
 
-            $("#update_log_get").click(function(){
-                layer.msg("正在获取日志信息",{icon:22,time:2000,shade:0.3})
-                $.getJSON("/admin/api/update_info.php/?type=log",function(res){
-                    $("#update_log").removeClass("layui-hide")
-                    if(res.log.length!=0){
-                        res.log.forEach(function(value){
-                            $("#version_log").append('<div class="layui-colla-item"><h2 class="layui-colla-title">'+value.version+'</h2><div class="layui-colla-content layui-show"><p><span>更新时间：</span>'+value.time+'</p><p><span>更新内容：</span>'+value.description+'</p></div></div>')
-                        })
-                    }else{
-                        $("#version_log").append('<div class="layui-colla-content layui-show">获取失败！</div>')
-                    }
-                })
-            })
-
-    });
 function room_receive() {
 	room_receive_time = setTimeout(function () {
 		$.getJSON("/public/api/room_download.php", function (data) {
