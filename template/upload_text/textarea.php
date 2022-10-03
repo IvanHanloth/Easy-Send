@@ -44,6 +44,6 @@
         <span class="code" id="text-code"></span><br>
         <span>剩余查看次数:</span><span style="color: #FF5722;" id="text-leave-times"></span><br>
         <span>到期时间:</span><span style="color: #FF5722;" id="text-leave-tillday"></span><br><br>
-        <button type="button" class="layui-btn btn <?php echo $theme_config["main_css"]?>" class="layui-hide" onclick="TextContinue()">继续上传</button>
+        <button type="button" class="layui-btn btn <?php echo $theme_config["main_css"]?>" onclick="TextContinue()">继续上传</button>
     </div>
   </form>
