@@ -23,7 +23,7 @@
         <span class="code" id="file-code"></span><br>
         <span>剩余查看次数:</span><span style="color: #FF5722;" id="file-leave-times"></span><br>
         <span>到期时间:</span><span style="color: #FF5722;" id="file-leave-tillday"></span><br><br>
-        <button type="button" class="layui-btn btn <?php echo $theme_config["main_css"]?>" class="layui-hide" onclick="FileContinue()">继续上传</button>
+        <button type="button" class="layui-btn btn <?php echo $theme_config["main_css"]?>" onclick="FileContinue()">继续上传</button>
     </div>
     <div id="reload-tip" class="layui-hide">
         <button type="button" class="layui-btn btn <?php echo $theme_config["main_css"]?>" id="reload">重新上传</button>
