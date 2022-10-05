@@ -58,8 +58,10 @@ session、curl、fileinfo、ZipArchive、
 * 使用了localForage模块进行离线存储
 * 使用了layuimini作为后台框架
 * blue模板使用了shuyudao/wenchuan开源项目的视觉设计
-## 模板开发
-最近正在编写开发文档(也许会在wiki中，但也不确定。如果有好用的技术文档编辑器，欢迎推荐)
+## 文档
+Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/），适合用户阅读
+Easy-Send帮助文档（http://doc.o5g.top/docs/easy-send-docs-use/），适合网站主、管理人员阅读
+Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/），适合开发者、程序员阅读
 ## 更新日志
 #### V3.0.0（更新于2022/10/1）
 - 对于项目进行了重构
