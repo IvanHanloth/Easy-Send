@@ -11,6 +11,9 @@
 ## 演示站
 https://send.hanloth.cn/
 https://send.o5g.top/
+## 测试站
+https://test.send.o5g.top/
+https://test.send.o5g.top/admin
 ## 环境依赖
 PHP 7.0+  MySQL 5.5+ 
 ## 推荐环境
