@@ -1,8 +1,10 @@
 <?php
 /*
 By Ivan Hanloth
-本文件为易传文本存储接口文件
-2022/4/4
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
 */
 header("Access-Control-Allow-Origin:*");
 header("Content-type:text/json");

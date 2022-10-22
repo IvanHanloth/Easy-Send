@@ -1,4 +1,11 @@
 <?php
+/*
+By Ivan Hanloth
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
+*/
 if(strpos($_SERVER['HTTP_USER_AGENT'], 'QQ/')!==false || strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger')!==false){
 	header('Content-type:text/html;charset=utf-8');
 	include dirname(__FILE__).'/../../public/page/jump.php';

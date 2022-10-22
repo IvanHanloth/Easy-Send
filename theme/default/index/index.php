@@ -1,4 +1,11 @@
-      <?php tem_require_head()?>
+      <?php
+      /*
+By Ivan Hanloth
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
+*/tem_require_head()?>
   <body>
         <?php tem_require_header()?>
     <div class="main">

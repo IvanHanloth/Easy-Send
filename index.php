@@ -1,8 +1,10 @@
 <?php 
 /*
 By Ivan Hanloth
-本文件为易传首页文件
-2022/2/26
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
 */
 include dirname(__FILE__)."/./common.php";
 

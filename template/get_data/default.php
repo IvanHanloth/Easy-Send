@@ -1,3 +1,4 @@
+
 <script src="/public/template/get_data/js/default.js"></script>
 <div id="input">
     <form class="layui-form getbox">

@@ -1,8 +1,10 @@
 <?php
 /*
 By Ivan Hanloth
-本文件为通用函数文件
-2022/7/31
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
 */
 require dirname(__FILE__)."/./info.php";
 

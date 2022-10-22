@@ -1,5 +1,11 @@
 <?php
-
+/*
+By Ivan Hanloth
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
+*/
 include dirname(__FILE__)."/./config.php";
 $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
 if (mysqli_connect_errno($db)){ 

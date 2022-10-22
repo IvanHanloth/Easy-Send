@@ -1,4 +1,11 @@
-function planecss(member) {
+
+/*
+By Ivan Hanloth
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
+*/function planecss(member) {
 	if(document.body.clientWidth < 600) {
 		member.attr("style", "margin-left:" + parseInt(document.body.clientWidth * 0.94) / 2 * -1 + "px")
 	}

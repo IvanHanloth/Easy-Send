@@ -10,6 +10,9 @@ if($_SESSION["admin"]!=$admintoken){
     echo "<script>window.location.href='/admin/page/login.php'</script>";
     exit;
 }
+if($admintoken=="21232f297a57a5a743894a0e4a801fc3ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ="){
+    echo "<script>window.location.href='/admin/page/admin_edit.php'</script>";
+}
 ?>
 <!DOCTYPE html>
 <html>

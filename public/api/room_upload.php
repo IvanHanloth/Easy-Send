@@ -1,12 +1,12 @@
 <?php
 
 /*
-
 By Ivan Hanloth
-本文件为易传文件存储接口文件
-2022/4/4
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
 */
-
 include dirname(__FILE__)."/../../common.php";
 header("Access-Control-Allow-Origin:*");
 header("Content-type:text/json");

@@ -1,3 +1,10 @@
+/*
+By Ivan Hanloth
+Easy-Send
+Github:https://github.com/IvanHanloth/Easy-Send
+Gitee:https://gitee.com/IvanHanloth/Easy-Send
+2022/10/16
+*/
 function TextContinue() {
 	$("#text-info").addClass("layui-hide");
 	$('#text').removeClass('layui-hide');
