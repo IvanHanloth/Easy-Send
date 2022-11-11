@@ -10,9 +10,9 @@
 
             "version": "V3.0.1",
 
-            "description": "新增后台强制修改密码<br>修复了一键安装出错的问题<br>修复了配套客户端无法加入直传的问题",
+            "description": "新增后台强制修改密码<br>修复了一键安装出错的问题<br>修复了配套客户端无法加入直传的问题<br><strong>注意！此版本的在线更新存在问题，请通过“完全重装”功能升级至更高版本</strong>",
 
-            "sql_url": "",
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.0.1-sql.zip",
 
             "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.0.1-code.zip",
 
