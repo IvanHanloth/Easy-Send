@@ -21,6 +21,9 @@
 <div id="room_choose" class="layui-hide formbox" style="text-align:center">
 	<button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" lay-submit="" id="room_choose_send" data-anim="layui-anim-down">发送</button><br>
 	<button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" lay-submit="" id="room_choose_receive" data-anim="layui-anim-down">接收</button>
+	   <a href="/app/" target="_blank">
+        <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">兼容性检测</button>
+        </a>
 </div>
 <div id="room_send" class="layui-hide formbox" style="text-align:center">
 	<div id="room_send_connected" class="layui-hide">

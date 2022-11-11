@@ -24,13 +24,6 @@ layui.use(function () {
 		/*
 		获取数据
 		*/
-		form.verify({
-			get: function (value) {
-				if(value.length != 4) {
-					return '提取码为4位';
-				}
-			}
-		});
 		//监听提交
 		form.on('submit(getbtn)', function (data) {
 			$.ajax({

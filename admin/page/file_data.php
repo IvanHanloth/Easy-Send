@@ -121,7 +121,13 @@
                         async:false,
                         success:function(res){
                             layer.close(index);
+                            if(res.code==200){
                             layer.msg(res.tip,{icon:1,shade:0.3,time:2000});
+                                
+                            }else{
+                                
+                            layer.msg(res.tip,{icon:1,shade:0.3,time:2000});
+                            }
                             table.reload('main-table',{})
                         },
                         error:function(){

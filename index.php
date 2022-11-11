@@ -36,6 +36,12 @@ if (get_setting('install')==false or get_setting('install')==0) {
                 }else{
                     include dirname(__FILE__)."/./theme/default/download/index.php";
                 }
+            }elseif($_REQUEST["mode"]=='app'){
+                if(file_exists(dirname(__FILE__)."/./theme/".$theme."/app/index.php")){
+                    include dirname(__FILE__)."/./theme/".$theme."/app/index.php";
+                }else{
+                    include dirname(__FILE__)."/./theme/default/app/index.php";
+                }
             }else{
                 if(file_exists(dirname(__FILE__)."/./theme/".$theme."/index/index.php")){
                     include dirname(__FILE__)."/./theme/".$theme."/index/index.php";

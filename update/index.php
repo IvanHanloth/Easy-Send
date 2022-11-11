@@ -41,6 +41,8 @@ $check=0;//初始化检查项目
         <title>Easy-Send升级程序</title>
         <link rel="stylesheet" type="text/css" href="./style.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+        
+    <script src="/public/public/js/jquery2.2.4.min.js"></script>
     </head>
     <body>
         <h2 style="text-align:center">Easy-Send升级程序</h2>
@@ -100,23 +102,30 @@ $check=0;//初始化检查项目
             </div>
             
             <?php if($check==$check_num){?>
-            <div class="input-pack">
-                正在解压必要文件……
-            
-            <?php 
-            include_once(dirname(__FILE__)."/../common.php");
-            $a=true;
-            $b=true;
-            if(file_exists(dirname(__FILE__)."/../file/code.zip")){
-                $a=unzip(dirname(__FILE__)."/../file/code.zip",dirname(__FILE__)."/../");
-            }
-            if(file_exists(dirname(__FILE__)."/../file/sql.zip")){
-                $b=unzip(dirname(__FILE__)."/../file/sql.zip",dirname(__FILE__)."/./");
-            }
-            if($a and $b){
-                echo '<a href="./?step=3"><button>下一步</button>';
-            }?>
+            <div class="input-pack" id="unzip-div">
+                <button id="unzip-confirm">解压文件</button>
             </div>
+            <script>
+            $("#unzip-confirm").click(function(){
+                $("#unzip-div").append('<Br>正在解压必要文件……')
+                $.ajax({
+                    url:"/update/unzip.php",
+                    type: "POST",
+                    success:function(res){
+                        if(res.code==200){
+                            $("#unzip-div").append('<br><a href="./?step=3"><button>下一步</button>')
+                        }else{
+                            $("#unzip-div").append('<br>解压失败')
+                        }
+                    },
+                    error:function(){
+                        $("#unzip-div").append('<br>解压失败')
+                    }
+                })
+                
+            })
+                
+            </script>
             <?php
         }else{echo '<div class="input-pack">环境检测未通过，配置完成后才能继续</div>';};
         }elseif($_REQUEST['step']==3){?>
@@ -131,7 +140,7 @@ $check=0;//初始化检查项目
                     	echo '请先填写好数据库并保存后再升级！<br><br><div class="button"><a href="javascript:history.back(-1)"><button>返回</button></a></div>';
                     } else {
                         $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
-                        $sql = file_get_contents('install.sql');
+                        $sql = file_get_contents('update.sql');
                         $sql = explode(';', $sql);
                     	$success_num=0;
                     	$fail_num=0;
@@ -157,13 +166,13 @@ $check=0;//初始化检查项目
             }elseif($_REQUEST['step']==5){ ?>
                 <div class="input-pack">
             <?php
-                include_once dirname(__FILE__)."/./common.php";
+                include_once dirname(__FILE__)."/../common.php";
                 save_setting("update",0);
-                if(file_put_contents("update.lock",'升级锁，防止重复升级，删除后即可继续使用升级程序')){
-                }else{
+                $e=file_put_contents("update.lock",'升级锁，防止重复升级，删除后即可继续使用升级程序');
+                include_once dirname(__FILE__)."/./end.html";
+                if(!$e){
 	                echo "<h2>无法正常创建update/update.lock，为保证数据的安全，请在升级程序所在目录下手动创建update.lock</h2>";
-            	};
-	            require "./end.html";?>
+            	};?>
                 </div>
                 <?php
             }else{

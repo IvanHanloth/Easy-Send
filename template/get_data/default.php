@@ -3,7 +3,7 @@
 <div id="input">
     <form class="layui-form getbox">
          <div class="layui-form-item layui-anim layui-anim-upbit">
-           <input type="text" name="key" lay-verify="get" pattern="/^[a-zA-Z0-9]{4}$/" autocomplete="off" placeholder="请输入4位提取码" id="get-input" value="<?php echo $_REQUEST['key']?>" data-anim="layui-anim-down" class="layui-input get"onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
+           <input type="text" name="key" lay-verify="get" pattern="/^[a-zA-Z0-9]{<?php echo $verify_num?>}$/" autocomplete="off" placeholder="请输入<?php echo $verify_num?>位提取码" id="get-input" value="<?php echo $_REQUEST['key']?>" data-anim="layui-anim-down" class="layui-input get"onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
            </div>
           <div class="info">
           <button type="submit" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" lay-submit="" lay-filter="getbtn" data-anim="layui-anim-down">立即提取</button>
@@ -20,6 +20,9 @@
     <div class="info layui-hide" id="result-download-btn">
         <a id="result-download" href="" target="_blank">
         <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">立即下载</button>
+        </a><br><br>
+        <a href="/app/" target="_blank">
+        <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">兼容性检测</button>
         </a>
     </div>
     <div class="info" id="result-info" class="layui-hide">

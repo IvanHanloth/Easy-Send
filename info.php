@@ -51,4 +51,6 @@ function get_request_scheme(){
     $PC_mac_url=get_setting("PC_mac_url");
     $PC_update_description=get_setting("PC_update_description");
     $PC_description=get_setting("PC_description");
+    $verify_type=get_setting("verify_type");
+    $verify_num=get_setting("verify_num");
 ?>

@@ -34,6 +34,22 @@
                     <input type="text" name="qrcode" lay-verify="required" autocomplete="off" placeholder="请输入二维码接口（直接返回图片地址）" class="layui-input" lay-filter="qrcode">
                 </div>
             </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">提取码类型</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="verify_type" value="mix" title="数字字母混合">
+                    <input type="radio" name="verify_type" value="number" title="纯数字">
+                    <input type="radio" name="verify_type" value="text" title="纯字母">
+                    <input type="radio" name="verify_type" value="capital" title="纯大写">
+                    <input type="radio" name="verify_type" value="lower" title="纯小写">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">提取码长度</label>
+                <div class="layui-input-block">
+                    <input type="number" name="verify_num" lay-verify="required" autocomplete="off" placeholder="请输入提取码长度" class="layui-input" lay-filter="verify_num">
+                </div>
+            </div>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 40px;">
             <legend>SEO设置</legend>
         </fieldset>

@@ -2,10 +2,11 @@
 注意，需要配置伪静态才能正常使用！
 
 Apache：
-RewriteRule ^/download/(.*)$ /index.php?mode=download&$1;
-
+RewriteRule ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
+RewriteRule ^/app+(\/?)$ /index.php?mode=app;
 
 
 Nginx（推荐）：
-rewrite ^/download/(.*)$ /index.php?mode=download&$1;
+rewrite ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
+rewrite ^/app+(\/?)$ /index.php?mode=app;
 

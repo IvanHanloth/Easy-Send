@@ -28,16 +28,18 @@ function return_json($data){
 function random($len, $type=""){  
     if ($type=="number") {
         $chars="1234567890";
-    }elseif($type="text"){
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }elseif($type="capital"){
-        $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }elseif($type="lower"){
-        $chars = "abcdefghijklmnopqrstuvwxyz";
+    }elseif($type=="text"){
+        $chars = "abcdefghijkmnopqrstuvxyzABCDEFGHJKLMNPQRSTUVXYZ";
+    }elseif($type=="capital"){
+        $chars = "ABCDEFGHIJKLMNPQRSTUVWXYZ";
+    }elseif($type=="lower"){
+        $chars = "abcdefghijkmnopqrstuvwxyz";
+    }elseif($type=="" or $type=="mix"){
+        $chars = "abcdefgh12345678ijkmnopqrstuvxyzABCDEFGHJKLMNPQRSTUVXYZ9";
     }else{
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $chars = $type;
     }
-    mt_srand(1000000*(double)microtime());  
+    mt_srand(1900000*(double)microtime()*rand(10,300));  
     for ($i = 0, $result = '', $lc = strlen($chars)-1; $i < $len; $i++) {  
         $result .= $chars[mt_rand(0, $lc)];  
     }  
@@ -78,6 +80,41 @@ function curl_download($url,$dir,$name){
     fwrite($fp, $content);
     fclose($fp);
     unset($content, $url);
+}
+
+//判断是否为手机端
+function is_mobile() {
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$mobile_browser = Array(
+"mqqbrowser", //手机QQ浏览器
+"opera mobi", //手机opera
+"juc","iuc",//uc浏览器
+"fennec","ios","applewebKit/420","applewebkit/525","applewebkit/532","ipad","iphone","ipaq","ipod",
+"iemobile", "windows ce",//windows phone
+"240×320","480×640","acer","android","asus","audio","blackberry","blazer","coolpad" ,"dopod", "etouch", "hitachi","htc","huawei", "jbrowser", "lenovo","lg","lg-","lge-","lge", "mobi","moto","nokia","phone","samsung","sony","symbian","tablet","tianyu","wap","xda","xde","zte"
+);
+$is_mobile = false;
+foreach ($mobile_browser as $device) {
+    if (stristr($user_agent, $device)) {
+    $is_mobile = true;
+    break;
+    }
+}
+return $is_mobile;
+}
+function could_download() {
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$mobile_browser = Array(
+"mqqbrowser","juc","iuc","Quark"
+);
+$is_mobile = false;
+foreach ($mobile_browser as $device) {
+    if (stristr($user_agent, $device)) {
+    $is_mobile = true;
+    break;
+    }
+}
+return $is_mobile;
 }
 /*
 
@@ -128,7 +165,21 @@ function save_data_by_id($id,$name,$content){
 }
 function delete_data_by_id($id){
     global $db;
-    $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+    $info=mysqli_query($db,"SELECT * FROM data` WHERE `id`='{$id}'");
+    if($info["type"]==1){
+        $res=unlink($info["path"]);
+        if($res){
+            $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+        }
+    }elseif($info["type"]==2){
+        $res=true;
+        if($info["method"]==2){
+            $res=unlink($info["data"]);
+        }
+        if($res){
+            $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+        }
+    }
     return $result;
 }
 function count_sql($table,$field='*',$add=""){

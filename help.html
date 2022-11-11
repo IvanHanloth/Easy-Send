@@ -1,0 +1,106 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+    <script src="/public/public/js/jquery2.2.4.min.js"></script>
+    <script src="/public/layui/layui.js"></script>
+    <title>Check Your Browser Compatibility</title>
+    <link rel="stylesheet" type="text/css" href="/theme/default/static/css/app.css">
+</head>
+<body class="flex-center">
+        <div id="welcome">
+        <div class="layui-carousel" id="welcome-carousel">
+            <div carousel-item>
+                <div>
+                    <table>
+                        <td>
+                            <strong>
+                                <h1>Check Your Browser Compatibility</h1>
+                            </strong>
+                            <br>
+                            <h4> 我们的服务依赖于浏览器提供的部分API，但部分浏览器存在兼容性问题，为了您的最佳体验，我们推荐您在使用一款新浏览器进行文件传输（包括中转下载、直传功能）前先通过本工具检查其兼容性</h4><br><br>
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg next" id="download_android">开始检测</button><br><br>
+
+                        </td>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <td>
+                            <strong>
+                                <h1>Blob Saving Check</h1>
+                            </strong>
+                            <br>
+                            <h4>此功能为核心功能的依赖，点击“检测”按钮后您的浏览器可能会弹出下载框，确认下载后如果出现以下情况之一则说明您的浏览器不兼容此功能</h4><br>
+                            <li>
+                                文件名不为“check.txt”、文件大小为0kb、文件内容不为“Your Browser Can Save Blob!”
+                            </li><br>
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg" id="check_blob">检  测</button><br><br>
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg next">解决方案</button><br><br>
+
+                        </td>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <td>
+                            <strong>
+                                <h1>The Solution</h1>
+                            </strong>
+                            <br>
+                            <h3>
+                                使用我们提供的客户端即可解决这个问题
+                            </h3><br><br>
+                            <a href="/app/" target="_blank">
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg" >前往下载</button></a>
+                        </td>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        layui.use(function () {
+
+	var carousel = layui.carousel,
+
+		layer = layui.layer,
+		form = layui.form;
+	carousel.render({
+		elem: '#welcome-carousel',
+		autoplay: false,
+		arrow: 'hover',
+		indicator: 'none',
+		full: true,
+		anim:"updown"
+	});
+	
+    $(".next").click(function(){
+            $("[lay-type='add']").click() 
+    })
+    $("#check_blob").click(function(){
+        a=new Blob(["Your Browser Can Save Blob!"])
+        		if(window.navigator.msSaveOrOpenBlob) {
+					navigator.msSaveBlob(a, "check.txt");
+				} else {
+					var link = document.createElement('a');
+					var body = document.querySelector('body');
+					link.href = window.URL.createObjectURL(a);
+					link.download = "check.txt";
+					// fix Firefox 
+					link.style.display = 'none';
+					body.appendChild(link);
+					link.click();
+					body.removeChild(link);
+					window.URL.revokeObjectURL(link.href);
+				};
+    })
+})
+    </script>
+    </body>
+    </html>

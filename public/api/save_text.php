@@ -17,7 +17,7 @@ $date=date("Y/m/");
     $tilltime=date('Y-m-d H:i:s', $tillday);
     $check=array(1);//定义进行循环检查
     while ($check[0]>=1){//进行循环检查
-        $key=random(4);//获得一个key
+        $key=random($verify_num,$verify_type);//获得一个key
         $check=mysqli_query($db,"SELECT count(*) FROM `data` WHERE binary `gkey` = '{$key}'");//获取数据库中是否存在相同key
         $check=mysqli_fetch_row($check);//sql对象转化为数组
         };
