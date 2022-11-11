@@ -66,6 +66,10 @@ session、curl、fileinfo、ZipArchive、
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.0.1（更新于2022/10/29）
+- 新增后台强制修改密码
+- 修复了一键安装出错的问题
+- 修复了配套客户端无法加入直传的问题
 #### V3.0.0（更新于2022/10/1）
 - 对于项目进行了重构
 - 新增文件直传功能
