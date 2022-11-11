@@ -1,8 +1,24 @@
 {
 
-    "announcement": "欢迎使用Easy-Send V3.0<br>V3.0.1更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
+    "announcement": "欢迎使用Easy-Send V3.0<br>V3.1.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
 
-    "update": [
+    "update": [{
+
+            "version_num": 310,
+
+            "version": "V3.1.0",
+
+            "description": "新增提取码数量、类型自定义<br>新增客户端下载页面<br>新增多处客户端推广位<br>修复监控文件无效的问题<br>修复后台删除数据不会删除文件的问题<br>修复在线更新无法正常使用的问题<br>修复了升级页面无法解压文件等问题<br>优化错误反馈机制<br>优化提取码显示、避免不易分辨的字符出现",
+
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.1.0-sql.zip",
+
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.0-code.zip",
+
+            "time":"2022/11/12",
+
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.0-all.zip"
+
+        },
 
         {
 
