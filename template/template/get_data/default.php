@@ -20,8 +20,8 @@
     <div class="info layui-hide" id="result-download-btn">
         <a id="result-download" href="" target="_blank">
         <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">立即下载</button>
-        </a><br>
-        <a href="/help.html" target="_blank">
+        </a><br><br>
+        <a href="/app/" target="_blank">
         <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">兼容性检测</button>
         </a>
     </div>

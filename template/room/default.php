@@ -18,10 +18,12 @@
 	<p>房间状态：<span id="room_state"></span></p>
 	<p>我的身份：<span id="room_type"></span></p>
 </div>
-<div id="room_choose" class="layui-hide formbox" style="text-align:center">
-	<button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" lay-submit="" id="room_choose_send" data-anim="layui-anim-down">发送</button><br>
-	<button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" lay-submit="" id="room_choose_receive" data-anim="layui-anim-down">接收</button>
-	   <a href="/app/" target="_blank">
+<div id="room_choose" class="layui-form layui-hide formbox" style="text-align:center">
+    <div class="layui-form-item">
+	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" id="room_choose_send" data-anim="layui-anim-down">发送</button>
+	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" id="room_choose_receive" data-anim="layui-anim-down">接收</button>
+	</div>
+	   <a href="/help.html" target="_blank">
         <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">兼容性检测</button>
         </a>
 </div>

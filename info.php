@@ -10,17 +10,13 @@ include dirname(__FILE__)."/./config.php";
 $db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
 if (mysqli_connect_errno($db)){ 
     echo "连接 MySQL 失败: " . mysqli_connect_error(); 
-};
-function get_request_scheme(){
+}
     $current_page_url = 'http';
-    
     if ($_SERVER["HTTPS"] == "on") {
-    $current_page_url .= "s";
+        $current_page_url .= "s";
     }
     $current_page_url .= "://";
-    return $current_page_url;
-}
-    $domain=$webpath=get_request_scheme().$_SERVER["HTTP_HOST"]."/";
+    $domain=$webpath=$current_page_url.$_SERVER["HTTP_HOST"]."/";
     $webname=get_setting("webname");
     $footer=get_setting("footer");
     $head=get_setting("head");
