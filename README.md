@@ -19,7 +19,7 @@ PHP 7.0+  MySQL 5.5+
 ## 推荐环境
 PHP 7.3 MySQL 5.6 Nginx 
 ## PHP依赖
-session、curl、fileinfo、ZipArchive、
+session、curl、fileinfo、ZipArchive
 ## 功能
 * 上传文件、文本至服务器临时保存
 * 文件直传
@@ -66,6 +66,17 @@ session、curl、fileinfo、ZipArchive、
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.1.0（更新于2022/11/12）
+- 新增提取码长度、类型自定义
+- 新增客户端下载页面
+- 新增多处客户端推广位
+- 新增浏览器兼容性检验
+- 修复监控文件无效的问题
+- 修复后台删除数据不会删除文件的问题
+- 修复在线更新无法正常使用的问题
+- 修复了升级页面无法解压文件等问题
+- 优化错误反馈机制
+- 优化提取码显示、避免不易分辨的字符出现
 #### V3.0.1（更新于2022/10/29）
 - 新增后台强制修改密码
 - 修复了一键安装出错的问题
