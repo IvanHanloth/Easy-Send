@@ -1,8 +1,24 @@
 {
 
-    "announcement": "欢迎使用Easy-Send V3.0<br>V3.1.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
+    "announcement": "欢迎使用Easy-Send V3.1<br>V3.1.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
 
     "update": [{
+
+            "version_num": 311,
+
+            "version": "V3.1.1",
+
+            "description": "修复升级不会自动删除原有升级文件的问题<br>修复提取码长度修改后之前生成的提取码失效的问题<br>修复更新后无法正常下载文件的问题<br>修复“检查兼容性”按钮跳转出错问题<br>优化文件直传类型选择按钮显示",
+
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.1.1-sql.zip",
+
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.1-code.zip",
+
+            "time":"2022/11/12",
+
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.1-all.zip"
+
+        },{
 
             "version_num": 310,
 
