@@ -29,9 +29,15 @@ if($_POST["all"]=="true"){
 }
 
 if($code_url!=""){
+    if(file_exists($dir."code.zip")){
+        unlink($dir."code.zip");
+    }
     curl_download($code_url,$dir,"code.zip");
 }
 if($sql_url!=""){
+    if(file_exists($dir."sql.zip")){
+        unlink($dir."sql.zip");
+    }
     curl_download($sql_url,$dir,"sql.zip");
 }
 echo return_json(array("code"=>"200","tip"=>"更新准备完成！"));

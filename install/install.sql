@@ -96,12 +96,12 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (11, 'textmethod', 'on', ''),
 (12, 'install', '1', '1：已经安装\r\n0：未安装'),
 (13, 'update', '0', '1:需要升级\r\n0:不需要升级'),
-(14, 'version_num', '300', ''),
+(14, 'version_num', '310', ''),
 (15, 'head', '', ''),
 (16, 'keywords', '', ''),
 (17, 'description', '', ''),
 (18, 'logo', '', ''),
-(19, 'version', 'v3.0.0', ''),
+(19, 'version', 'v3.1.0', ''),
 (20, 'qrcode', 'https://api.qrserver.com/v1/create-qr-code/?data=', ''),
 (21, 'announcement', '', ''),
 (22, 'mobile_version', '', ''),
@@ -115,7 +115,9 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (30, 'mobile_android_url', '', ''),
 (31, 'PC_windows_url', '', ''),
 (32, 'mobile_apple_url', '', ''),
-(33, 'PC_mac_url', '', '');
+(33, 'PC_mac_url', '', ''),
+(34, 'verify_type', 'mix', ''),
+(35, 'verify_num', '4', ''),;
 
 --
 -- Indexes for dumped tables
