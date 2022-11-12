@@ -66,6 +66,12 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.1.1（更新于2022/11/12）
+- 修复升级不会自动删除原有升级文件的问题
+- 修复提取码长度修改后之前生成的提取码失效的问题
+- 修复更新后无法正常下载文件的问题
+- 修复“检查兼容性”按钮跳转出错问题
+- 优化文件直传类型选择按钮显示
 #### V3.1.0（更新于2022/11/12）
 - 新增提取码长度、类型自定义
 - 新增客户端下载页面
