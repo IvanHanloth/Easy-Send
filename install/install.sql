@@ -117,7 +117,7 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (32, 'mobile_apple_url', '', ''),
 (33, 'PC_mac_url', '', ''),
 (34, 'verify_type', 'mix', ''),
-(35, 'verify_num', '4', ''),;
+(35, 'verify_num', '4', '');
 
 --
 -- Indexes for dumped tables
