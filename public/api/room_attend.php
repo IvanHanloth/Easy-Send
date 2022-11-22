@@ -10,6 +10,7 @@ include dirname(__FILE__)."/../../common.php";
 session_start();
 header("Access-Control-Allow-Origin:*");
 header("Content-type:text/json");
+$sessid=session_id();
 if($_REQUEST["step"]=="input"){
     $data=$_REQUEST["data"];
     $data=json_decode($data,true);
@@ -37,7 +38,7 @@ if($_REQUEST["step"]=="input"){
         $room=roominfo();
         if($check[0]==1){
             $room=roominfo($roomtoken);
-            if($room["receive"]>=1 and $room["send"]>=1 and $_SESSION["roomtoken"]!=$roomtoken){
+            if($room["receive"]!="" and $room["send"]!="" and $_SESSION["roomtoken"]!=$roomtoken){
                 echo return_json(array("code"=>100,"tip"=>"房间已满员"));
                 exit;
             }else{
@@ -63,17 +64,17 @@ if($_REQUEST["step"]=="input"){
         $r_name="接收端";
     }
 
-        if($room[$r_type]>=1){//存在该端
+        if($room[$r_type]!=""){//存在该端
             if($_SESSION["roomtype".$room["rid"]]!=$r_type){
                 echo return_json(array("code"=>100,"tip"=>"已存在".$r_name));
                 exit;
             }else{
-                mysqli_query($db,"UPDATE `room` SET `{$r_type}`='1' WHERE `rid`='{$room['rid']}'");
+                mysqli_query($db,"UPDATE `room` SET `{$r_type}`='{$sessid}' WHERE `rid`='{$room['rid']}'");
                 $room=roominfo();            
-                if($room["send"]==1 and $room["receive"]==1){
-                mysqli_query($db,"UPDATE `room` SET `state`='connected' WHERE `rid`='{$room['rid']}'");
-                $room=roominfo();
-            }
+                if($room["send"]!="" and $room["receive"]!=""){
+                    mysqli_query($db,"UPDATE `room` SET `state`='connected' WHERE `rid`='{$room['rid']}'");
+                    $room=roominfo();
+                }
                 echo return_json(array("code"=>200,"tip"=>$r_name.'回归成功！',"state"=>$room["state"]));
                 exit;
             }
@@ -82,10 +83,10 @@ if($_REQUEST["step"]=="input"){
                 echo return_json(array("code"=>100,"tip"=>'上一次传输还未完成'));
                 exit;
             }else{
-                mysqli_query($db,"UPDATE `room` SET `{$r_type}`='1' WHERE `rid`='{$room['rid']}'");
+                mysqli_query($db,"UPDATE `room` SET `{$r_type}`='{$sessid}' WHERE `rid`='{$room['rid']}'");
                 $_SESSION['roomtype'.$room["rid"]]=$r_type;
                 $room=roominfo();
-                if($room["send"]==1 and $room["receive"]==1){
+                if($room["send"]!="" and $room["receive"]!=""){
                     mysqli_query($db,"UPDATE `room` SET `state`='connected' WHERE `rid`='{$room['rid']}'");
                     $room=roominfo();
                 }

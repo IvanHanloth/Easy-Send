@@ -2,13 +2,14 @@
 <div id="room_input">
 	<form class="layui-form roombox">
 		<div class="layui-form-item layui-anim layui-anim-upbit">
-			<input type="text" name="roomid" lay-verify="roomid" autocomplete="off" placeholder="请输入房间号" id="roomid_input" value="<?php echo $_REQUEST['roomid']?>" data-anim="layui-anim-down" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
+			<input type="text" name="roomid" lay-verify="roomid" autocomplete="off" placeholder="请输入房间号" id="roomid_input" value="<?php echo $_REQUEST['roomid']?>" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
 		</div>
 		<div class="layui-form-item layui-anim layui-anim-upbit">
-			<input type="text" name="roompassword" lay-verify="roompassword" autocomplete="off" placeholder="请输入房间密码" id="roompassword_input" value="<?php echo $_REQUEST['roompassword']?>" data-anim="layui-anim-down" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
+			<input type="text" name="roompassword" lay-verify="roompassword" autocomplete="off" placeholder="请输入房间密码" id="roompassword_input" value="<?php echo $_REQUEST['roompassword']?>" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required>
 		</div>
 		<div class="info">
-			<button type="submit" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" lay-submit="" lay-filter="roombtn" data-anim="layui-anim-down">立即加入</button>
+			<button type="submit" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" lay-submit="" lay-filter="roombtn">立即加入</button><br><br>
+			    <span class="layui-icon" style="text-align:center;font-size:10px" id="room_use_tips">&#xe702;&nbsp;&nbsp;<a>文件直传使用方法</a></span>
 		</div>
 	</form>
 </div>
@@ -20,12 +21,14 @@
 </div>
 <div id="room_choose" class="layui-form layui-hide formbox" style="text-align:center">
     <div class="layui-form-item">
-	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" id="room_choose_send" data-anim="layui-anim-down">发送</button>
-	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" id="room_choose_receive" data-anim="layui-anim-down">接收</button>
+    	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" id="room_choose_send">发送</button>
+    	<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" id="room_choose_receive">接收</button>
 	</div>
-	   <a href="/help.html" target="_blank">
-        <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" data-anim="layui-anim-down">兼容性检测</button>
-        </a>
+	<div class="layui-form-item">
+        <button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" onclick="window.open('/help.html')">兼容性检测
+        </button>
+		<button type="button" class="room_logout layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">退出房间</button>
+		</div>
 </div>
 <div id="room_send" class="layui-hide formbox" style="text-align:center">
 	<div id="room_send_connected" class="layui-hide">
@@ -39,16 +42,25 @@
 	</div>
 	<div id="room_send_sending" class="layui-hide">
 		<div class="layui-progress layui-progress-big" lay-showpercent="yes" lay-filter="room_progress">
-			<div class="layui-progress-bar <?php echo $theme_config["main_css"]?>" lay-percent=""></div>
+			<div class="layui-progress-bar <?php echo $theme_config["main_css"]?>" lay-percent="" id="room_send_upload_progress"></div>
 		</div>
 	</div>
 	<div id="room_send_finish" class="layui-hide">
-		<button type="button" class="layui-btn <?php echo $theme_config["main_css"]?>" id="room_send_button_continue">继续发送</button>
+		<button type="button" class="layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" id="room_send_button_continue">继续发送</button>
+	</div>
+	<br>
+	<div class="room_logout_box">
+		<button type="button" class="room_logout layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">退出房间</button>
 	</div>
 </div>
 <div id="room_receive" class="layui-hide formbox">
 	<div id="room_receive_connected"></div>
 	<div id="room_receive_sending"></div>
-	<div id="room_receive_finish" class="layui-hide">
+	<div id="room_receive_finish" class="layui-hide" style="text-align:center">
+	    本次传输已完成！
+	</div>
+	<div class="room_logout_box">
+		<button type="button" class="room_logout layui-btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">退出房间</button>
 	</div>
 </div>
+

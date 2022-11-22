@@ -226,5 +226,24 @@ function roominfo($roomtoken=""){
         }
     }
 }
-
+function delete_roomdata($rid,$delete_room=false){
+    global $db;
+    $info=mysqli_query($db,"SELECT * FROM `room` WHERE binary `rid` = '{$rid}'");
+    $info=mysqli_fetch_assoc($info);
+    $result=mysqli_query($db,"SELECT * FROM `roomdata` WHERE binary `roomid`='{$info['roomid']}'");
+    $num=mysqli_num_rows($result);
+    if($num!=0){
+        $result=mysqli_fetch_all($result,MYSQLI_BOTH);
+        for($i=0;$i<=$num;$i++){
+            $delete_file=unlink($result[$i]["path"]);
+            if($delete_file==TRUE){
+                    mysqli_query($db,"DELETE FROM `roomdata` WHERE `rdid`='{$result[$i]['rdid']}'");
+            }
+        }
+    }
+    if($delete_room){
+        mysqli_query($db,"DELETE FROM `room` WHERE `rid`='{$rid}'");
+    }
+    return true;
+}
 ?>

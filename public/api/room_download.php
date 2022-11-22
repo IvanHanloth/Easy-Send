@@ -20,10 +20,10 @@ if($_POST["state"]=="finish"){
     $num=mysqli_num_rows($result);
     if($num!=0){
     $result=mysqli_fetch_all($result,MYSQLI_BOTH);
-    for($i=0;$i<=$num;$i++){
-        $delete_file=unlink($result[$i]["path"]);
-        if($delete_file==TRUE){
-                mysqli_query($db,"DELETE FROM `roomdata` WHERE `rdid`='{$result[$i]['rdid']}'");
+    foreach($result as $num=>$content){
+        $delete_file=unlink($content["path"]);
+        if($delete_file){
+                mysqli_query($db,"DELETE FROM `roomdata` WHERE `rdid`='{$content['rdid']}'");
             }
     }}
     mysqli_query($db,"UPDATE `room` SET `state`='finish' WHERE binary `roomid`='{$roomid}'");

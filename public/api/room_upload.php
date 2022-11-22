@@ -46,7 +46,7 @@ if($_REQUEST["index"]==1){
     }}
 }
 if($_POST["index"]==$_POST["total"]){
-    mysqli_query($db,"UPDATE `room` SET `state`='send-finish',`send`='0',`endtime`='{$endtime}' WHERE binary `roomid`='{$roomid}'");
+    mysqli_query($db,"UPDATE `room` SET `state`='send-finish',`send`='',`endtime`='{$endtime}' WHERE binary `roomid`='{$roomid}'");
     $_SESSION["roomtype".$room["rid"]]="";
 }
     if ($_FILES["file"]["error"] > 0){

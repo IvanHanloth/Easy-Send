@@ -98,6 +98,12 @@
               "icon":"fa fa-edit",
               "href":"page/editor.html",
               "target":"_self"
+          },
+          {
+              "title":"文件上传",
+              "icon":"fa fa-cloud-upload",
+              "href":"page/uploader.php",
+              "target":"_self"
           }
           ]
     }
