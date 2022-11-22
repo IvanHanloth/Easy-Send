@@ -3,6 +3,22 @@
     "announcement": "欢迎使用Easy-Send V3.1<br>V3.1.2更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
     "update": [{
 
+            "version_num": 313,
+
+            "version": "V3.1.3",
+
+            "description": "修复后台在线更新报错的问题<br>修复升级程序无法解压文件的问题<br><strong>注意！此版本更新了升级文件，可能需要使用“完全重装模式进行升级”</strong>",
+
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.1.3-sql.zip",
+
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.3-code.zip",
+
+            "time":"2022/11/23",
+
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.3-all.zip"
+
+        },{
+
             "version_num": 312,
 
             "version": "V3.1.2",
