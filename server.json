@@ -1,8 +1,23 @@
 {
 
-    "announcement": "欢迎使用Easy-Send V3.1<br>V3.1.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
-
+    "announcement": "欢迎使用Easy-Send V3.1<br>V3.1.2更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue",
     "update": [{
+
+            "version_num": 312,
+
+            "version": "V3.1.2",
+
+            "description": "新增文件直传房间销毁机制（依赖监控文件cron.php）<br>新增文件直传退出房间功能<br>新增一套主题（Orange）虽然只是改了改颜色而已<br>新增文件直传说明<br>后台新增“文件上传”功能<br>优化default主题视觉设计，增加Tab图标<br>修复文件直传成功但显示为失败的问题<br>修复部分按钮颜色出错问题<br><strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份</strong>",
+
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.1.2-sql.zip",
+
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.2-code.zip",
+
+            "time":"2022/11/22",
+
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.1.2-all.zip"
+
+        },{
 
             "version_num": 311,
 
