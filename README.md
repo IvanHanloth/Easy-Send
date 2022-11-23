@@ -66,6 +66,15 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.1.2（更新于2022/11/22）
+- 新增文件直传房间销毁机制（依赖监控文件cron.php）
+- 新增文件直传退出房间功能
+- 新增一套主题（Orange）虽然只是改了改颜色而已
+- 新增文件直传说明
+- 后台新增“文件上传”功能
+- 优化default主题视觉设计，增加Tab图标
+- 修复文件直传成功但显示为失败的问题
+- 修复部分按钮颜色出错问题
 #### V3.1.1（更新于2022/11/12）
 - 修复升级不会自动删除原有升级文件的问题
 - 修复提取码长度修改后之前生成的提取码失效的问题
