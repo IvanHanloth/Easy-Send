@@ -14,7 +14,9 @@ if($_POST["all"]=="true"){
     $dir =$_SERVER['DOCUMENT_ROOT']."/";
     $code_url=$data["update"][0]["all_url"];
     save_setting("install",0);
-    unlink($_SERVER['DOCUMENT_ROOT']."/install/install.lock");
+    if(file_exists($_SERVER['DOCUMENT_ROOT']."/install/install.lock")){
+        unlink($_SERVER['DOCUMENT_ROOT']."/install/install.lock");
+    }
 }else{
     $dir =$_SERVER['DOCUMENT_ROOT']."/update/file/";
     foreach ($data["update"] as $value) {
@@ -25,7 +27,9 @@ if($_POST["all"]=="true"){
         }
     }
     save_setting("update",1);
-    unlink($_SERVER['DOCUMENT_ROOT']."/update/update.lock");
+    if(file_exists($_SERVER['DOCUMENT_ROOT']."/update/update.lock")){
+        unlink($_SERVER['DOCUMENT_ROOT']."/update/update.lock");
+    }
 }
 
 if($code_url!=""){

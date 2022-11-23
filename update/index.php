@@ -118,8 +118,8 @@ $check=0;//初始化检查项目
                             $("#unzip-div").append('<br>解压失败')
                         }
                     },
-                    error:function(){
-                        $("#unzip-div").append('<br>解压失败')
+                    error:function(res){
+                        $("#unzip-div").append('<br>'+res.tip)
                     }
                 })
                 
