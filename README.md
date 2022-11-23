@@ -6,8 +6,13 @@
 </p>
 
 
+## 语言选择（Change to Other Language）
+[简体中文](/IvanHanloth/Easy-Send/blob/main/README.md) 
+[English](/IvanHanloth/Easy-Send/blob/main/README-en.md)
 ## 简介
 一个简易的用于跨设备、跨平台传输文件或文本的程序。
+## 关于此README
+我们主要维护简体中文版README，其他语言均由谷歌翻译而来，如果存在翻译不到位的地方，敬请谅解
 ## 演示站
 https://send.hanloth.cn/
 https://send.o5g.top/
@@ -31,10 +36,11 @@ session、curl、fileinfo、ZipArchive
 * 配置权限755以上
 * 访问install目录一键安装
 * 配置伪静态
-* 如需实现文件过期自动清理，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
+* 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
+* 详细使用方法请查看Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ）
 ## 注意！
 * 从V2升级至V3需要完全覆盖网站目录，重新配置各项设置(即完全重装)
-* 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决)
+* 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决，提供了浏览器兼容性检测)
 * v3.0以上版本需要配置伪静态方能使用，参见根目录下的安装说明
 * v3.0以上版本支持文件伪直传，该功能会耗费流量及服务器资源
 * v3.0以上版本支持文件伪直传，该功能需要浏览器支持localStorage和blob下载(与提取文件时状况相同，部分国产浏览器如UC、夸克、QQ等均无法正常使用)
