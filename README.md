@@ -8,7 +8,7 @@
 
 ## 语言选择（Change to Other Language）
 [简体中文](https://ivanhanloth.github.io/Easy-Send/) 
-[English](https://ivanhanloth.github.io/Easy-Send/README-en.md)
+[English](https://github.com/IvanHanloth/Easy-Send/blob/main/README-en.md)
 ## 简介
 一个简易的用于跨设备、跨平台传输文件或文本的程序。
 ## 关于此README
