@@ -66,6 +66,9 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.1.3（更新于2022/11/23）
+- 修复后台在线更新报错的问题
+- 修复升级程序无法解压文件的问题
 #### V3.1.2（更新于2022/11/22）
 - 新增文件直传房间销毁机制（依赖监控文件cron.php）
 - 新增文件直传退出房间功能
