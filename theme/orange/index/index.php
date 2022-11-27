@@ -1,4 +1,4 @@
-      <?php
+<?php
       /*
 By Ivan Hanloth
 Easy-Send
@@ -15,8 +15,12 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
           <li lay-id="text" class="layui-icon">&#xe60a;&nbsp;文字转存</li>
           <li lay-id="get" class="layui-icon">&#xe601;&nbsp;数据提取</li>
           <li lay-id="room" class="layui-icon">&#xe609;&nbsp;文件直传</li>
+          <?php if($if_scan=="on"){?>
+          <li lay-id="scan"><span class="fa fa-qrcode"></span>&nbsp;扫&nbsp;码</li>
+          <?php }?>
+          <li lay-id="user"><span class="fa fa-user-o"></span>&nbsp;用户中心</li>
          </ul>
-         <div class="layui-tab-content" style="height: 330px;">
+         <div class="layui-tab-content" style="height: 370px;" id="main-tab">
           <div class="layui-tab-item layui-show">
            <?php
             tem_file_drag_box()
@@ -36,7 +40,19 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
            <?php
             tem_room_default()
            ?>
+          </div>          
+          <?php if($if_scan=="on"){?>
+          <div class="layui-tab-item">
+           <?php
+            tem_scan_default()
+           ?>
           </div>
+          <?php }?>          
+          <div class="layui-tab-item">
+           <?php
+            tem_user_default()
+           ?>
+          </div> 
          </div>
         </div>
         </div>
@@ -53,7 +69,13 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
         	    echo "element.tabChange('tab', 'room');";
         	}
         	?>
-                
+        	element.on("tab(tab)",function(data){
+        	    if($(this).attr("lay-id")=="user"){
+        	        $("#main-tab").css("height","auto")
+        	    }else{
+        	        $("#main-tab").css("height","370px")
+        	    }
+        	})
         });
       </script>
 </footer>

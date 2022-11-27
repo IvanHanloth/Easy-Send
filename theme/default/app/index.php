@@ -7,9 +7,9 @@
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta name="keywords" content="<?php echo $keywords?>">
     <meta name="description" content="<?php echo $description?>">
-    <link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
-    <script src="/public/public/js/jquery2.2.4.min.js"></script>
-    <script src="/public/layui/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/lib/layui/css/layui.css">
+    <script src="/public/lib/jquery/jquery.js"></script>
+    <script src="/public/lib/layui/layui.js"></script>
     <title>Download Client For Your Device</title>
     <link rel="stylesheet" type="text/css" href="/theme/default/static/css/app.css">
 </head>

@@ -33,10 +33,11 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">文本以文件形式存储</label>
-                <div class="layui-input-block">
-                    <input type="checkbox" name="textmethod" lay-skin="switch" lay-text="ON|OFF">
-                </div>
+                <label class="layui-form-label">文本存储形式</label>
+                    <div class="layui-input-block">
+                      <input type="radio" name="textmethod" value="on" title="文件（推荐）">
+                      <input type="radio" name="textmethod" value="off" title="数据库">
+                    </div>
             </div>
             <div class="layui-form-item">
                 <div class="layui-input-block">
@@ -77,8 +78,8 @@
     			    })
     			},
     			error:function(res){
-    			    layer.msg(res.tip,{
-    			        icon:icon,
+    			    layer.msg("程序运行出错",{
+    			        icon:2,
     			        time:2000,
     			        shade:0.3
     			    })

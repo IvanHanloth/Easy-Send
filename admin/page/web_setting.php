@@ -50,6 +50,14 @@
                     <input type="number" name="verify_num" lay-verify="required" autocomplete="off" placeholder="请输入提取码长度" class="layui-input" lay-filter="verify_num">
                 </div>
             </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否启用扫码功能</label>
+                    <div class="layui-input-block">
+                      <input type="radio" name="if_scan" value="on" title="启用">
+                      <input type="radio" name="if_scan" value="off" title="关闭">
+                    </div>
+            </div>
+            <blockquote class="layui-elem-quote layui-quote-nm">扫码功能说明：<br>扫码功能需要网站使用https协议访问，否则无法调用摄像头进行扫码<br>扫码功能地址：网址/scan 部分主题可能不会提供扫码功能入口</blockquote>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 40px;">
             <legend>SEO设置</legend>
         </fieldset>
@@ -133,8 +141,8 @@
     			    })
     			},
     			error:function(res){
-    			    layer.msg(res.tip,{
-    			        icon:icon,
+    			    layer.msg("程序运行出错",{
+    			        icon:2,
     			        time:2000,
     			        shade:0.3
     			    })

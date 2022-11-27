@@ -49,4 +49,5 @@ if (mysqli_connect_errno($db)){
     $PC_description=get_setting("PC_description");
     $verify_type=get_setting("verify_type");
     $verify_num=get_setting("verify_num");
+    $if_scan=get_setting("if_scan");
 ?>

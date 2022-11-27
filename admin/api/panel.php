@@ -5,6 +5,6 @@ $data=json_decode($data,true);
 $file_num=count_sql("data","*","WHERE `type`=1");
 $text_num=count_sql("data","*","WHERE `type`=2");
 $room_num=count_sql("room","*");
-$newest_version=$data["update"][0]["version"];
-echo return_json(array("announcement"=>$data["announcement"],"file_num"=>$file_num,"text_num"=>$text_num,"room_num"=>$room_num,'newest_version'=>$newest_version))
+$user_total=count_sql("user","*");
+echo return_json(array("announcement"=>$data["announcement"],"file_num"=>$file_num,"text_num"=>$text_num,"room_num"=>$room_num,'user_total'=>$user_total))
 ?>

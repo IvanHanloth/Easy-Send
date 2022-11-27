@@ -6,11 +6,12 @@
     <title><?php echo $webname?></title>
     <meta name="keywords" content="<?php echo $keywords?>">
     <meta name="description" content="<?php echo $description?>">
-    <link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/public/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/public/lib/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="/public/template/public/css/main.css">
-    <script src="/public/public/js/jquery2.2.4.min.js"></script>
-    <script src="/public/layui/layui.js"></script>
-    <script src="/public/public/js/localforage.js"></script>
+    <script src="/public/lib/jquery/jquery.js"></script>
+    <script src="/public/lib/layui/layui.js"></script>
+    <script src="/public/lib/localforage/localforage.js"></script>
     <?php echo $theme_config["head"]?>
     <?php echo $head?>
   </head>

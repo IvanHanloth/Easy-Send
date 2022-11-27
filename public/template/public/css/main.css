@@ -60,6 +60,10 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
     margin:auto;
     padding:50px 0px;
 }
+.user_log_box{
+    margin:auto;
+    padding:30px 0px;
+}
 .get{
     margin: auto;
     width:25%;
@@ -76,7 +80,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
     border-bottom:2px solid #02aa9a !important;
 }
 .code{
-  font-size: 35px;
+    font-size: 35px;
     font-family: "Microsoft Yahei";
     font-weight: bold;
     line-height: 30px;

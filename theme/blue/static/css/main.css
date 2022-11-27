@@ -95,7 +95,6 @@ h1{
   background-color: #fff;
   border-radius: 4px;
   overflow: hidden;
-  display: none;
   -webkit-box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
     -moz-box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
     box-shadow: rgba(0,0,0,0.05) 0px 10px 20px;
@@ -113,7 +112,6 @@ h1{
   opacity: .6;  
   z-index: 98;
   top: 0;
-  display: none;
 }
 .panel_title{
   font-size: 20px;
@@ -127,7 +125,20 @@ h1{
     font-weight: 100;
     cursor: pointer;
 }
-
+.user_menu_button,.scaner_menu_button{
+    display: block;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+}
+.user_menu_button_icon,.scaner_menu_button_icon{
+    font-size: 35px;
+    font-weight: 500;
+    color: #00b7ff;
+}
+.scaner_menu_button{
+    left: 20px;
+}
 @font-face {font-family: 'webfont';
   src: url('//at.alicdn.com/t/webfont_4g9eajr4war.eot'); /* IE9*/
   src: url('//at.alicdn.com/t/webfont_4g9eajr4war.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */

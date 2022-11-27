@@ -102,20 +102,6 @@ foreach ($mobile_browser as $device) {
 }
 return $is_mobile;
 }
-function could_download() {
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-$mobile_browser = Array(
-"mqqbrowser","juc","iuc","Quark"
-);
-$is_mobile = false;
-foreach ($mobile_browser as $device) {
-    if (stristr($user_agent, $device)) {
-    $is_mobile = true;
-    break;
-    }
-}
-return $is_mobile;
-}
 /*
 
 
@@ -245,5 +231,54 @@ function delete_roomdata($rid,$delete_room=false){
         mysqli_query($db,"DELETE FROM `room` WHERE `rid`='{$rid}'");
     }
     return true;
+}
+/*
+
+
+
+
+
+用户函数区
+
+
+
+
+
+*/
+function userinfo($usertoken=""){
+    global $db;
+    if($usertoken==""){
+        $usertoken=$_COOKIE["usertoken"];
+    }
+    if(empty($usertoken)){
+        return FALSE;
+        }else{
+        $check=mysqli_query($db,"SELECT count(*) FROM `user` WHERE binary `usertoken` = '{$usertoken}'");
+        $check=mysqli_fetch_row($check);
+        if($check[0]!=1){
+            return FALSE;
+        }else{
+            $user=mysqli_query($db,"SELECT * FROM `user` WHERE binary `usertoken` = '{$usertoken}'");
+            $user=mysqli_fetch_assoc($user);
+            $uid=$user['uid'];
+            $file_num=mysqli_query($db,"SELECT count(*) FROM `data` WHERE binary `uid` = '{$uid}' AND `type`='1'");
+            $file_num=mysqli_fetch_row($file_num);
+            $user['file_num']=$file_num[0];
+            $text_num=mysqli_query($db,"SELECT count(*) FROM `data` WHERE binary `uid` = '{$uid}' AND `type`='2'");
+            $text_num=mysqli_fetch_row($text_num);
+            $user['text_num']=$text_num[0];
+            $data_num=$text_num[0]+$file_num[0];
+            $user['data_num']=$data_num;
+            $receive_num=mysqli_query($db,"SELECT count(*) FROM `room` WHERE binary `receiveuid` = '{$uid}'");
+            $receive_num=mysqli_fetch_row($receive_num);
+            $user['receive_num']=$receive_num[0];
+            $send_num=mysqli_query($db,"SELECT count(*) FROM `room` WHERE binary `senduid` = '{$uid}'");
+            $send_num=mysqli_fetch_row($send_num);
+            $user['send_num']=$send_num[0];
+            $room_num=$receive_num[0]+$send_num[0];
+            $user['room_num']=$room_num;
+            return $user;
+        }
+    }
 }
 ?>

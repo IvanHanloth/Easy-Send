@@ -27,6 +27,12 @@
                             </div>
                         </div>
                         <div class="layui-inline">
+                            <label class="layui-form-label">uid</label>
+                            <div class="layui-input-inline">
+                                <input type="number" name="uid" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
                             <label class="layui-form-label">到期时间</label>
                             <div class="layui-input-inline">
                                 <input type="text" name="tillday" autocomplete="off" class="layui-input" id="tillday" placeholder="yyyy-MM-dd">
@@ -79,7 +85,8 @@
                 {type: "checkbox", width: 50},
                 {field: 'id', title: 'ID'},
                 {field: 'preview',minWidth: 150, title: '文本预览'},
-                {field: 'times',minWidth: 100, title: '剩余次数', align: "center"},
+                {field: 'times',minWidth: 70, title: '剩余次数', align: "center"},
+                {field: 'uid',minWidth: 70, title: 'uid', align: "center"},
                 {field: 'tillday',minWidth: 100, title: '到期时间', align: "center"},
                 {title: '操作', minWidth: 150, toolbar: '#each-tool', align: "center"}
             ]],
@@ -140,7 +147,7 @@
             if (obj.event === "LAYTABLE_TIPS"){
                 layer.open({
                     type:0,
-                    content:"为保护用户隐私，此处不会显示提取码，仅可通过搜索框获取指定提取码对应的数据。<br>搜索功能中“提取码”和“剩余次数”为全词匹配搜索，不搜索此两项时请留空。<br>多个条件搜索则匹配同时符合所有搜索条件的结果。",
+                    content:"为保护用户隐私，此处不会显示提取码，仅可通过搜索框获取指定提取码对应的数据。<br>搜索功能中“提取码”、“uid”和“剩余次数”为全词匹配搜索，不搜索时请留空。<br>多个条件搜索则匹配同时符合所有搜索条件的结果。<br>uid为0代表游客上传的数据",
                     shade:0.3,
                     title:"说明"
                 })

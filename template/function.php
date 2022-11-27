@@ -41,7 +41,11 @@ function tem_download_big_showpercent(){
     include dirname(__FILE__)."/./download/big_showPercent.php";
 }
 
-
+//scan
+function tem_scan_default(){
+    global $theme_config;
+    include dirname(__FILE__)."/./scan/default.php";
+}
 
 //require
 function tem_require_head(){
@@ -56,5 +60,10 @@ function tem_require_header(){
 function tem_require_footer(){
     global $footer;
     include dirname(__FILE__)."/./require/footer.php";
+}
+//user
+function tem_user_default(){
+    global $theme_config;
+    include dirname(__FILE__)."/./user/default.php";
 }
 ?>

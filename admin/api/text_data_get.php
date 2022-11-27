@@ -8,14 +8,15 @@ if($page=="" or $limit==""){
 }
 $start=($page-1)*$limit;
 if($_REQUEST["type"]=="get"){
-    $count=mysqli_query($db,"SELECT count(*) FROM `data` WHERE `type`='1' ");
-    $result=mysqli_query($db,"SELECT `id`,`preview`,`times`,`tillday` FROM `data` WHERE `type`='2' LIMIT {$start},{$limit}");
+    $count=mysqli_query($db,"SELECT count(*) FROM `data` WHERE `type`='2' ");
+    $result=mysqli_query($db,"SELECT `id`,`preview`,`times`,`tillday`,`uid` FROM `data` WHERE `type`='2' LIMIT {$start},{$limit}");
 }elseif($_REQUEST["type"]=="search"){
     $data=json_decode($_REQUEST["data"],true);
     $preview=$data["preview"];
     $gkey=$data["gkey"];
     $times=$data["times"];
     $tillday=$data["tillday"];
+    $uid=$data["uid"];
     $add=" WHERE `type`='2' AND `preview` LIKE '%{$preview}%'";
     if($times!=""){
         $add.=" AND `times`='{$times}'";
@@ -23,14 +24,17 @@ if($_REQUEST["type"]=="get"){
     if($gkey!=""){
         $add.=" AND binary `gkey`='{$gkey}'";
     }
+    if($uid!=""){
+        $add.=" AND binary `uid` = '{$uid}'";
+    }
     if($tillday!=""){
         $add.=" AND `tillday` LIKE '%{$tillday}%'";
     }
     $count=mysqli_query($db,"SELECT count(*) FROM `data`".$add);
-    $result=mysqli_query($db,"SELECT `id`,`preview`,`times`,`tillday` FROM `data`".$add." LIMIT {$start},{$limit}");
+    $result=mysqli_query($db,"SELECT `id`,`preview`,`times`,`tillday`,`uid` FROM `data`".$add." LIMIT {$start},{$limit}");
 }
 $count=mysqli_fetch_row($count);
-if($count!=0){
+if($count[0]!=0){
     $result=mysqli_fetch_all($result,MYSQLI_ASSOC);
 }else{
     $result=array();

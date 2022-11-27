@@ -41,8 +41,7 @@ $check=0;//初始化检查项目
         <title>Easy-Send升级程序</title>
         <link rel="stylesheet" type="text/css" href="./style.css">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
-        
-    <script src="/public/public/js/jquery2.2.4.min.js"></script>
+    <script src="/public/lib/jquery/jquery.js"></script>
     </head>
     <body>
         <h2 style="text-align:center">Easy-Send升级程序</h2>

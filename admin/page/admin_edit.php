@@ -103,11 +103,11 @@ if($_SESSION["admin"]!=$admintoken){
         			    })
         			},
         			error:function(res){
-        			    layer.msg(res.tip,{
-        			        icon:icon,
-        			        time:2000,
-        			        shade:0.3
-        			    })
+    			    layer.msg("程序运行出错",{
+    			        icon:2,
+    			        time:2000,
+    			        shade:0.3
+    			    })
         			}
                 })
                 return false;

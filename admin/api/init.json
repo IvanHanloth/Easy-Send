@@ -20,8 +20,19 @@
           "icon": "fa fa-tachometer",
           "href": "page/panel.php",
           "target": "_self"
-        },
-        {
+        },{
+          "title": "用户管理",
+          "icon": "fa fa-male",
+          "href": "",
+          "target": "_self",
+          "child": [
+            {
+              "title": "用户信息",
+              "href": "page/user_data.php",
+              "icon": "fa fa-user",
+              "target": "_self"
+            }]
+        },{
           "title": "数据管理",
           "href": "",
           "icon": "fa fa-calendar",

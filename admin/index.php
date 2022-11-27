@@ -23,7 +23,6 @@ if($_SESSION["admin"]!=$admintoken){
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
-    <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="lib/layui-v2.6.3/css/layui.css" media="all">
     <link rel="stylesheet" href="css/layuimini.css?v=2.0.4.2" media="all">
     <link rel="stylesheet" href="css/themes/default.css" media="all">

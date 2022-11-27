@@ -55,7 +55,7 @@ if($dbcount[0]==0) {
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-touch-fullscreen" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+        <link rel="stylesheet" type="text/css" href="/public/lib/layui/css/layui.css">
 		<meta name="full-screen" content="yes">
 		<!--UC强制全屏-->
 		<meta name="browsermode" content="application">
@@ -97,9 +97,8 @@ if($dbcount[0]==0) {
 			</td>
 		</table>
 		<footer>
-            <script src="/public/public/js/jquery2.2.4.min.js">
-            </script>
-            <script src="/public/layui/layui.js">
+    <script src="/public/lib/jquery/jquery.js"></script>
+            <script src="/public/lib/layui/layui.js">
             </script>
 			<script src="/public/template/download/big_showPercent.js">
 			</script>

@@ -4,9 +4,11 @@
 Apache：
 RewriteRule ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
 RewriteRule ^/app+(\/?)$ /index.php?mode=app;
+RewriteRule ^/user+(\/?)$ /index.php?mode=user;
 
 
 Nginx（推荐）：
 rewrite ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
 rewrite ^/app+(\/?)$ /index.php?mode=app;
+rewrite ^/user+(\/?)$ /index.php?mode=user;
 

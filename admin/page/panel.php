@@ -65,10 +65,10 @@
                     <div class="panel layui-bg-orange">
                         <div class="panel-body">
                             <div class="panel-title">
-                                <h5>最新版本</h5>
+                                <h5>用户统计</h5>
                             </div>
                             <div class="panel-content">
-                                <h1 class="no-margins" id="newest_version">获取中……</h1>
+                                <h1 class="no-margins" id="user-total">获取中……</h1>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ $.getJSON("/admin/api/panel.php",function(res){
     $("#text-total").html(res.text_num);
     $("#file-total").html(res.file_num);
     $("#room-total").html(res.room_num);
-    $("#newest_version").html(res.newest_version);
+    $("#user-total").html(res.user_total);
 })
 </script>
 </body>

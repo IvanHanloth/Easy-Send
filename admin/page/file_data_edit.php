@@ -58,8 +58,8 @@
 
 	form.verify({
 		gkey: function (value) {
-			if (value.length !=4 && value.length!=0) {
-				return '提取码为4位';
+			if (value.length !=<?php echo $verify_num ?> && value.length!=0) {
+				return '提取码为<?php echo $verify_num ?>位';
 			}
 		}
 	});
@@ -83,8 +83,8 @@
     			    })
     			},
     			error:function(res){
-    			    layer.msg(res.tip,{
-    			        icon:icon,
+    			    layer.msg("程序运行出错",{
+    			        icon:2,
     			        time:2000,
     			        shade:0.3
     			    })

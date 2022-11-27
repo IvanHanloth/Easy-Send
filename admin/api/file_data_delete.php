@@ -18,6 +18,6 @@ if($_REQUEST["type"]=="one"){
 if($res){
     echo return_json(array("code"=>200,"tip"=>"删除成功"));
 }else{
-    echo return_json(array("code"=>100,"tip"=>"删除失败,出错id".$wrong));
+    echo return_json(array("code"=>100,"tip"=>"删除失败,出错id".$wrong."，请刷新后重试"));
 }
 ?>

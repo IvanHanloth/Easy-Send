@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Scanner</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes">
+    <meta name="full-screen" content="yes">
+    <!--UC强制全屏-->
+    <meta name="browsermode" content="application">
+    <!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true">
+    <!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app">
+    <!--QQ应用模式-->
+    <style>
+      @keyframes lineanim {
+        0% {
+          top: 0px;
+        }
+
+        50% {
+          top: 190px;
+        }
+
+        100% {
+          top: 0px;
+        }
+      }
+
+      .cover {
+        height: 220px;
+        width: 220px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border: 0.7px solid #95e18d;
+        z-index: 99999;
+        top: 50%;
+        left: 50%;
+        background-color: #eececec4a;
+      }
+
+      .line {
+        width: 200px;
+        height: 1px;
+        -webkit-animation: lineamin 7s linear infinite;
+        animation: lineanim 7s linear infinite;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        margin-left: 10px;
+        background: #5f68e8;
+        background: linear-gradient(90deg, transparent, #18ef20, #20a53a, #18ef20, transparent);
+        position: absolute;
+        border-radius: 1px
+      }
+
+      .tip {
+        position: absolute;
+        bottom: -48px;
+        width: 100%;
+        font-size: 14px;
+        color: #fff;
+        opacity: .8
+      }
+
+      .shade {
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: #ffffff11;
+        z-index: 3;
+        margin: -30px;
+        padding: 50px
+      }
+
+      #qr-video {
+        width: auto;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+      }
+		</style>
+    <script src="./jquery.min.js"></script>
+    <script src="./jsQR.js"></script>
+  </head>
+  <body style="overflow:hidden;background-color:black">
+    <video id="qr-video" autoplay></video>
+    <div class="shade"></div>
+    <div class="cover">
+      <p class="line"></p>
+      <p class="tip">将二维码放入框内，即可自动扫描</p>
+    </div>
+    <canvas id="qr-canvas" width="800" height="800"></canvas>
+    <script type="text/javascript" src="./qrcode.js"></script>
+    <script type="text/javascript" src="./scan.js"></script>
+  </body>
+</html>
