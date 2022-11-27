@@ -55,7 +55,7 @@ session、curl、fileinfo、ZipArchive
  - [x] 新增模板
  - [x] 在线更新
  - [x] 文件直传
- - [ ] 用户中心
+ - [x] 用户中心
  - [ ] 对接七牛云
 ## 联系作者
 * QQ:1580272392
@@ -72,6 +72,16 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
+#### V3.2.0（更新于2022/11/27）
+- 新增用户功能
+- 新增扫码功能
+- 修复后台文本数据统计出错的问题
+- 修复后台报错出错的问题
+- 修复后台修改提取码长度出错的问题
+- 修复后台开关无效导致部分功能无法关闭的问题
+- 优化了错误提示
+- 优化了静态资源的引用
+- 优化默认主题（default）和orange主题视觉视觉设计
 #### V3.1.3（更新于2022/11/23）
 - 修复后台在线更新报错的问题
 - 修复升级程序无法解压文件的问题
