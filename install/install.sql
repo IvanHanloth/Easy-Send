@@ -91,7 +91,7 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
 (4, 'header', '', '网站header'),
 (5, 'footer', '', '网站footer'),
-(6, 'theme', 'blue', '网站模板'),
+(6, 'theme', 'default', '网站模板'),
 (7, 'times', '10', ''),
 (8, 'settime', '864000', ''),
 (9, 'uploadsize', '104857600', ''),
