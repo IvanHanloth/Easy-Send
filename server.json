@@ -1,6 +1,15 @@
 {
     "announcement": "欢迎使用Easy-Send V3.1<br>V3.1.3更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”", 
     "update": [
+         {
+            "version_num": 320, 
+            "version": "V3.2.0", 
+            "description": "新增用户功能<br>新增扫码功能<br>修复后台文本数据统计出错的问题<br>修复后台报错出错的问题<br>修复后台修改提取码长度出错的问题<br>修复后台开关无效导致部分功能无法关闭的问题<br>优化了错误提示<br>优化了静态资源的引用<br>优化默认主题（default）和orange主题视觉视觉设计<strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份</strong>", 
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.2.0-sql.zip", 
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.2.0-code.zip", 
+            "time": "2022/11/27", 
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.2.0-all.zip"
+        },
         {
             "version_num": 313, 
             "version": "V3.1.3", 
