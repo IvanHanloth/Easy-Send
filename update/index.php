@@ -155,10 +155,10 @@ $check=0;//初始化检查项目
                     		}
                     	}
                     };
-                    if($e==0) {
+                    if($fail_num==0) {
                     	echo '升级成功！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br><br><div class="button"><a href="./?step=5"><button>下一步</button></a></div>';
                     } else {
-                    	echo '升级失败！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br><br><div class="button"><a href="./?step=2"><button>重新配置</button></a></div>';
+                    	echo '升级失败！<br>SQL成功'.$success_num.'句/失败'.$fail_num.'句<br>'.$error.'<br><div class="button"><a href="./?step=2"><button>重新配置</button></a></div>';
                     };?>
             </div>
             <?php
