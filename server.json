@@ -4,7 +4,7 @@
          {
             "version_num": 320, 
             "version": "V3.2.0", 
-            "description": "新增用户功能<br>新增扫码功能<br>修复后台文本数据统计出错的问题<br>修复后台报错出错的问题<br>修复后台修改提取码长度出错的问题<br>修复后台开关无效导致部分功能无法关闭的问题<br>优化了错误提示<br>优化了静态资源的引用<br>优化默认主题（default）和orange主题视觉视觉设计<strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份</strong>", 
+            "description": "新增用户功能<br>新增扫码功能<br>修复后台文本数据统计出错的问题<br>修复后台报错出错的问题<br>修复后台修改提取码长度出错的问题<br>修复后台开关无效导致部分功能无法关闭的问题<br>优化了错误提示<br>优化了静态资源的引用<br>优化默认主题（default）和orange主题视觉视觉设计<strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份。<br>另外，此版本需要重新配置伪静态，请查看根目录下“安装说明.txt”（文件名可能会乱码）</strong>", 
             "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.2.0-sql.zip", 
             "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.2.0-code.zip", 
             "time": "2022/11/27", 
