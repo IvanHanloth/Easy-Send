@@ -55,7 +55,7 @@ session, curl, fileinfo, ZipArchive
  - [x] Added templates
  - [x] Online update
  - [x] File direct transfer
- - [ ] User Center
+ - [x] User Center
  - [ ] Connect with Qiniuyun
 ## Contact the author
 * QQ:1580272392
@@ -72,6 +72,16 @@ session, curl, fileinfo, ZipArchive
 - Easy-Send documentation (http://doc.o5g.top/docs/easy-send-docs-help/ ), suitable for website owners and managers to read
 - Easy-Send development documentation (http://doc.o5g.top/docs/easy-send-docs-develop/ ), suitable for developers and programmers to read
 ## Update log
+#### V3.2.0 (updated on 2022/11/27)
+-New user functions
+-Newly added code scanning function
+-Fix errors in background text data statistics
+-Fix the error reported in the background
+-Fix the problem of error in background modification of extracted code length
+-Fix the problem that some functions cannot be closed due to invalid background switches
+-Optimized error prompts
+-Optimize the reference of static resources
+-Optimize the visual visual design of the default theme and orange theme
 #### V3.1.3 (updated on 2022/11/23)
 - Fix the problem of online update error reporting in the background
 - Fixed the problem that the upgrade program could not decompress files
