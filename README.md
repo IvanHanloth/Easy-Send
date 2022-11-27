@@ -55,7 +55,7 @@ session、curl、fileinfo、ZipArchive
  - [x] 新增模板
  - [x] 在线更新
  - [x] 文件直传
- - [ ] 用户中心
+ - [x] 用户中心
  - [ ] 对接七牛云
 ## 联系作者
 * QQ:1580272392
