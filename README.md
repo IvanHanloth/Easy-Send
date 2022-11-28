@@ -62,6 +62,7 @@ session、curl、fileinfo、ZipArchive
 * Email:ivan@hanloth.com
 * Blog:https://ivan.hanloth.cn/  （ https://ivan.o5g.top/ ）
 * 交流群:390108536(QQ群)
+* TG群:https://t.me/IHopensource
 ## 引用
 * 使用了layui框架中的部分模块
 * 使用了localForage模块进行离线存储
