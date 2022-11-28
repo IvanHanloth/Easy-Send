@@ -62,6 +62,7 @@ session, curl, fileinfo, ZipArchive
 * Email:ivan@hanloth.com
 * Blog: https://ivan.hanloth.cn/ ( https://ivan.o5g.top/ )
 * Communication group: 390108536 (QQ group)
+* Telegram: https://t.me/IHopensource
 ## quoting
 * Some modules in the layui framework are used
 * Use the localForage module for offline storage
