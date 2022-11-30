@@ -36,7 +36,7 @@ session、curl、fileinfo、ZipArchive
 * 配置权限755以上
 * 访问install目录一键安装
 * 配置伪静态
-* 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
+* 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）（推荐使用https://yrw.hanloth.cn/ 网址监控功能）
 * 详细使用方法请查看Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ）
 ## 注意！
 * 从V2升级至V3需要完全覆盖网站目录，重新配置各项设置(即完全重装)
