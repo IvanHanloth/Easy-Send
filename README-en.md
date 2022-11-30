@@ -36,7 +36,7 @@ session, curl, fileinfo, ZipArchive
 * Configuration permissions above 755
 * Visit the install directory for one-click installation
 * Configure pseudo-static
-* If you need to automatically clean up expired files and destroy rooms, you need to monitor the following URL: domain name/cron.php (frequency 1 minute/time-5 minutes/time)
+* If you need to automatically clean up expired files and destroy rooms, you need to monitor the following URL: domain name/cron.php (frequency 1 minute/time-5 minutes/time)(We recommand you to use the URL monitoring function provided by https://yrw.hanloth.cn/)
 * For detailed usage, please refer to the Easy-Send documentation (http://doc.o5g.top/docs/easy-send-docs-help/)
 ## Notice!
 * Upgrading from V2 to V3 needs to completely overwrite the website directory and reconfigure various settings (that is, completely reinstall)
