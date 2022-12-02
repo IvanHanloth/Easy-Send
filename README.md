@@ -36,7 +36,7 @@ session、curl、fileinfo、ZipArchive
 * 配置权限755以上
 * 访问install目录一键安装
 * 配置伪静态
-* 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）
+* 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）（推荐使用https://yrw.hanloth.cn/ 网址监控功能）
 * 详细使用方法请查看Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ）
 ## 注意！
 * 从V2升级至V3需要完全覆盖网站目录，重新配置各项设置(即完全重装)
@@ -45,9 +45,19 @@ session、curl、fileinfo、ZipArchive
 * v3.0以上版本支持文件伪直传，该功能会耗费流量及服务器资源
 * v3.0以上版本支持文件伪直传，该功能需要浏览器支持localStorage和blob下载(与提取文件时状况相同，部分国产浏览器如UC、夸克、QQ等均无法正常使用)
 ## 演示
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
+
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
 ## ToDo
  - [x] 二维码分享
  - [x] 一键安装
