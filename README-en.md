@@ -45,9 +45,19 @@ session, curl, fileinfo, ZipArchive
 * Versions above v3.0 support pseudo-direct file transfer, which will consume traffic and server resources
 * Versions above v3.0 support pseudo-direct file transfer. This function requires the browser to support localStorage and blob download (the situation is the same as when extracting files, and some domestic browsers such as UC, Quark, QQ, etc. cannot work normally)
 ## Demo
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
+
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
 ## ToDo
  - [x] QR code sharing
  - [x] One-click installation
