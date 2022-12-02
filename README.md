@@ -45,9 +45,19 @@ session、curl、fileinfo、ZipArchive
 * v3.0以上版本支持文件伪直传，该功能会耗费流量及服务器资源
 * v3.0以上版本支持文件伪直传，该功能需要浏览器支持localStorage和blob下载(与提取文件时状况相同，部分国产浏览器如UC、夸克、QQ等均无法正常使用)
 ## 演示
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-1.PNG)
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-2.PNG)
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
+
 ![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
+
+![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
 ## ToDo
  - [x] 二维码分享
  - [x] 一键安装
