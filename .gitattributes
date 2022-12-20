@@ -1,2 +1,4 @@
-*.js linguist-language=PHP
+layui.js linguist-language=PHP
 *.html linguist-language=PHP
+jquery.js linguist-language=PHP
+localforage.js linguist-language=PHP
