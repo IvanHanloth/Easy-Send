@@ -2,8 +2,8 @@ user_info = "";
 $(window).load(function() {
     layui.use(function() {
         var layer = layui.layer;
-        var laypage = layui.laypage; 
-        var table = layui.table; 
+        var laypage = layui.laypage;
+        var table = layui.table;
         var form = layui.form;
         //登录提交
         $("#user_log").submit(function() {
@@ -190,7 +190,7 @@ $(window).load(function() {
                 ,
             page: true //开启分页
                 ,
-            height: 600,
+            height: 500,
             skin: "line",
             cols: [
                 [ //表头
@@ -255,45 +255,47 @@ $(window).load(function() {
         $(".user_center_back_button").click(function() {
             user_reset("menu");
         });
-    
-        
-            $.getJSON("/public/api/user_edit_get.php",function(res){
-                form.val('user_edit_info_form',res)
-            })
+
+
+        $.getJSON("/public/api/user_edit_get.php", function(res) {
+            form.val('user_edit_info_form', res)
+        })
         //监听提交
-        form.on('submit(user_edit_info_button)', function (data) {
+        form.on('submit(user_edit_info_button)', function(data) {
             $.ajax({
-    			type: "POST",
-    			url: '/public/api/user_edit_save.php',
-    			dataType: 'json',
-    			async: false,
-    			data:{"data":JSON.stringify(data.field)},
-    			success:function(res){
-    			    if(res.code==200){
-        			    layer.msg(res.tip,{
-        			        icon:1,
-        			        time:2000,
-        			        shade:0.3,
-        			        end:function(){
-        			            get_user_info(true);
-        			        }
-        			    })
-    			    }else{
-        			    layer.msg(res.tip,{
-        			        icon:2,
-        			        time:2000,
-        			        shade:0.3
-        			    })
-    			        
-    			    }
-    			},
-    			error:function(res){
-    			    layer.msg("程度运行出错",{
-    			        icon:2,
-    			        time:2000,
-    			        shade:0.3
-    			    })
-    			}
+                type: "POST",
+                url: '/public/api/user_edit_save.php',
+                dataType: 'json',
+                async: false,
+                data: {
+                    "data": JSON.stringify(data.field)
+                },
+                success: function(res) {
+                    if (res.code == 200) {
+                        layer.msg(res.tip, {
+                            icon: 1,
+                            time: 2000,
+                            shade: 0.3,
+                            end: function() {
+                                get_user_info(true);
+                            }
+                        })
+                    } else {
+                        layer.msg(res.tip, {
+                            icon: 2,
+                            time: 2000,
+                            shade: 0.3
+                        })
+
+                    }
+                },
+                error: function(res) {
+                    layer.msg("程度运行出错", {
+                        icon: 2,
+                        time: 2000,
+                        shade: 0.3
+                    })
+                }
             })
             return false;
         });

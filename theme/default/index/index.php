@@ -7,6 +7,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 2022/10/16
 */tem_require_head()?>
   <body>
+      <link rel="stylesheet" type="text/css" href="/theme/default/static/css/index.css">
         <?php tem_require_header()?>
     <div class="main">
         <div class="layui-tab layui-tab-card" lay-filter="tab">
@@ -20,7 +21,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
           <?php }?>
           <li lay-id="user"><span class="fa fa-user-o"></span>&nbsp;用户中心</li>
          </ul>
-         <div class="layui-tab-content" style="height: 370px;" id="main-tab">
+         <div class="layui-tab-content" style="height: auto;" id="main-tab">
           <div class="layui-tab-item layui-show">
            <?php
             tem_file_drag_box()
@@ -69,13 +70,6 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
         	    echo "element.tabChange('tab', 'room');";
         	}
         	?>
-        	element.on("tab(tab)",function(data){
-        	    if($(this).attr("lay-id")=="user"){
-        	        $("#main-tab").css("height","auto")
-        	    }else{
-        	        $("#main-tab").css("height","370px")
-        	    }
-        	})
         });
       </script>
 </footer>

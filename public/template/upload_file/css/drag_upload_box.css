@@ -1,0 +1,16 @@
+.upload_file_drag_upload_box_dragbox {
+	margin: auto;
+	width: 90%;
+	border-style: dashed;
+	border-width: 2px;
+	border-radius: 10px;
+	border-color: #eee0ee;
+	padding: 1% 2%;
+	height: 200px;
+	display: block;
+}
+
+.upload_file_drag_upload_box_btn {
+	display: block;
+	margin: auto;
+}

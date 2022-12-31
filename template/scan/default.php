@@ -2,13 +2,13 @@
 /* By Ivan Hanloth
 本文件为易传文本存储模板文件
 2022/4/3 */
-?>
-    <style>  .textarea::-webkit-scrollbar {
+?><link rel="stylesheet" type="text/css" href="/public/template/scan/css/default.css">	
+    <style>  .scan_default_textarea::-webkit-scrollbar {
   /*滚动条整体样式*/
   width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
   height: 1px;
   }
-  .textarea::-webkit-scrollbar-thumb {
+  .scan_default_textarea::-webkit-scrollbar-thumb {
   /*滚动条里面小方块*/
   border-radius   : 8px;
   background-color: <?php echo $theme_config["main_color"]?>;
@@ -32,10 +32,10 @@
   );
   }</style>
   
-  <form class="layui-form formbox">
+  <form class="layui-form scan_default_formbox">
     <div class="layui-form-item layui-form-text layui-anim layui-anim-upbit">
         <div style="text-align:center"><h2><strong>扫码功能使用说明</strong></h2><br></div>
-      <textarea class="layui-textarea textarea" disabled style="font-size:14px">
+      <textarea class="layui-textarea scan_default_textarea" disabled style="font-size:14px">
           欢迎使用“扫码”功能！使用此功能前请先认真阅读以下使用说明以便您能了解此功能以及所涉及到的相关问题。
           “扫码”功能用于二维码（不包括一维码）扫描及对应内容的解析。
           如果二维码内容为网址，则我们将在解析成功后直接跳转至该网址，否则将会通过弹窗的形式告知您二维码的内容。
@@ -47,7 +47,7 @@
       </textarea>
     </div>
     <div class="info" id="text-btn">		    
-      <span class="layui-icon layui-anim layui-anim-upbit" style="text-align:center;font-size:10px" id="room_use_tips">&#xe702;&nbsp;&nbsp;<a>点击“开始扫码”即代表您已认真阅读并同意以上使用说明</a></span><br>
+      <span class="layui-icon layui-anim layui-anim-upbit" style="text-align:center;font-size:10px;cursor: pointer;" id="room_use_tips">&#xe702;&nbsp;&nbsp;<a>点击“开始扫码”即代表您已认真阅读并同意以上使用说明</a></span><br>
       <a href="/scan">
-      <button type="button" class="layui-btn btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">开始扫码</button></div></a>
+      <button type="button" class="layui-btn scan_default_btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">开始扫码</button></div></a>
   </form>

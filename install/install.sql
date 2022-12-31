@@ -1,24 +1,18 @@
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `data`
---
 
 CREATE TABLE IF NOT EXISTS `data` (
   `id` int(11) NOT NULL,
   `gkey` varchar(4) NOT NULL COMMENT '提取码',
   `type` int(11) NOT NULL COMMENT '1-文件,2-文本',
   `method` text NOT NULL COMMENT '文本存储方式1-数据库存储,2-文件存储',
+  `cloud_way` text NOT NULL,
   `preview` text NOT NULL,
   `data` text NOT NULL,
   `origin` text NOT NULL COMMENT '文件原名',
@@ -26,13 +20,8 @@ CREATE TABLE IF NOT EXISTS `data` (
   `tillday` text NOT NULL COMMENT '到期时间戳',
   `times` int(11) NOT NULL COMMENT '剩余次数',
   `uid` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=129 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `room`
---
 
 CREATE TABLE IF NOT EXISTS `room` (
   `rid` int(11) NOT NULL,
@@ -49,13 +38,7 @@ CREATE TABLE IF NOT EXISTS `room` (
   `receive` text NOT NULL,
   `senduid` int(11) NOT NULL DEFAULT '0',
   `receiveuid` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `roomdata`
---
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `roomdata` (
   `rdid` int(11) NOT NULL,
@@ -66,46 +49,36 @@ CREATE TABLE IF NOT EXISTS `roomdata` (
   `size` int(11) NOT NULL,
   `origin` text NOT NULL,
   `total` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `setting`
---
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS `setting` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `content` text NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `setting`
---
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (1, 'account', 'admin', '管理员账户'),
-(2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '管理员密码'),
+(2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ==', '管理员密码'),
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
 (4, 'header', '', '网站header'),
 (5, 'footer', '', '网站footer'),
-(6, 'theme', 'default', '网站模板'),
+(6, 'theme', 'blue', '网站模板'),
 (7, 'times', '10', ''),
-(8, 'settime', '864000', ''),
+(8, 'settime', '10', ''),
 (9, 'uploadsize', '104857600', ''),
 (10, 'textsize', '5000', ''),
-(11, 'textmethod', 'off', ''),
+(11, 'textmethod', 'on', ''),
 (12, 'install', '1', '1：已经安装\r\n0：未安装'),
 (13, 'update', '0', '1:需要升级\r\n0:不需要升级'),
-(14, 'version_num', '313', ''),
+(14, 'version_num', '320', ''),
 (15, 'head', '', ''),
 (16, 'keywords', '', ''),
 (17, 'description', '', ''),
 (18, 'logo', '/favicon.ico', ''),
-(19, 'version', 'v3.1.3', ''),
-(20, 'qrcode', 'https://my.tv.sohu.com/user/a/wvideo/getQRCode.do?height=250&width=250&text=', ''),
+(19, 'version', 'v3.3.0', ''),
+(20, 'qrcode', 'https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=', ''),
 (21, 'announcement', '', ''),
 (22, 'mobile_version', '', ''),
 (23, 'mobile_version_num', '', ''),
@@ -121,13 +94,17 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (33, 'PC_mac_url', '', ''),
 (34, 'verify_type', 'mix', '验证码类型'),
 (35, 'verify_num', '4', ''),
-(36, 'if_scan', 'off', '是否开启扫码功能');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `user`
---
+(38, 'if_scan', 'off', '是否开启扫码功能'),
+(49, 'if_gray', 'off', ''),
+(50, 'cloud_way', 'server', ''),
+(51, 'qiniu_Access_Key', '', ''),
+(52, 'qiniu_Secret_Key', '', ''),
+(53, 'qiniu_bucket', '', ''),
+(54, 'qiniu_domain', '', ''),
+(55, 'limit_way_times', '1', '限制times的方式，1为固定值，2为最大值'),
+(56, 'limit_way_tillday', '1', '限制tillday的方式，1为固定值，2为最大值'),
+(57, 'limit_num_times', '10', ''),
+(58, 'limit_num_tillday', '10', '');
 
 CREATE TABLE IF NOT EXISTS `user` (
   `uid` int(11) NOT NULL,
@@ -135,74 +112,38 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` text NOT NULL,
   `usertoken` text NOT NULL,
   `mail` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `data`
---
 ALTER TABLE `data`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `gkey_3` (`gkey`),
   ADD KEY `gkey` (`gkey`),
   ADD KEY `gkey_2` (`gkey`);
 
---
--- Indexes for table `room`
---
 ALTER TABLE `room`
   ADD PRIMARY KEY (`rid`);
 
---
--- Indexes for table `roomdata`
---
 ALTER TABLE `roomdata`
   ADD PRIMARY KEY (`rdid`);
 
---
--- Indexes for table `setting`
---
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `user`
---
 ALTER TABLE `user`
   ADD PRIMARY KEY (`uid`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `data`
---
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=129;
---
--- AUTO_INCREMENT for table `room`
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 ALTER TABLE `room`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `roomdata`
---
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
 ALTER TABLE `roomdata`
-  MODIFY `rdid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
---
--- AUTO_INCREMENT for table `setting`
---
+  MODIFY `rdid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=975;
 ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
---
--- AUTO_INCREMENT for table `user`
---
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
 ALTER TABLE `user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

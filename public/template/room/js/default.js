@@ -11,6 +11,23 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 room_info = 0;
 all_blob = [];
 save_lock = 1;
+upload_lock = "";
+
+function send_notification(content) {
+    try {
+        new Notification("直传状态变更提醒", {
+            badge: "/favicon.ico",
+            body: content,
+            icon: "/favicon.ico"
+        })
+    } catch (e) {
+        $("#if_notify_box").prop("checked", false);
+        $("#if_notify").addClass("layui-hide");
+        layui.use(function() {
+            layui.layer.msg("抱歉，您的浏览器不支持发送网页通知")
+        })
+    }
+}
 layui.use(function() {
     var form = layui.form,
         $ = layui.jquery,
@@ -36,6 +53,63 @@ layui.use(function() {
             title: "文件直传使用方法Q&A"
         });
     });
+    $("#if_notify span").click(function() {
+        $("#if_notify_box").click();
+    })
+    //检查是否支持订阅
+    if (window.Notification && document.location.protocol == "https:") {
+        $("#if_notify").removeClass("layui-hide");
+    }
+    //订阅通知
+    $("#if_notify_box").change(function() {
+        if ($("#if_notify_box").prop("checked")) {
+            if (Notification.permission == "default") {
+                layer.confirm('状态变更提醒需要获取浏览器的通知权限<br>手机浏览器一般不支持此功能', {
+                    cancel: function(index) {
+                        layer.close(index);
+                        $("#if_notify_box").prop("checked", false);
+                    },
+                    title: "获取权限"
+                }, function(index) {
+                    Notification.requestPermission(function(status) {
+                        if (status === "granted") {
+                            layer.msg("权限获取成功！", {
+                                icon: 1,
+                                time: 1500
+                            })
+                            layer.close(index);
+
+                        } else if (status === "default") {
+                            layer.msg("权限获取失败，可尝试重新获取", {
+                                icon: 2,
+                                time: 1500
+                            })
+                            $("#if_notify_box").prop("checked", false);
+                        } else if (status === "denied") {
+                            layer.msg("您禁用了通知权限", {
+                                icon: 2,
+                                time: 1500
+                            })
+                            $("#if_notify_box").prop("checked", false);
+                        }
+                    });
+                }, function(index) {
+                    $("#if_notify_box").prop("checked", false)
+                    layer.close(index);
+                })
+            } else if (Notification.permission == "denied") {
+                layer.open({
+                    content: "状态变更提醒功能需要获取浏览器的通知权限，您曾禁止了我们获取的此项权限<Br>请尝试重置网站设置以便我们能够重新获取该权限",
+                    title: "无法启用",
+                    end: function() {
+                        $("#if_notify_box").prop("checked", false);
+                    }
+                })
+                $("#if_notify_box").prop("checked", false);
+            }
+        }
+    });
+
     //监听提交
     form.on('submit(roombtn)', function(data) {
         $.ajax({
@@ -168,12 +242,13 @@ layui.use(function() {
         $("#room_send").addClass("layui-hide");
     });
     $("#room_send_button").click(function() {
-        $("#room_send_file").click();
         Send_Select();
+        $("#room_send_file").click();
     });
     $(".room_logout").click(function() {
-        logout = layer.msg("正在退出……", {
+        logout = layer.msg("正在退出，请稍等", {
             time: 0,
+            icon: 16,
             shade: 0.3,
             shadeClose: false
         });
@@ -196,6 +271,13 @@ layui.use(function() {
                     time: 2000
                 });
             }
+            Send_Select_time = setTimeout(function() {}, 1);
+            statetime = setTimeout(function() {}, 1);
+            room_receive_time = setTimeout(function() {}, 1);
+            clearTimeout(Send_Select_time);
+            clearTimeout(statetime);
+            clearTimeout(room_receive_time);
+            upload_lock = false;
         });
     });
 });
@@ -219,12 +301,16 @@ function room_reset() {
     $("#room_send_file_size").html("");
     $("#room_send_file_name").html("");
     $("#room_send_file").val("");
-    $("#room_qrcode").attr("href","/public/template/public/img/placeholder.svg");
-    statetime=setTimeout(function(){},100);
-    clearTimeout(statetime);
+    $("#room_qrcode").attr("href", "/public/template/public/img/placeholder.svg");
+
+    Send_Select_time = setTimeout(function() {}, 0);
+    statetime = setTimeout(function() {}, 0);
+    room_receive_time = setTimeout(function() {}, 0);
+    upload_lock = false;
     layui.use(function() {
         element = layui.element;
         element.progress("room_progress", 0);
+        element.progress("room_receive_progress", 0);
     });
 }
 
@@ -244,65 +330,68 @@ function Send_Select() {
             $("#room_send_file_name").html(name);
             $("#room_send_file_size").html(size);
             clearTimeout(Send_Select_time);
+            upload_lock = true;
         }
     }, 100)
 }
 
 function room_upload(index) {
-    layui.use(function() {
-        layer = layui.layer
-        element = layui.element
-        if (index == 0) {
-            layer.msg("正在发送…", {
-                icon: 21,
-                time: 3000,
-                shade: 0.3
-            })
-            clearTimeout(statetime)
-            data_check()
-        }
-        sliceSize = (1024 * 1024) * 0.5; //切片0.5M
-        xhr = new XMLHttpRequest();
-        const file = $("#room_send_file")[0].files[0]
-        const name = file.name
-        const size = file.size
-        const total = Math.ceil(size / sliceSize)
-        start = index * sliceSize
-        end = start + sliceSize
-        if (start >= size) {
-            clearTimeout(statetime)
-            data_check()
-            $("#room_send_connected").addClass("layui-hide")
-            $("#room_send_sending").addClass("layui-hide")
-            $("#room_send_finish").removeClass("layui-hide")
-            layer.msg("直传成功", {
-                icon: 1,
-                shade: 0.3,
-                time: 2000
-            })
-            return true
-        }
-        if (end >= size) {
-            end = size
-        }
-        progress = Number((end / size).toFixed(2)) * 100 + "%"
-        blob = file.slice(start, end)
-        sliced = new File([blob], index + name)
-        form = new FormData()
-        form.append("file", sliced)
-        form.append("index", index + 1)
-        form.append("total", total)
-        form.append("size", size)
-        form.append("origin", name)
-        xhr.open("post", "/public/api/room_upload.php", true) //发送请求
-        xhr.send(form) //携带集合    
-        xhr.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                element.progress("room_progress", progress)
-                room_upload(index + 1);
+    if (upload_lock) {
+        layui.use(function() {
+            layer = layui.layer
+            element = layui.element
+            if (index == 0) {
+                layer.msg("正在发送…", {
+                    icon: 16,
+                    time: 3000,
+                    shade: 0.3
+                })
+                clearTimeout(statetime)
+                data_check()
             }
-        };
-    })
+            sliceSize = (1024 * 1024) * 0.5; //切片0.5M
+            xhr = new XMLHttpRequest();
+            const file = $("#room_send_file")[0].files[0]
+            const name = file.name
+            const size = file.size
+            const total = Math.ceil(size / sliceSize)
+            start = index * sliceSize
+            end = start + sliceSize
+            if (start >= size) {
+                clearTimeout(statetime)
+                data_check()
+                $("#room_send_connected").addClass("layui-hide")
+                $("#room_send_sending").addClass("layui-hide")
+                $("#room_send_finish").removeClass("layui-hide")
+                layer.msg("直传成功", {
+                    icon: 1,
+                    shade: 0.3,
+                    time: 2000
+                })
+                return true
+            }
+            if (end >= size) {
+                end = size
+            }
+            progress = Number((end / size).toFixed(2)) * 100 + "%"
+            blob = file.slice(start, end)
+            sliced = new File([blob], index + name)
+            form = new FormData()
+            form.append("file", sliced)
+            form.append("index", index + 1)
+            form.append("total", total)
+            form.append("size", size)
+            form.append("origin", name)
+            xhr.open("post", "/public/api/room_upload.php", true) //发送请求
+            xhr.send(form) //携带集合    
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    element.progress("room_progress", progress)
+                    room_upload(index + 1);
+                }
+            };
+        })
+    }
 }
 
 function data_check() {
@@ -316,12 +405,20 @@ function data_check() {
             } else {
                 mytype = "神秘人"
             }
-            $("#room_type").html(mytype);
-            $("#room_state").html(data.state)
-            if ($("#room_qrcode").attr("src") != data.qrcode) {
-                $("#room_qrcode").attr("src", data.qrcode)
-            }
             if (data.type == "send") {
+                if (data.state != $("#room_state").html() && $("#if_notify_box").prop("checked")) { //需要提醒
+                    if (data.state == "waiting") {
+                        send_notification("正在等待接收端加入……");
+                    } else if (data.state == "connected") {
+                        send_notification("接收端加入啦！可以开始发送文件了");
+                    } else if (data.state == "sending") {
+                        send_notification("正在努力发送文件!");
+                    } else if (data.state == "send-finish") {
+                        send_notification("文件发送完啦");
+                    } else if (data.state == "finish") {
+                        send_notification("文件接收完成！")
+                    }
+                }
                 if (data.state == "connected") {
                     $("#room_send_connected").removeClass("layui-hide")
                     $("#room_send_finish").addClass("layui-hide")
@@ -336,6 +433,17 @@ function data_check() {
                     $("#room_send_finish").removeClass("layui-hide")
                 }
             } else if (data.type == "receive") {
+                if (data.state != $("#room_state").html() && $("#if_notify_box").prop("checked")) { //需要提醒
+                    if (data.state == "waiting") {
+                        send_notification("正在等待发送端加入……")
+                    } else if (data.state == "connected") {
+                        send_notification("有发送端加入啦！")
+                    } else if (data.state == "sending") {
+                        send_notification("努力接收文件ing……")
+                    } else if (data.state == "send-finish") {} else if (data.state == "finish") {
+                        send_notification("文件接收成功！")
+                    }
+                }
                 if (data.state == "connected") {
                     $("#room_receive_connected").removeClass("layui-hide")
                     $("#room_receive_finish").addClass("layui-hide")
@@ -351,9 +459,14 @@ function data_check() {
                     $("#room_receive_finish").removeClass("layui-hide")
                 }
             }
+            $("#room_type").html(mytype);
+            $("#room_state").html(data.state)
+            if ($("#room_qrcode").attr("src") != data.qrcode) {
+                $("#room_qrcode").attr("src", data.qrcode)
+            }
             room_info = data;
         })
-        data_check()
+        data_check();
     }, 3000);
 }
 
@@ -377,6 +490,11 @@ function room_receive() {
                                 xhr.responseType = 'blob';
                                 xhr.onload = function() {
                                     localforage.setItem(String(content.num), xhr.response)
+                                    layui.use(function() {
+                                        var element = layui.element;
+                                        prog = Number((index / content.total).toFixed(2)) * 100 + "%";
+                                        element.progress("room_receive_progress", prog);
+                                    })
                                 };
                                 xhr.send();
                             } else {
@@ -452,5 +570,5 @@ function room_receive() {
             }
         })
         room_receive()
-    }, 1500)
+    }, 5000)
 }

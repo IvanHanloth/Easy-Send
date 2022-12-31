@@ -1,25 +1,22 @@
 <script src="/public/template/user/js/default.js"></script>
-<link rel="stylesheet" type="text/css" href="/public/template/user/css/style.css">		
-<style>
-			#user_login_table,#user_input{ margin:0; height:100%; } #user_login_table{ width:100%;
-			}
-		</style>
+<link rel="stylesheet" type="text/css" href="/public/template/user/css/default.css">		
+
 <div id="user_input">
 		<table id="user_login_table">
 			<td>
 	<form class="layui-form user_log_box" user_log_type="login" id="user_log" action="">
 		<div class="layui-form-item layui-anim layui-anim-upbit">
-			<input type="text" name="account" placeholder="请输入账号或邮箱" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required id="user_account_input">
+			<input type="text" name="account" placeholder="请输入账号或邮箱" class="layui-input user_default_get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required id="user_account_input">
 		</div>
 		<div class="layui-form-item layui-anim layui-anim-upbit">
-			<input type="password" name="password" placeholder="请输入密码" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required id="user_password_input">
+			<input type="password" name="password" placeholder="请输入密码" class="layui-input user_default_get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" required id="user_password_input">
 		</div>
 		<div style="display:none" id="user_register_info_input">
     		<div class="layui-form-item layui-anim layui-anim-upbit">
-    			<input type="password" name="repassword" placeholder="请再次输入密码" autocomplete="off" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"  id="user_repassword_input">
+    			<input type="password" name="repassword" placeholder="请再次输入密码" autocomplete="off" class="layui-input user_default_get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;"  id="user_repassword_input">
     		</div>		
     		<div class="layui-form-item layui-anim layui-anim-upbit">
-    			<input type="email" name="mail" placeholder="请输入邮箱" autocomplete="off" class="layui-input get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" id="user_mail_input">
+    			<input type="email" name="mail" placeholder="请输入邮箱" autocomplete="off" class="layui-input user_default_get" onKeypress="javascript:if(event.keyCode == 32)event.returnValue = false;" id="user_mail_input">
     		</div>
 		</div>
 		<div class="info">

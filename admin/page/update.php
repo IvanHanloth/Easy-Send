@@ -41,7 +41,7 @@
         layui.use(function(){
             var layer=layui.layer;
             layer.prompt({title:"请输入后台密码以确认升级",formType: 1},function(value, index, elem){
-                layer.msg("正在提交……",{icon:22,time:2000,shade:0.3})
+                layer.msg("正在提交……",{icon:16,time:0,shade:0.3})
                 $.ajax({
                     type:"POST",
                     url:"/admin/api/update_action.php",
@@ -51,6 +51,7 @@
                         "all":all
                     },
                     success:function(res){
+                        layer.closeAll()
                         if(res.code==200){
                             layer.msg(res.tip,{icon:1,shade:0.3,time:100,end:function(){window.location.href="/"}})
                         }else{
@@ -69,8 +70,9 @@
             , layer = layui.layer
             , element = layui.element;
             $("#update_get_btn").click(function(){
-                layer.msg("正在获取更新信息",{icon:22,time:2000,shade:0.3})
+                layer.msg("正在获取更新信息",{icon:16,time:0,shade:0.3})
                 $.getJSON("/admin/api/update_info.php/?type=info",function(res){
+                    layer.closeAll()
                     $("#update_info").removeClass("layui-hide")
                     $("#now_version").html(res.now_version)
                     $("#newest_version").html(res.newest_version)
@@ -88,8 +90,9 @@
             
 
             $("#update_log_get").click(function(){
-                layer.msg("正在获取日志信息",{icon:22,time:2000,shade:0.3})
+                layer.msg("正在获取日志信息",{icon:16,time:0,shade:0.3})
                 $.getJSON("/admin/api/update_info.php/?type=log",function(res){
+                    layer.closeAll()
                     $("#update_log").removeClass("layui-hide")
                     if(res.log.length!=0){
                         res.log.forEach(function(value){

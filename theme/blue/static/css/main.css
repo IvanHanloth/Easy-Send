@@ -84,7 +84,7 @@ h1{
 .panel{
   position: relative;
   width: 500px;
-  height: 330px;
+  height: auto;
   position: absolute;
   z-index: 99;
   top: 200px;

@@ -25,6 +25,7 @@ if($type!=""){
 }
 $_SESSION["roomtype".$room["rid"]]="";
 $url=$domain."cron.php";
+/*
 $curl = curl_init();
 $timeout = 10;
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -33,5 +34,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $timeout);
 $content = curl_exec($curl);
 curl_close($curl);
+*/
+file_get_contents($url);
 echo return_json(array("code"=>200,"tip"=>"退出成功"));
 ?>

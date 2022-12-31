@@ -12,15 +12,34 @@ include dirname(__FILE__)."/../../common.php";
 $date=date("Y/m/");
 $r=$_POST["data"];
 $data=json_decode($r,true);
-$tillday=time()+$settime;
 $user=userinfo();
 if(!$user){
     $uid=0;
 }else{
     $uid=$user["uid"];
-}
-//剩余时长
-$tilltime=date('Y-m-d H:i:s', $tillday);
+}		
+		//剩余时长
+		if($limit_way_tillday==1){//固定值
+		    $tillday=time()+$settime*24*60*60;
+		    $tilltime=date('Y-m-d H:i:s', $tillday);
+		}else{//自定义值,此时tillday为最大到期时间
+		    $tillday=time()+$limit_num_tillday*24*60*60;
+		    if(strtotime($data['tillday'])<=$tillday){//合法时间
+		        $tilltime=$data['tillday'];
+		    }else{
+		        echo return_json(array("code"=>0,"tip"=>"到期时间超过上限"));
+		        exit;
+		    }
+		}
+		//提取次数
+		if($limit_way_times==2){//自定义值
+		    if($data['times']<=$limit_num_times){//合法提取次数
+		        $times=$data['times'];
+		    }else{
+		        echo return_json(array("code"=>0,"tip"=>"提取次数超过上限"));
+		        exit;
+		    }
+		}
 $check=array(1);
 //定义进行循环检查
 while ($check[0]>=1) {

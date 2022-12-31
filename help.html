@@ -32,6 +32,19 @@
                     <table>
                         <td>
                             <strong>
+                                <h1>Browser Notification Check</h1>
+                            </strong>
+                            <br>
+                            <h4>此功能为直传拓展功能，可提示直传的状态</h4><br>
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg" id="check_notification">检  测</button><br><br>
+                                <button type="button" class="layui-btn layui-btn-radius layui-btn-primary layui-btn-lg next">下一项</button><br><br>
+                        </td>
+                    </table>
+                </div>
+                <div>
+                    <table>
+                        <td>
+                            <strong>
                                 <h1>Blob Saving Check</h1>
                             </strong>
                             <br>
@@ -99,6 +112,51 @@
 					body.removeChild(link);
 					window.URL.revokeObjectURL(link.href);
 				};
+    })
+    
+    $("#check_notification").click(function(){
+        if (window.Notification && document.location.protocol=="https:") {
+                if(Notification.permission=="default"){
+                    layer.confirm('此功能需要获取浏览器的通知权限<br>手机浏览器一般不支持此功能',{
+                        cancel:function(index){
+                            layer.close(index);
+                        },
+                        title: "获取权限"
+                    },function(index){
+            			Notification.requestPermission(function(status) {
+            				if (status === "granted") {
+                            try{new Notification("浏览器兼容性测试", {
+                                body:"测试成功"
+                            })}catch(e){
+            				    layer.msg("您的浏览器不支持此功能",{time:1500})
+                            }
+            				} else if(status === "default"){
+            					layer.msg("权限获取失败，可尝试重新获取",{icon:2,time:1500})
+            				} else if(status === "denied"){
+            					layer.msg("您禁用了通知权限",{icon:2,time:1500})
+            				}
+            			});
+                    },function(index){
+                        layer.close(index);
+                    })
+                }else if(Notification.permission=="denied"){
+                    layer.open({
+                        content:"此功能需要获取浏览器的通知权限，您曾禁止了我们获取的此项权限<Br>请尝试重置网站设置以便我们能够重新获取该权限",
+                        title:"无法启用"
+                    })
+            		$("#if_notify_box").prop("checked",false);
+                }else if (Notification.permission === "granted") {
+                            try{new Notification("浏览器兼容性测试", {
+                                body:"测试成功"
+                            })}catch(e){
+            				    layer.msg("您的浏览器不支持此功能",{time:1500})
+                            }
+                }
+            
+        }else{
+            layer.msg("您的浏览器不支持此功能")
+        }
+        
     })
 })
     </script>

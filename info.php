@@ -50,4 +50,14 @@ if (mysqli_connect_errno($db)){
     $verify_type=get_setting("verify_type");
     $verify_num=get_setting("verify_num");
     $if_scan=get_setting("if_scan");
+    $if_gray=get_setting("if_gray");
+    $cloud_way=get_setting("cloud_way");
+    $qiniu_Access_Key=get_setting("qiniu_Access_Key");
+    $qiniu_Secret_Key=get_setting("qiniu_Secret_Key");
+    $qiniu_bucket=get_setting("qiniu_bucket");
+    $qiniu_domain=get_setting("qiniu_domain");
+    $limit_way_times=get_setting("limit_way_times");
+    $limit_num_times=get_setting("limit_num_times");
+    $limit_way_tillday=get_setting("limit_way_tillday");
+    $limit_num_tillday=get_setting("limit_num_tillday");
 ?>

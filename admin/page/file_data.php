@@ -133,13 +133,13 @@
                                 
                             }else{
                                 
-                            layer.msg(res.tip,{icon:1,shade:0.3,time:2000});
+                            layer.msg(res.tip,{icon:2,shade:0.3,time:2000});
                             }
                             table.reload('main-table',{})
                         },
                         error:function(){
                             layer.close(index);
-                            layer.msg("删除失败",{icon:2,shade:0.3,time:2000})
+                            layer.msg("程序出错",{icon:2,shade:0.3,time:2000})
                         }
                     })
                 });
@@ -183,7 +183,11 @@
                         async:false,
                         success:function(res){
                             layer.close(index);
-                            layer.msg(res.tip,{icon:1,shade:0.3,time:2000});
+                            if(res.code==200){
+                                layer.msg(res.tip,{icon:1,shade:0.3,time:2000});
+                            }else{
+                                layer.msg(res.tip,{icon:2,shade:0.3,time:2000});
+                            }
                             table.reload('main-table',{})
                         },
                         error:function(){

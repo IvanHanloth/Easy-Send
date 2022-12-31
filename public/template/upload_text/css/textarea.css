@@ -1,0 +1,13 @@
+.upload_text_textarea_formbox {
+	margin: auto;
+	width: 90%;
+	padding: 1% 2%;
+	height: auto;
+	display: block;
+}
+
+.upload_text_textarea_textarea {
+	overflow-y: auto;
+	resize: none;
+	height: 200px;
+}

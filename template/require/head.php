@@ -12,6 +12,7 @@
     <script src="/public/lib/jquery/jquery.js"></script>
     <script src="/public/lib/layui/layui.js"></script>
     <script src="/public/lib/localforage/localforage.js"></script>
+    <script src="/public/lib/clipboard/dist/clipboard.min.js"></script>
     <?php echo $theme_config["head"]?>
     <?php echo $head?>
   </head>

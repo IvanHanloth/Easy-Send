@@ -1,0 +1,18 @@
+.scan_default_formbox {
+	margin: auto;
+	width: 90%;
+	padding: 1% 2%;
+	height: auto;
+	display: block;
+}
+
+.scan_default_textarea {
+	overflow-y: auto;
+	resize: none;
+	height: 200px;
+}
+
+.scan_default_btn {
+	display: block;
+	margin: auto;
+}

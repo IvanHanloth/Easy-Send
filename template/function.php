@@ -17,11 +17,11 @@ function tem_room_default(){
 
 //upload_file
 function tem_file_drag_box(){
-    global $theme_config;
+    global $theme_config,$limit_num_tillday;
     include dirname(__FILE__)."/./upload_file/drag_upload_box.php";
 }
 function tem_file_drag_whole(){
-    global $theme_config;
+    global $theme_config,$limit_num_tillday;
     include dirname(__FILE__)."/./upload_file/drag_upload_whole.php";
 }
 
@@ -29,7 +29,7 @@ function tem_file_drag_whole(){
 
 //upload_text
 function tem_text_textarea(){
-    global $theme_config;
+    global $theme_config,$limit_num_tillday;
     include dirname(__FILE__)."/./upload_text/textarea.php";
 }
 
@@ -58,7 +58,7 @@ function tem_require_header(){
     include dirname(__FILE__)."/./require/header.php";
 }
 function tem_require_footer(){
-    global $footer;
+    global $footer,$if_gray;
     include dirname(__FILE__)."/./require/footer.php";
 }
 //user

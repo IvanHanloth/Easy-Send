@@ -1,0 +1,28 @@
+
+html,
+body,
+table {
+    margin: 0;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+
+* {
+    font-family: "微软雅黑";
+}
+body{
+    overflow:hidden;
+    background-color: #efefef;
+}
+input{
+    background-color: #00000000 !important;
+}
+
+.layui-carousel-arrow {
+    display: none !important;
+}

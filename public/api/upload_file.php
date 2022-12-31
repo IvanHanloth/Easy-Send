@@ -29,9 +29,28 @@ if ($_FILES["file"]["error"] > 0) {
 	if($mov==TRUE) {
 		$file_url=$domain."upload/files/".$date.$file_name;
 		$file_path=$dir.$file_name;
-		$tillday=time()+$settime;
 		//剩余时长
-		$tilltime=date('Y-m-d H:i:s', $tillday);
+		if($limit_way_tillday==1){//固定值
+		    $tillday=time()+$settime*24*60*60;
+		    $tilltime=date('Y-m-d H:i:s', $tillday);
+		}else{//自定义值,此时tillday为最大到期时间
+		    $tillday=time()+$limit_num_tillday*24*60*60;
+		    if(strtotime($_POST['tillday'])<=$tillday){//合法时间
+		        $tilltime=$_POST['tillday'];
+		    }else{
+		        echo return_json(array("code"=>0,"tip"=>"到期时间超过上限"));
+		        exit;
+		    }
+		}
+		//提取次数
+		if($limit_way_times==2){//自定义值
+		    if($_POST['times']<=$limit_num_times){//合法提取次数
+		        $times=$_POST['times'];
+		    }else{
+		        echo return_json(array("code"=>0,"tip"=>"提取次数超过上限"));
+		        exit;
+		    }
+		}
 		$check=array(1);
 		//定义进行循环检查
 		while ($check[0]>=1) {

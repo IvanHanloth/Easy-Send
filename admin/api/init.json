@@ -83,7 +83,13 @@
               "target": "_self"
             }
           ]
-        }
+        },
+         {
+            "title":"数据监控",
+            "icon":"fa fa-compass",
+            "href":"page/cron.php",
+            "target":"_self"
+         }
       ]
     },
     {

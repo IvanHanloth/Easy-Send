@@ -7,7 +7,7 @@
         })
     })
 </script>
-<?php
+<?php 
 }
 echo $header;
 

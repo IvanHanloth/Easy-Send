@@ -42,7 +42,7 @@ if($room["state"]!="send-finish" and $room["state"]!="sending"){
         echo return_json(array("code"=>100,"tip"=>"房间不存在"));
         exit;
     }
-    $sql="SELECT * FROM `roomdata` WHERE binary `roomid`='{$roomid}'";
+    $sql="SELECT `rdid`,`url`,`num`,`roomid`,`size`,`origin`,`total` FROM `roomdata` WHERE binary `roomid`='{$roomid}'";
     $result=mysqli_query($db,$sql);
     $result=mysqli_fetch_all($result,MYSQLI_ASSOC);
     echo return_json($result);

@@ -25,7 +25,16 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">主题名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="theme" lay-verify="required" autocomplete="off" placeholder="请输入主题名称" class="layui-input" lay-filter="theme">
+                    <select name="theme">
+                    <?php
+                    $theme_dir=scandir(dirname(__FILE__)."/../../theme/");
+                    foreach ($theme_dir as $dirname){
+                        if($dirname=="." or $dirname==".."){
+                            continue;
+                        }
+                     echo "<option value='{$dirname}'>{$dirname}</option>";
+                    }
+                    ?></select>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -58,6 +67,14 @@
                     </div>
             </div>
             <blockquote class="layui-elem-quote layui-quote-nm">扫码功能说明：<br>扫码功能需要网站使用https协议访问，否则无法调用摄像头进行扫码<br>扫码功能地址：网址/scan 部分主题可能不会提供扫码功能入口</blockquote>
+            <div class="layui-form-item">
+                <label class="layui-form-label">是否启用网站灰度</label>
+                    <div class="layui-input-block">
+                      <input type="radio" name="if_gray" value="on" title="启用">
+                      <input type="radio" name="if_gray" value="off" title="关闭">
+                    </div>
+            </div>
+            <blockquote class="layui-elem-quote layui-quote-nm">网站灰度功能用于在大型悼念活动中将网站主页设为灰色以示哀悼。<br>此功能可能会延长网站加载速度</blockquote>
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 40px;">
             <legend>SEO设置</legend>
         </fieldset>

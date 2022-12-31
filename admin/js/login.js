@@ -36,7 +36,7 @@
                             layer.msg(result.tip,{
                                 icon:1,
                                 shade:0.3,
-                                time:2500,
+                                time:2000,
                                 end:function(){
                                     window.location.href="/admin";
                                 }

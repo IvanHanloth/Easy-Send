@@ -102,6 +102,27 @@ foreach ($mobile_browser as $device) {
 }
 return $is_mobile;
 }
+
+//获取指定目录下所有文件，返回包含由directory组成的完整文件路径数组，目录以/结尾
+function get_files_from_dir($directory){
+    if (is_dir($directory)) {
+        $files=scandir($directory);
+        $res=array();
+        foreach($files as $filename) {
+                if ($filename != '.' && $filename != '..') { // 一定要排除两个特殊的目录
+                    $subFile = $directory . $filename; //将目录下的文件与当前目录相连
+                    if (is_file($subFile)) { // 如果是文件条件则成立
+                        array_push($res,$subFile);
+                    } 
+                } 
+            }
+    }else{
+        $res=false;
+    }
+    return $res;
+}
+
+
 /*
 
 
@@ -113,6 +134,7 @@ return $is_mobile;
 
 
 */
+//获取指定设置项
 function get_setting($name){
     global $db;
     $result=mysqli_query($db,"SELECT `content` FROM `setting` WHERE `name`='{$name}'");
@@ -123,11 +145,15 @@ function get_setting($name){
         return $result[0];
     }
 }
+
+//保存指定设置项
 function save_setting($name,$content){
     global $db;
     $result=mysqli_query($db,"UPDATE `setting` SET `content`='{$content}' WHERE `name`='{$name}'");
     return $result;
 }
+
+//通过id获取data详细信息
 function get_data_by_id($id,$field){
     global $db;
     if($field!="*"){
@@ -144,18 +170,37 @@ function get_data_by_id($id,$field){
         return $result[0];
     }
 }
+
+//通过id保存data
 function save_data_by_id($id,$name,$content){
     global $db;
     $result=mysqli_query($db,"UPDATE `data` SET `{$name}`='{$content}' WHERE `id`='{$id}'");
     return $result;
 }
+
+//通过id删除Data
 function delete_data_by_id($id){
-    global $db;
-    $info=mysqli_query($db,"SELECT * FROM data` WHERE `id`='{$id}'");
+    global $db,$domain;
+    $info=mysqli_query($db,"SELECT * FROM `data` WHERE `id`='{$id}'");
+    $info=mysqli_fetch_assoc($info);
+    $result=false;
     if($info["type"]==1){
-        $res=unlink($info["path"]);
-        if($res){
-            $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+        if($info["cloud_way"]=="" or $info["cloud_way"]=="server"){
+            $res=unlink($info["path"]);
+            if($res){
+                $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+            }
+        }elseif($info['cloud_way']=="qiniu"){
+            $dir=dirname(__FILE__)."/./temp/qiniu_delete/";
+            if(!is_dir($dir)) {
+            	mkdir($dir,0777,true);
+            }
+            file_put_contents($dir.$info['data'],$info['data']);
+            $query=file_get_contents($domain."public/api/qiniu.php?action=delete");
+            $query=json_decode($query,true);
+            if($query["code"]==200){
+                $result=mysqli_query($db,"DELETE FROM `data` WHERE `id`='{$id}'");
+            }
         }
     }elseif($info["type"]==2){
         $res=true;
@@ -168,6 +213,8 @@ function delete_data_by_id($id){
     }
     return $result;
 }
+
+//数据库计数，第二个参数为需要指定的列，第三个参数为附加在查询指令最后的筛选条件
 function count_sql($table,$field='*',$add=""){
     global $db;
     if($field!="*"){
@@ -192,6 +239,7 @@ function count_sql($table,$field='*',$add=""){
 
 
 */
+//获取room所有信息
 function roominfo($roomtoken=""){
     global $db;
     session_start();
@@ -212,6 +260,7 @@ function roominfo($roomtoken=""){
         }
     }
 }
+//根据rid删除roomdata
 function delete_roomdata($rid,$delete_room=false){
     global $db;
     $info=mysqli_query($db,"SELECT * FROM `room` WHERE binary `rid` = '{$rid}'");
@@ -245,6 +294,7 @@ function delete_roomdata($rid,$delete_room=false){
 
 
 */
+//获取用户信息
 function userinfo($usertoken=""){
     global $db;
     if($usertoken==""){
