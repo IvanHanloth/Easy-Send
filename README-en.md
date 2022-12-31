@@ -87,7 +87,6 @@ session, curl, fileinfo, ZipArchive
 #### V3.3.0 (updated on 2023/1/1)
 New year new life. On New Year's Day, Ivan Hanloth wishes everyone a happy new year, good health, good luck in everything and smooth work!
 - [New] Connect to Qiniu Cloud Object Storage
-- [New] colorful theme
 - [New] Custom extraction times, expiration time function
 - [New] website grayscale function
 - [New] background data monitoring page
