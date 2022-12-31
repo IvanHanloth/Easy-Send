@@ -66,7 +66,8 @@ session, curl, fileinfo, ZipArchive
  - [x] Online update
  - [x] File direct transfer
  - [x] User Center
- - [ ] Connect with Qiniuyun
+ - [x] Connect with Qiniuyun
+ - [x] Click to copy the extract code
 ## Contact the author
 * QQ:1580272392
 * Email:ivan@hanloth.com
@@ -83,6 +84,23 @@ session, curl, fileinfo, ZipArchive
 - Easy-Send documentation (http://doc.o5g.top/docs/easy-send-docs-help/ ), suitable for website owners and managers to read
 - Easy-Send development documentation (http://doc.o5g.top/docs/easy-send-docs-develop/ ), suitable for developers and programmers to read
 ## Update log
+#### V3.3.0 (updated on 2023/1/1)
+New year new life. On New Year's Day, Ivan Hanloth wishes everyone a happy new year, good health, good luck in everything and smooth work!
+- [New] Connect to Qiniu Cloud Object Storage
+- [New] colorful theme
+- [New] Custom extraction times, expiration time function
+- [New] website grayscale function
+- [New] background data monitoring page
+- [New] Click to copy the extraction code
+- [New] Reminder function of direct transmission status change
+- [Optimization] background theme modification process
+- [Optimization] Shorten the display time of some prompts
+- [Optimization] Direct transfer room exit speed
+- [Optimization] Adjust the details of themes and templates
+- [Optimization] Adjust the style name in the template to prevent conflicts with the theme
+- [Fix] The problem of file upload status reset error
+- [Fix] There may be an error in the border of the user center
+- [Fix] The problem that some prompt icons are displayed incorrectly
 #### V3.2.0 (updated on 2022/11/27)
 -New user functions
 -Newly added code scanning function
