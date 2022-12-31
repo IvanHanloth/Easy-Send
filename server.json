@@ -1,7 +1,15 @@
 {
-    "announcement": "欢迎使用Easy-Send！<br>V3.2.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”", 
+    "announcement": "<strong>新年快乐！</strong><br>V3.3.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”<br>项目说明文档：http://doc.hanloth.cn/docs/easy-send-docs-help<br>说明文档备用地址：http://doc.o5g.top/docs/easy-send-docs-help", 
     "update": [
-         {
+        {
+            "version_num": 330, 
+            "version": "V3.3.0", 
+            "description": "新年伊始，万象更新。元旦佳节，Ivan Hanloth祝大家新年快乐，身体健康，万事如意，工作顺利！<br>【新增】对接七牛云对象存储<br>【新增】自定义提取次数、过期时间功能<br>【新增】网站灰度功能<br>【新增】后台数据监控页面<br>【新增】提取码点击复制功能<br>【新增】直传状态变更提醒功能<br>【优化】后台主题修改流程<br>【优化】缩短部分提示显示时间<br>【优化】直传房间退出速度<br>【优化】各主题及模板细节调整<br>【优化】模板内样式名称调整，防止与主题冲突<br>【修复】文件上传状态重置出错的问题<br>【修复】可能出现用户中心边框出错的问题<br>【修复】部分提示图标显示错误的问题<strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份。<br>此次更新中，“到期时间”配置单位变更，请注意查看</strong>", 
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.3.0-sql.zip", 
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.3.0-code.zip", 
+            "time": "2023/1/1", 
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.3.0-all.zip"
+        },{
             "version_num": 320, 
             "version": "V3.2.0", 
             "description": "新增用户功能<br>新增扫码功能<br>修复后台文本数据统计出错的问题<br>修复后台报错出错的问题<br>修复后台修改提取码长度出错的问题<br>修复后台开关无效导致部分功能无法关闭的问题<br>优化了错误提示<br>优化了静态资源的引用<br>优化默认主题（default）和orange主题视觉视觉设计<strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份。<br>另外，此版本需要重新配置伪静态，请查看根目录下“安装说明.txt”（文件名可能会乱码）</strong>", 
