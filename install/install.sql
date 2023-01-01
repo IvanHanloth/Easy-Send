@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `setting` (
 
 INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (1, 'account', 'admin', '管理员账户'),
-(2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ==', '管理员密码'),
+(2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '管理员密码'),
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
 (4, 'header', '', '网站header'),
 (5, 'footer', '', '网站footer'),
