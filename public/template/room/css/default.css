@@ -9,16 +9,17 @@
 	padding-left: 0px;
 	text-align: center;
 	border: 0px;
-	border-bottom: 2px solid #00e9d2;
+	border-bottom: 2px solid var(--some_color);
 	min-width: 200px;
+	background-color: #0000;
 }
 
 .room_default_get:hover {
-	border-bottom: 2px solid #00bdab !important;
+	border-bottom: 2.2px solid var(--some_color) !important;
 }
 
 .room_default_get:focus {
-	border-bottom: 2px solid #02aa9a !important;
+	border-bottom: 2px solid var(--main_color) !important;
 }
 
 .room_default_btn {

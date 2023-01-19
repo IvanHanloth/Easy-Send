@@ -20,5 +20,33 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 	font-weight: bold;
 	line-height: 30px;
 	letter-spacing: 10px;
-	color: #00e9d2;
+	color: #19ded3;
 }
+  *::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+  }
+  *::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius   : 8px;
+  background-color: var(--main_color);
+  background-image: -webkit-linear-gradient(
+      45deg,
+      var(--some_color) 10%,
+      transparent 10%,
+      transparent 30%,
+      var(--some_color) 30%,
+    
+      var(--some_color) 50%,
+      transparent 50%,
+      transparent 70%,
+      var(--some_color) 70%,
+    
+      var(--some_color) 90%,
+      transparent 90%,
+      transparent 100%,
+      var(--some_color) 100%,
+      transparent
+  );
+  }

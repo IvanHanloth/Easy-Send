@@ -9,22 +9,22 @@
   <div class="layui-upload-drag layui-anim layui-anim-upbit upload_file_drag_upload_box_dragbox" id="upload" data-anim="layui-anim-down">
     <div class="info">
       <i class="layui-icon layui-anim layui-anim-upbit <?php echo $theme_config["some_css"]?>" data-anim="layui-anim-down"></i>
-      <p>点击上传，或将文件拖拽到此处</p>
-      <div id="upload-size-info">Loading…</div>
+      <p class="<?php echo $theme_config["some_css"]?>">点击上传，或将文件拖拽到此处</p>
+      <div id="upload-size-info" class="<?php echo $theme_config["some_css"]?>">Loading…</div>
       <div class="layui-hide info" id="upload-progress">
         <div class="layui-progress layui-progress-big" lay-showpercent="yes" lay-filter="progress">
           <div class="layui-progress-bar <?php echo $theme_config["main_css"]?>" lay-percent=""></div>
         </div>
       </div>
     </div>
-    <p id="local-info"></p>
+    <p id="local-info" class="<?php echo $theme_config["some_css"]?>"></p>
   </div>
   <div class="layui-hide info" id="upload-info">
     <div id="file-info" class="info layui-hide layui-anim layui-anim-upbit">
         <img id="file-qrcode" class="qrcode" src="/public/template/public/img/placeholder.svg"><br>
         <span class="code" id="file-code"></span><br>
-        <span>剩余查看次数:</span><span style="color: #FF5722;" id="file-leave-times"></span><br>
-        <span>到期时间:</span><span style="color: #FF5722;" id="file-leave-tillday"></span><br><br>
+        <span>剩余查看次数:</span><span style="color:  var(--some_color);" id="file-leave-times"></span><br>
+        <span>到期时间:</span><span style="color:  var(--some_color);" id="file-leave-tillday"></span><br><br>
         <button type="button" class="layui-btn upload_file_drag_upload_box_btn <?php echo $theme_config["main_css"]?>" onclick="FileContinue()">继续上传</button>
     </div>
     <form class="layui-form" style="max-width:500px;margin:auto">

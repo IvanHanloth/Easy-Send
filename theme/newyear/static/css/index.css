@@ -1,0 +1,48 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-image: url("/theme/newyear/static/img/bj.jpg");
+	background-position: center center;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.main {
+	position: fixed;
+	left: 10%;
+	top: 100px;
+	height: calc(90% - 120px);
+	width: 80%;
+	border-radius: 10px;
+	outline: solid 0.2px #fefefe20;
+	overflow: auto;
+}
+@media screen and (max-width:630px) {
+    .main {
+    	left: 4%;
+    	height: calc(95% - 120px);
+    	width: 92%;
+    }
+}
+
+.window {
+	backdrop-filter: blur(5px);
+	background-color: #ffffff45;
+}
+.layui-tab-card > .layui-tab-title .layui-this{
+    background-color: #fff0;
+}
+.layui-tab-card > .layui-tab-title .layui-this::after{
+    border: solid 1px #eee;
+    background-color: #fefefe42;
+}
+.logo{
+    position: fixed;
+    top:25px;
+    width:100%;
+    text-align: center;
+}

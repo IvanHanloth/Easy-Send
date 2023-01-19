@@ -325,6 +325,7 @@ function get_user_info(reset) {
 }
 
 function user_reset(mode) {
+    $("#user_loading").addClass("layui-hide");
     if (mode == "log") {
         $("#user_register_info_input").slideUp();
         $("#user_log_button").html("立即登录");

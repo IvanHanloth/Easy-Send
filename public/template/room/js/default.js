@@ -145,7 +145,7 @@ layui.use(function() {
                     layer.msg(res.tip, {
                         icon: 1
                     });
-                    data_check();
+                    data_check_i();
                 } else {
                     if (res.code == 100) {
                         layer.msg(res.tip, {
@@ -271,12 +271,15 @@ layui.use(function() {
                     time: 2000
                 });
             }
-            Send_Select_time = setTimeout(function() {}, 1);
-            statetime = setTimeout(function() {}, 1);
-            room_receive_time = setTimeout(function() {}, 1);
-            clearTimeout(Send_Select_time);
-            clearTimeout(statetime);
-            clearTimeout(room_receive_time);
+            try{
+                clearInterval(Send_Select_time);
+            }catch{}
+            try{
+                clearInterval(statetime);
+            }catch{}
+            try{
+                clearInterval(room_receive_time);
+            }catch{}
             upload_lock = false;
         });
     });
@@ -302,10 +305,15 @@ function room_reset() {
     $("#room_send_file_name").html("");
     $("#room_send_file").val("");
     $("#room_qrcode").attr("href", "/public/template/public/img/placeholder.svg");
-
-    Send_Select_time = setTimeout(function() {}, 0);
-    statetime = setTimeout(function() {}, 0);
-    room_receive_time = setTimeout(function() {}, 0);
+            try{
+                clearInterval(Send_Select_time);
+            }catch{}
+            try{
+                clearInterval(statetime);
+            }catch{}
+            try{
+                clearInterval(room_receive_time);
+            }catch{}
     upload_lock = false;
     layui.use(function() {
         element = layui.element;
@@ -315,9 +323,8 @@ function room_reset() {
 }
 
 function Send_Select() {
-    Send_Select_time = setTimeout(function() {
+    Send_Select_time = setInterval(function() {
         if ($("#room_send_file").val() == "") {
-            Send_Select();
         } else {
             $("#room_send_button_confirm").removeClass("layui-hide");
             $("#room_send_file_info").removeClass("layui-hide");
@@ -329,7 +336,7 @@ function Send_Select() {
             size = (file.size / (1024 * 1024)).toFixed(2);
             $("#room_send_file_name").html(name);
             $("#room_send_file_size").html(size);
-            clearTimeout(Send_Select_time);
+            clearInterval(Send_Select_time);
             upload_lock = true;
         }
     }, 100)
@@ -341,13 +348,12 @@ function room_upload(index) {
             layer = layui.layer
             element = layui.element
             if (index == 0) {
+                data_check()
                 layer.msg("正在发送…", {
                     icon: 16,
                     time: 3000,
                     shade: 0.3
                 })
-                clearTimeout(statetime)
-                data_check()
             }
             sliceSize = (1024 * 1024) * 0.5; //切片0.5M
             xhr = new XMLHttpRequest();
@@ -358,7 +364,6 @@ function room_upload(index) {
             start = index * sliceSize
             end = start + sliceSize
             if (start >= size) {
-                clearTimeout(statetime)
                 data_check()
                 $("#room_send_connected").addClass("layui-hide")
                 $("#room_send_sending").addClass("layui-hide")
@@ -393,9 +398,7 @@ function room_upload(index) {
         })
     }
 }
-
 function data_check() {
-    statetime = setTimeout(function() {
         $.getJSON("/public/api/room_info.php", function(data) {
             $("#room_roomid").html(data.roomid);
             if (data.type == "send") {
@@ -453,7 +456,10 @@ function data_check() {
                     $("#room_receive_finish").addClass("layui-hide")
                     $("#room_receive_connected").addClass("layui-hide")
                     $("#room_receive_sending").removeClass("layui-hide")
-                } else if (data.state == "finish" || data.state == "send-finish") {
+                } else if (data.state == "send-finish") {
+                    $("#room_receive_connected").addClass("layui-hide")
+                    $("#room_receive_sending").addClass("layui-hide")
+                } else if (data.state == "finish") {
                     $("#room_receive_connected").addClass("layui-hide")
                     $("#room_receive_sending").addClass("layui-hide")
                     $("#room_receive_finish").removeClass("layui-hide")
@@ -466,12 +472,13 @@ function data_check() {
             }
             room_info = data;
         })
-        data_check();
-    }, 3000);
+    }
+function data_check_i() {
+    statetime = setInterval(function(){data_check()}, 3000);
 }
 
 function room_receive() {
-    room_receive_time = setTimeout(function() {
+    room_receive_time = setInterval(function() {
         $.getJSON("/public/api/room_download.php", function(data) {
             if (room_info.state == "waiting" || room_info.state == "connected") {
                 all_blob = [];
@@ -533,8 +540,7 @@ function room_receive() {
                                                                     shade: 0.3
                                                                 })
                                                                 localforage.clear()
-                                                                clearTimeout(statetime)
-                                                                data_check()
+                                                                data_check();
                                                             },
                                                             error: function() {
                                                                 layer.msg("直传出错", {
@@ -542,8 +548,7 @@ function room_receive() {
                                                                     time: 2000,
                                                                     shade: 0.3
                                                                 })
-                                                                clearTimeout(statetime)
-                                                                data_check()
+                                                                data_check();
                                                             }
                                                         })
                                                     } else {
@@ -569,6 +574,5 @@ function room_receive() {
                 }
             }
         })
-        room_receive()
     }, 5000)
 }

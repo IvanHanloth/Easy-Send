@@ -30,9 +30,9 @@ if($dbcount[0]==0) {
 	    $url=$dbinfo["data"];
 	    $name=$dbinfo["origin"];
 	    if($times<=0){
-	        $info='<span>剩余下载次数:</span><span style="color: #FF5722;">'.$times.'</span><br>文件将在<span style="color: #FF5722;">30分钟</span>后删除，请及时保存';
+	        $info='<span>剩余下载次数:</span><span style="color: var(--some_color);">'.$times.'</span><br>文件将在<span style="color: var(--some_color);">30分钟</span>后删除，请及时保存';
 	    }else{
-	        $info='<span>剩余下载次数:</span><span style="color: #FF5722;">'.$times.'</span><br><span>到期时间:</span><span style="color: #FF5722;">'.$tillday.'</span>';
+	        $info='<span>剩余下载次数:</span><span style="color: var(--some_color);">'.$times.'</span><br><span>到期时间:</span><span style="color: var(--some_color);">'.$tillday.'</span>';
 	    }
 		if($times>0) {
 			mysqli_query($db,"UPDATE `data` SET `times` = '{$times}' WHERE binary `gkey` = '{$key}'");
@@ -80,12 +80,10 @@ if($dbcount[0]==0) {
 						</div>
 					</div>
 					<div class="layui-btn-container" style="margin:5px">
-						<button type="button" class="layui-btn layui-btn-sm layui-btn-radius <?php echo $theme_main_css?>"
-						id="cancel">
+						<button type="button" class="layui-btn layui-btn-sm layui-btn-radius <?php echo $theme_main_css?>" id="cancel">
 							取消下载
 						</button>
-						<button type="button" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-warm layui-hide"
-						id="reload">
+						<button type="button" class="layui-btn layui-btn-sm layui-btn-radius layui-btn-warm layui-hide" id="reload">
 							重新下载
 						</button>
 					</div>

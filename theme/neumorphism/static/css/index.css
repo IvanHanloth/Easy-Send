@@ -1,0 +1,75 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #e0e0e0;
+	width: 100%;
+	height: 100%;
+}
+
+.main {
+	position: fixed;
+	left: 10%;
+	top: 100px;
+	border-radius: 41px;
+	background: #e0e0e0;
+	box-shadow: 24px 24px 47px #acacac,
+		-24px -24px 47px #ffffff;
+	height: calc(90% - 120px);
+	width: 80%;
+	overflow: auto;
+}
+@media screen and (max-width:630px) {
+    .main {
+    	left: 4%;
+    	height: calc(95% - 120px);
+    	width: 92%;
+    }
+}
+.layui-tab-card>.layui-tab-title .layui-this {
+	background-color: #fff0;
+}
+
+.layui-tab-card>.layui-tab-title .layui-this::after {
+	border: solid 1px #eee0;
+}
+
+.logo {
+	position: fixed;
+	top: 25px;
+	width: 100%;
+	text-align: center;
+}
+
+.theme_bg_color {
+	color: #000 !important;
+	border-radius: 10px !important;
+	background: #e0e0e0;
+	box-shadow: 5px 5px 10px #cecece,
+		-5px -5px 10px #f2f2f2;
+}
+
+.theme_font_color {
+	color: #797979 !important;
+
+}
+
+ul,
+textarea,
+input,
+button,
+tr,
+.upload_file_drag_upload_box_dragbox {
+	border: 0px !important;
+	border-radius: 10px !important;
+	background: #e0e0e0;
+	box-shadow: 5px 5px 10px #cecece,
+		-5px -5px 10px #f2f2f2;
+}
+
+*::-webkit-scrollbar {
+	width: 0px;
+	height: 1px;
+}

@@ -3,34 +3,6 @@
 本文件为易传文本存储模板文件
 2022/4/3 */
 ?><link rel="stylesheet" type="text/css" href="/public/template/scan/css/default.css">	
-    <style>  .scan_default_textarea::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
-  height: 1px;
-  }
-  .scan_default_textarea::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
-  border-radius   : 8px;
-  background-color: <?php echo $theme_config["main_color"]?>;
-  background-image: -webkit-linear-gradient(
-      45deg,
-      <?php echo $theme_config["some_color"]?> 10%,
-      transparent 10%,
-      transparent 30%,
-      <?php echo $theme_config["some_color"]?> 30%,
-    
-      <?php echo $theme_config["some_color"]?> 50%,
-      transparent 50%,
-      transparent 70%,
-      <?php echo $theme_config["some_color"]?> 70%,
-    
-      <?php echo $theme_config["some_color"]?> 90%,
-      transparent 90%,
-      transparent 100%,
-      <?php echo $theme_config["some_color"]?> 100%,
-      transparent
-  );
-  }</style>
   
   <form class="layui-form scan_default_formbox">
     <div class="layui-form-item layui-form-text layui-anim layui-anim-upbit">
@@ -47,7 +19,7 @@
       </textarea>
     </div>
     <div class="info" id="text-btn">		    
-      <span class="layui-icon layui-anim layui-anim-upbit" style="text-align:center;font-size:10px;cursor: pointer;" id="room_use_tips">&#xe702;&nbsp;&nbsp;<a>点击“开始扫码”即代表您已认真阅读并同意以上使用说明</a></span><br>
+      <span class="layui-icon layui-anim layui-anim-upbit" style="text-align:center;font-size:10px;" id="room_use_tips">&#xe702;&nbsp;&nbsp;<a>点击“开始扫码”即代表您已认真阅读并同意以上使用说明</a></span><br>
       <a href="/scan">
       <button type="button" class="layui-btn scan_default_btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>">开始扫码</button></div></a>
   </form>

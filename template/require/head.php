@@ -13,6 +13,12 @@
     <script src="/public/lib/layui/layui.js"></script>
     <script src="/public/lib/localforage/localforage.js"></script>
     <script src="/public/lib/clipboard/dist/clipboard.min.js"></script>
+    <style>
+        :root {
+          --main_color: <?php echo $theme_config['main_color']?>;
+          --some_color: <?php echo $theme_config['some_color']?>;
+        }
+    </style>
     <?php echo $theme_config["head"]?>
     <?php echo $head?>
   </head>

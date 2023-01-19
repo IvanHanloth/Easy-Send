@@ -8,9 +8,13 @@
 	padding: 1% 2%;
 	height: 200px;
 	display: block;
+	background-color: #00000000;
 }
 
 .upload_file_drag_upload_box_btn {
 	display: block;
 	margin: auto;
+}
+.layui-input{
+    background-color: #fff0;
 }

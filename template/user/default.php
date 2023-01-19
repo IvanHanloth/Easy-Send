@@ -1,7 +1,10 @@
 <script src="/public/template/user/js/default.js"></script>
 <link rel="stylesheet" type="text/css" href="/public/template/user/css/default.css">		
-
-<div id="user_input">
+<div id="user_loading" style="text-align:center">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <h4>Loading...</h4>
+</div>
+<div id="user_input" class="layui-hide">
 		<table id="user_login_table">
 			<td>
 	<form class="layui-form user_log_box" user_log_type="login" id="user_log" action="">
