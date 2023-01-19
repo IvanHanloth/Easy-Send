@@ -1,7 +1,14 @@
 {
     "announcement": "<strong>新年快乐！</strong><br>V3.3.0更新啦，快去更新！<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”<br>项目说明文档：http://doc.hanloth.cn/docs/easy-send-docs-help<br>说明文档备用地址：http://doc.o5g.top/docs/easy-send-docs-help", 
-    "update": [
-        {
+    "update": [{
+            "version_num": 331, 
+            "version": "V3.3.1", 
+            "description": "新的一年即将到来，IvanHanloth带着全新的主题给大家拜年咯<br>【新增】新增新春主题和新拟态主题<br>【新增】新增用户中心加载动画<br>【优化】主题主副色改为变量调用",
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.3.1-sql.zip", 
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.3.1-code.zip", 
+            "time": "2023/1/1", 
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.3.1-all.zip"
+        },{
             "version_num": 330, 
             "version": "V3.3.0", 
             "description": "新年伊始，万象更新。元旦佳节，Ivan Hanloth祝大家新年快乐，身体健康，万事如意，工作顺利！<br>【新增】对接七牛云对象存储<br>【新增】自定义提取次数、过期时间功能<br>【新增】网站灰度功能<br>【新增】后台数据监控页面<br>【新增】提取码点击复制功能<br>【新增】直传状态变更提醒功能<br>【优化】后台主题修改流程<br>【优化】缩短部分提示显示时间<br>【优化】直传房间退出速度<br>【优化】各主题及模板细节调整<br>【优化】模板内样式名称调整，防止与主题冲突<br>【修复】文件上传状态重置出错的问题<br>【修复】可能出现用户中心边框出错的问题<br>【修复】部分提示图标显示错误的问题<br><strong>注意！此版本存在主题变更，可能会覆盖您个人的更改，请先对相应目录(theme)进行备份。<br>此次更新中，“到期时间”配置单位变更，请注意查看<br><h1>更新时若提示“Unknown column 'recevieuid' in 'room'”，请直接访问 域名/update/?step=5 完成更新即可</h1></strong>", 
