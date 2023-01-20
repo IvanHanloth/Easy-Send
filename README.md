@@ -40,24 +40,19 @@ session、curl、fileinfo、ZipArchive
 * 详细使用方法请查看Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ）
 ## 注意！
 * 从V2升级至V3需要完全覆盖网站目录，重新配置各项设置(即完全重装)
-* 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决，提供了浏览器兼容性检测)
+* 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决，提供了浏览器兼容性检测。使用第三方云存储不会出现此问题)
 * v3.0以上版本需要配置伪静态方能使用，参见根目录下的安装说明
 * v3.0以上版本支持文件伪直传，该功能会耗费流量及服务器资源
 * v3.0以上版本支持文件伪直传，该功能需要浏览器支持localStorage和blob下载(与提取文件时状况相同，部分国产浏览器如UC、夸克、QQ等均无法正常使用)
 ## 演示
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
 
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
-
+![](https://ivan.o5g.top/usr/uploads/2023/01/940968649.png)
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
-
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
+![image.png](https://ivan.o5g.top/usr/uploads/2023/01/2167890129.png)
 ## ToDo
  - [x] 二维码分享
  - [x] 一键安装
@@ -84,7 +79,12 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
-#### V3.3.0（更新于2023/1/1）
+#### V3.3.1（更新于2023/1/20）
+新的一年即将到来，IvanHanloth带着全新的主题给大家拜年咯
+- 【新增】新增新春主题和新拟态主题
+- 【新增】新增用户中心加载动画
+- 【优化】主题主副色改为变量调用
+#### V3.3.0（更新于2023/1/1）  
 新年伊始，万象更新。元旦佳节，Ivan Hanloth祝大家新年快乐，身体健康，万事如意，工作顺利！
 - 【新增】对接七牛云对象存储
 - 【新增】自定义提取次数、过期时间功能
