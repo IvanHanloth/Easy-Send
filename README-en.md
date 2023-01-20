@@ -46,18 +46,12 @@ session, curl, fileinfo, ZipArchive
 * Versions above v3.0 support pseudo-direct file transfer. This function requires the browser to support localStorage and blob download (the situation is the same as when extracting files, and some domestic browsers such as UC, Quark, QQ, etc. cannot work normally)
 ## Demo
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
-
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
-
+![](https://ivan.o5g.top/usr/uploads/2023/01/940968649.png)
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
-
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
+![image.png](https://ivan.o5g.top/usr/uploads/2023/01/2167890129.png)
 ## ToDo
  - [x] QR code sharing
  - [x] One-click installation
@@ -84,6 +78,11 @@ session, curl, fileinfo, ZipArchive
 - Easy-Send documentation (http://doc.o5g.top/docs/easy-send-docs-help/ ), suitable for website owners and managers to read
 - Easy-Send development documentation (http://doc.o5g.top/docs/easy-send-docs-develop/ ), suitable for developers and programmers to read
 ## Update log
+#### V3.3.1 (updated on 2023/1/20)
+The spring festival is coming. Ivan Hanloth is giving you a New Year greeting with a new theme
+- [Add] New spring theme and new mimetic theme
+- [Add] Add user center loading animation
+- [Optimization] Change the main and secondary colors of the theme to variable call
 #### V3.3.0 (updated on 2023/1/1)
 New year new life. On New Year's Day, Ivan Hanloth wishes everyone a happy new year, good health, good luck in everything and smooth work!
 - [New] Connect to Qiniu Cloud Object Storage
