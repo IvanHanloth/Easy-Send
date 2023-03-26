@@ -47,17 +47,12 @@ session、curl、fileinfo、ZipArchive
 ## 演示
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
 
-![](https://ivan.o5g.top/usr/uploads/2022/08/Easy-Send-preview-3.png)
-
+![](https://ivan.o5g.top/usr/uploads/2023/01/940968649.png)
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
-
 ![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
-
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/2575794277.png)
+![image.png](https://ivan.o5g.top/usr/uploads/2023/01/2167890129.png)
 ## ToDo
  - [x] 二维码分享
  - [x] 一键安装
@@ -84,7 +79,12 @@ session、curl、fileinfo、ZipArchive
 - Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
 - Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
-#### V3.3.0（更新于2023/1/1）
+#### V3.3.1（更新于2023/1/20）
+新的一年即将到来，IvanHanloth带着全新的主题给大家拜年咯
+- 【新增】新增新春主题和新拟态主题
+- 【新增】新增用户中心加载动画
+- 【优化】主题主副色改为变量调用
+#### V3.3.0（更新于2023/1/1）  
 新年伊始，万象更新。元旦佳节，Ivan Hanloth祝大家新年快乐，身体健康，万事如意，工作顺利！
 - 【新增】对接七牛云对象存储
 - 【新增】自定义提取次数、过期时间功能
