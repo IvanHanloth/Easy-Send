@@ -160,6 +160,7 @@ layui.use(function() {
                 }
             });
         } else if (cloud_way == "qiniu") {
+            import("https://cdnjs.cloudflare.com/ajax/libs/qiniu-js/3.4.1/qiniu.min.js");
             upload.render({
                 elem: '#upload',
                 auto: false,

@@ -4,7 +4,6 @@
 2022/4/3 */
 ?>
     <link rel="stylesheet" type="text/css" href="/public/template/upload_file/css/drag_upload_box.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qiniu-js/3.4.1/qiniu.min.js"></script>
     <script src="/public/template/upload_file/js/drag_upload_box.js"></script>
   <div class="layui-upload-drag layui-anim layui-anim-upbit upload_file_drag_upload_box_dragbox" id="upload" data-anim="layui-anim-down">
     <div class="info">
