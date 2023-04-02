@@ -2,13 +2,13 @@
 注意，需要配置伪静态才能正常使用！
 
 Apache：
-RewriteRule ^/download/(\w*)/(.*)$ /public/api/file_download.php?key=$1;
+RewriteRule ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
 RewriteRule ^/app+(\/?)$ /index.php?mode=app;
 RewriteRule ^/user+(\/?)$ /index.php?mode=user;
 
 
 Nginx（推荐）：
+rewrite ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
 rewrite ^/app+(\/?)$ /index.php?mode=app;
 rewrite ^/user+(\/?)$ /index.php?mode=user;
-rewrite ^/download/(\w*)/(.*)$ /public/api/file_download.php?key=$1;
 

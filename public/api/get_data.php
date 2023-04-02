@@ -39,7 +39,7 @@ if($dbcount[0]==0) {
 		        $rdata=$dbinfo['data'];
 		    }else{
     		    if($dbinfo["cloud_way"]=="" or $dbinfo["cloud_way"]=="server"){
-    			    $rdata=$domain."download/".$dbinfo["gkey"]."/{$dbinfo['origin']}";
+    			    $rdata=$domain."download/?key=".$dbinfo["gkey"];
     		    }elseif($dbinfo["cloud_way"]=="qiniu"){
         		    include dirname(__FILE__)."/./qiniu.php";
                     $baseUrl = $qiniu_domain.$dbinfo["data"];
