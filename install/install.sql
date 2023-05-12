@@ -1,4 +1,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -7,58 +9,65 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 
-CREATE TABLE IF NOT EXISTS `data` (
+DROP TABLE IF EXISTS `data`;
+CREATE TABLE `data` (
   `id` int(11) NOT NULL,
   `gkey` varchar(4) NOT NULL COMMENT '提取码',
   `type` int(11) NOT NULL COMMENT '1-文件,2-文本',
-  `method` text NOT NULL COMMENT '文本存储方式1-数据库存储,2-文件存储',
-  `cloud_way` text NOT NULL,
-  `preview` text NOT NULL,
+  `method` text COMMENT '文本存储方式1-数据库存储,2-文件存储',
+  `cloud_way` text,
+  `preview` text,
   `data` text NOT NULL,
-  `origin` text NOT NULL COMMENT '文件原名',
-  `path` text NOT NULL,
+  `origin` text COMMENT '文件原名',
+  `path` text,
   `tillday` text NOT NULL COMMENT '到期时间戳',
   `times` int(11) NOT NULL COMMENT '剩余次数',
   `uid` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
-CREATE TABLE IF NOT EXISTS `room` (
+TRUNCATE TABLE `data`;
+DROP TABLE IF EXISTS `room`;
+CREATE TABLE `room` (
   `rid` int(11) NOT NULL,
-  `roomid` text NOT NULL,
-  `password` text NOT NULL,
-  `roomtoken` text NOT NULL,
-  `state` text NOT NULL,
-  `starttime` text NOT NULL,
-  `endtime` text NOT NULL,
-  `size` int(11) NOT NULL,
-  `origin` text NOT NULL,
-  `total` int(11) NOT NULL,
-  `send` text NOT NULL,
-  `receive` text NOT NULL,
+  `roomid` text,
+  `password` text,
+  `roomtoken` text,
+  `state` text,
+  `starttime` text,
+  `endtime` text,
+  `size` int(11) DEFAULT NULL,
+  `origin` text,
+  `total` int(11) DEFAULT NULL,
+  `send` text,
+  `receive` text,
   `senduid` int(11) NOT NULL DEFAULT '0',
   `receiveuid` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `roomdata` (
+TRUNCATE TABLE `room`;
+DROP TABLE IF EXISTS `roomdata`;
+CREATE TABLE `roomdata` (
   `rdid` int(11) NOT NULL,
-  `roomid` text NOT NULL,
-  `num` int(11) NOT NULL,
-  `url` text NOT NULL,
-  `path` text NOT NULL,
-  `size` int(11) NOT NULL,
-  `origin` text NOT NULL,
-  `total` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+  `roomid` text,
+  `num` int(11) DEFAULT NULL,
+  `url` text,
+  `path` text,
+  `size` int(11) DEFAULT NULL,
+  `origin` text,
+  `total` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS `setting` (
+TRUNCATE TABLE `roomdata`;
+DROP TABLE IF EXISTS `setting`;
+CREATE TABLE `setting` (
   `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `content` text NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
+  `name` text,
+  `content` text,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
+TRUNCATE TABLE `setting`;
+INSERT DELAYED IGNORE INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (1, 'account', 'admin', '管理员账户'),
 (2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '管理员密码'),
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
@@ -106,14 +115,16 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (57, 'limit_num_times', '10', ''),
 (58, 'limit_num_tillday', '10', '');
 
-CREATE TABLE IF NOT EXISTS `user` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
   `uid` int(11) NOT NULL,
-  `account` text NOT NULL,
-  `password` text NOT NULL,
-  `usertoken` text NOT NULL,
-  `mail` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+  `account` text,
+  `password` text,
+  `usertoken` text,
+  `mail` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+TRUNCATE TABLE `user`;
 
 ALTER TABLE `data`
   ADD PRIMARY KEY (`id`),
@@ -135,15 +146,21 @@ ALTER TABLE `user`
 
 
 ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 ALTER TABLE `room`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=36;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
 ALTER TABLE `roomdata`
-  MODIFY `rdid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=975;
+  MODIFY `rdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=975;
+
 ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
 ALTER TABLE `user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
