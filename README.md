@@ -17,8 +17,8 @@
 https://send.hanloth.cn/
 https://send.o5g.top/
 ## 测试站
-https://test.send.o5g.top/
-https://test.send.o5g.top/admin
+https://test.send.hanloth.cn/
+https://test.send.hanloth.cn/admin
 ## 环境依赖
 PHP 7.0+  MySQL 5.5+ 
 ## 推荐环境
@@ -37,7 +37,7 @@ session、curl、fileinfo、ZipArchive
 * 访问install目录一键安装
 * 配置伪静态
 * 如需实现文件过期自动清理及房间销毁，需监控以下网址:域名/cron.php（频率1分钟/次-5分钟/次）（推荐使用https://yrw.hanloth.cn/ 网址监控功能）
-* 详细使用方法请查看Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ）
+* 详细使用方法请查看Easy-Send说明文档（http://doc.hanloth.cn/docs/easy-send-docs-help/ ）
 ## 注意！
 * 从V2升级至V3需要完全覆盖网站目录，重新配置各项设置(即完全重装)
 * 使用v2.2以上版本，提取文件时只能通过"立即下载"按钮进行下载，且在部分国产浏览器中会出问题(使用app端可解决，提供了浏览器兼容性检测。使用第三方云存储不会出现此问题)
@@ -45,14 +45,14 @@ session、curl、fileinfo、ZipArchive
 * v3.0以上版本支持文件伪直传，该功能会耗费流量及服务器资源
 * v3.0以上版本支持文件伪直传，该功能需要浏览器支持localStorage和blob下载(与提取文件时状况相同，部分国产浏览器如UC、夸克、QQ等均无法正常使用)
 ## 演示
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3241990972.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2022/12/3241990972.png)
 
-![](https://ivan.o5g.top/usr/uploads/2023/01/940968649.png)
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1407648030.png)
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/1878165295.png)
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/3474609757.png)
-![image.png](https://ivan.o5g.top/usr/uploads/2022/12/618709812.png)
-![image.png](https://ivan.o5g.top/usr/uploads/2023/01/2167890129.png)
+![](https://ivan.hanloth.cn/usr/uploads/2023/01/940968649.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2022/12/1407648030.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2022/12/1878165295.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2022/12/3474609757.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2022/12/618709812.png)
+![image.png](https://ivan.hanloth.cn/usr/uploads/2023/01/2167890129.png)
 ## ToDo
  - [x] 二维码分享
  - [x] 一键安装
@@ -75,9 +75,9 @@ session、curl、fileinfo、ZipArchive
 * 使用了layuimini作为后台框架
 * blue模板使用了shuyudao/wenchuan开源项目的视觉设计
 ## 文档
-- Easy-Send帮助文档（http://doc.o5g.top/docs/easy-send-docs-use/ ），适合用户阅读
-- Easy-Send说明文档（http://doc.o5g.top/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
-- Easy-Send开发文档（http://doc.o5g.top/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
+- Easy-Send帮助文档（http://doc.hanloth.cn/docs/easy-send-docs-use/ ），适合用户阅读
+- Easy-Send说明文档（http://doc.hanloth.cn/docs/easy-send-docs-help/ ），适合网站主、管理人员阅读
+- Easy-Send开发文档（http://doc.hanloth.cn/docs/easy-send-docs-develop/ ），适合开发者、程序员阅读
 ## 更新日志
 #### V3.3.1（更新于2023/1/20）
 新的一年即将到来，IvanHanloth带着全新的主题给大家拜年咯
