@@ -76,7 +76,7 @@ INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (9, 'uploadsize', '104857600', ''),
 (10, 'textsize', '5000', ''),
 (11, 'textmethod', 'on', ''),
-(12, 'install', '0', '1：已经安装\r\n0：未安装'),
+(12, 'install', '1', '1：已经安装\r\n0：未安装'),
 (13, 'update', '0', '1:需要升级\r\n0:不需要升级'),
 (14, 'version_num', '340', ''),
 (15, 'head', '', ''),
