@@ -154,7 +154,7 @@
                             $("#version_info").append('<div class="layui-colla-content layui-show"><strong>恭喜，您的程序处于最新版本，并不需要更新</strong></div>')
                         }
 
-                        $("#version_info").append('<div class="layui-colla-content layui-show">您也可以选择重装本程序<br><button class="layui-btn layui-btn-danger" id="total-reinstall" type="button" onclick="update("",true)">完全重装</button></div>')
+                        $("#version_info").append('<div class="layui-colla-content layui-show">您也可以选择重装本程序<br><button class="layui-btn layui-btn-danger" id="total-reinstall" type="button" onclick="update('+"''"+',true)">完全重装</button></div>')
                     } else {
                         layer.open({
                             content: "服务器无法连接至Github，正在尝试使用本地网络连接",
