@@ -4,13 +4,19 @@ By Ivan Hanloth
 Easy-Send
 Github:https://github.com/IvanHanloth/Easy-Send
 Gitee:https://gitee.com/IvanHanloth/Easy-Send
-2022/10/16
+2024/2/6
 */
 include dirname(__FILE__)."/./config.php";
-$db = new mysqli($dbconfig['host'], $dbconfig['account'], $dbconfig['password'], $dbconfig['name'], $dbconfig['port']);
-if ($db->connect_error) {
-    die("连接 MySQL 失败: " . $db->connect_error);
+// 检查连接配置是否有效
+if (empty($dbconfig['host']) || empty($dbconfig['account']) || empty($dbconfig['password']) || empty($dbconfig['name']) || empty($dbconfig['port'])) {
+    $db=false;
+}else{
+    $db = new mysqli($dbconfig['host'], $dbconfig['account'], $dbconfig['password'], $dbconfig['name'], $dbconfig['port']);
+    if ($db->connect_error) {
+        $db=false;
+    }
 }
+
     $current_page_url = 'http';
     if ($_SERVER["HTTPS"] == "on") {
         $current_page_url .= "s";
