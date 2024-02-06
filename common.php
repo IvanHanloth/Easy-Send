@@ -145,6 +145,9 @@ function get_files_from_dir($directory)
 function get_setting($name)
 {
     global $db;
+    if(!$db){
+        return false;
+    }
     $db_stmt = $db->prepare("SELECT `content` FROM `setting` WHERE `name`=?");
     $db_stmt->bind_param("s", $name);
     $db_stmt->execute();
