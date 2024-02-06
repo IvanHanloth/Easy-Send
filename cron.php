@@ -52,7 +52,10 @@ foreach($result as $data){
         session_id($data[$type]);
         session_start();
         if($_SESSION["roomtype".$data["rid"]]!=$type or isset($_SESSION["roomtype".$data["rid"]])==false){
-            mysqli_query($db,"UPDATE `room` SET `{$type}`='',`state`='waiting' WHERE `rid`='{$data['rid']}' ");
+            $my_stmt=$db->prepare("UPDATE `room` SET `{$type}`='',`state`='waiting' WHERE `rid`=? ");
+            $my_stmt->bind_param("s",$data['rid']);
+            $my_stmt->execute();
+            $my_stmt->close();
         }
         session_write_close();
     };

@@ -34,13 +34,6 @@ function tem_text_textarea(){
 }
 
 
-
-//download
-function tem_download_big_showpercent(){
-    global $theme_config;
-    include dirname(__FILE__)."/./download/big_showPercent.php";
-}
-
 //scan
 function tem_scan_default(){
     global $theme_config;

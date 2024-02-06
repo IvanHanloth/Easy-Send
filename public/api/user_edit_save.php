@@ -13,8 +13,11 @@ $a=md5($a);
 $a=base64_encode($a);
 $usertoken=md5(base64_encode($data['account'])).md5($a);
 if($data["newpassword"]=="" and $data["renewpassword"]=="" and $data["password"]==""){
-    mysqli_query($db,"UPDATE `user` SET `account`='{$data['account']}',`mail`='{$data['mail']}',`usertoken`='{$usertoken}' WHERE `uid`='{$user['uid']}'");
-    echo return_json(array("code"=>200,"tip"=>"修改成功，请重新登录")); 
+    $my_stmt = $db->prepare("UPDATE `user` SET `account` = ?, `mail` = ?,`usertoken`=? WHERE `uid` = ?");
+    $my_stmt->bind_param("sssi", $data['account'], $data['mail'],$usertoken,$user['uid']);
+    $my_stmt->execute();
+    $my_stmt->close();
+    echo return_json(array("code"=>200,"tip"=>"修改成功，请重新登录"));
     exit;
 }
 if($data['newpassword']!="" or $data["renewpassword"]!=""){
@@ -31,8 +34,11 @@ if($data['newpassword']!="" or $data["renewpassword"]!=""){
     $a=md5($a);
     $a=base64_encode($a);
     $usertoken=md5(base64_encode($data['account'])).md5($a);
-    mysqli_query($db,"UPDATE `user` SET `account`='{$data['account']}',`mail`='{$data['mail']}',`usertoken`='{$usertoken}',`password`='{$a}' WHERE `uid`='{$user['uid']}'");
-    echo return_json(array("code"=>200,"tip"=>"修改成功，请重新登录")); 
+    $my_stmt = $db->prepare("UPDATE `user` SET `account` = ?, `mail` = ?,`usertoken`=?,`password`=? WHERE `uid` = ?");
+    $my_stmt->bind_param("sssii", $data['account'], $data['mail'],$usertoken,$a,$user['uid']);
+    $my_stmt->execute();
+    $my_stmt->close();
+    echo return_json(array("code"=>200,"tip"=>"修改成功，请重新登录"));
     exit;
 }
 ?>

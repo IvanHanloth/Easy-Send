@@ -4,14 +4,12 @@
 Apache：
 RewriteEngine on
 RewriteBase /
-RewriteRule ^download/?$ /index.php?mode=download [QSA,L]
 RewriteRule ^user/?$ /index.php?mode=user [QSA,L]
 RewriteRule ^app/?$ /index.php?mode=app [QSA,L]
 
 
 
 Nginx（推荐）：
-rewrite ^/download+(?:\/?)+(.*)$ /index.php?mode=download&$1;
 rewrite ^/app+(\/?)$ /index.php?mode=app;
 rewrite ^/user+(\/?)$ /index.php?mode=user;
 

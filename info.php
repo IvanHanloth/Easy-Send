@@ -7,9 +7,9 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 2022/10/16
 */
 include dirname(__FILE__)."/./config.php";
-$db=mysqli_connect($dbconfig['host'],$dbconfig['account'],$dbconfig['password'],$dbconfig['name'],$dbconfig['port']);
-if (mysqli_connect_errno($db)){ 
-    echo "连接 MySQL 失败: " . mysqli_connect_error(); 
+$db = new mysqli($dbconfig['host'], $dbconfig['account'], $dbconfig['password'], $dbconfig['name'], $dbconfig['port']);
+if ($db->connect_error) {
+    die("连接 MySQL 失败: " . $db->connect_error);
 }
     $current_page_url = 'http';
     if ($_SERVER["HTTPS"] == "on") {
@@ -27,7 +27,6 @@ if (mysqli_connect_errno($db)){
     $theme=get_setting("theme");
     $announcement=get_setting("announcement");
     $times=get_setting("times");
-    $qrcode=get_setting("qrcode");
     $settime=get_setting("settime");
     $uploadsize=get_setting("uploadsize");
     $textsize=get_setting("textsize");
@@ -60,4 +59,5 @@ if (mysqli_connect_errno($db)){
     $limit_num_times=get_setting("limit_num_times");
     $limit_way_tillday=get_setting("limit_way_tillday");
     $limit_num_tillday=get_setting("limit_num_tillday");
+    $whole_upload=get_setting("whole_upload");
 ?>

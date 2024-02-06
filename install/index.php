@@ -48,6 +48,7 @@ $check=0;//初始化检查项目
         <div class="check-pack">
             <h3 style="text-align:center">用户协议</h3>
             <p><?php require "./license.html";?></p>
+            <div><small>使用本程序即代表您已理解并同意以上协议</small></div>
             <div class="button">
                 <a href="./?step=2"><button>下一步</button></a>
             </div>

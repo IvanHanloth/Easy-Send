@@ -13,6 +13,7 @@
     <script src="/public/lib/layui/layui.js"></script>
     <script src="/public/lib/localforage/localforage.js"></script>
     <script src="/public/lib/clipboard/dist/clipboard.min.js"></script>
+    <script src="/public/lib/jquery.qrcode/jquery.qrcode.min.js"></script>
     <style>
         :root {
           --main_color: <?php echo $theme_config['main_color']?>;

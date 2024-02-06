@@ -14,6 +14,7 @@ echo return_json(array(
     "filesize"=>$uploadsize,
     "textsize"=>$textsize,
     "webname"=>$webname,
+    "announcement"=>$announcement,
     "header"=>$header,
     "footer"=>$footer,
     "mobile"=>array(

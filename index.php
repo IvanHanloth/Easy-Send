@@ -9,8 +9,6 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 include dirname(__FILE__)."/./common.php";
 
 //检查是否安装
-
-
 if (get_setting('install')==false or get_setting('install')==0) {
     echo("<script>window.location.href='/install'</script>");
     exit;
@@ -29,12 +27,6 @@ if (get_setting('install')==false or get_setting('install')==0) {
                     include dirname(__FILE__)."/./theme/".$theme."/user/index.php";
                 }else{
                     include dirname(__FILE__)."/./theme/default/user/index.php";
-                }
-            }elseif($_REQUEST["mode"]=='download'){
-                if(file_exists(dirname(__FILE__)."/./theme/".$theme."/download/index.php")){
-                    include dirname(__FILE__)."/./theme/".$theme."/download/index.php";
-                }else{
-                    include dirname(__FILE__)."/./theme/default/download/index.php";
                 }
             }elseif($_REQUEST["mode"]=='app'){
                 if(file_exists(dirname(__FILE__)."/./theme/".$theme."/app/index.php")){

@@ -30,33 +30,42 @@ if($_REQUEST["step"]=="input") {
 	$a=md5($a);
 	$a=base64_encode($a);
 	$roomtoken=base64_encode(md5($roomid).md5($a));
-	$check=mysqli_query($db,"SELECT count(*) FROM `room` WHERE binary `roomid` = '{$roomid}'");
-	$check=mysqli_fetch_row($check);
-	if($check[0]==0) {
-		mysqli_query($db,"INSERT INTO `room` (`roomid`,`password`,`roomtoken`,`state`) VALUES ('{$roomid}','{$a}','{$roomtoken}','waiting')");
+	$my_stmt=$db->prepare("SELECT * FROM `room` WHERE binary `roomid` = ? AND binary `password` = ?");
+	$my_stmt->bind_param("ss",$roomid,$a);
+	$my_stmt->execute();
+	$result=$my_stmt->get_result();
+	$my_stmt->close();
+	if($result->num_rows==0){
+		$my_stmt=$db->prepare("INSERT INTO `room` (`roomid`,`password`,`roomtoken`,`state`) VALUES (?,?,?,'waiting')");
+		$my_stmt->bind_param("sss",$roomid,$a,$roomtoken);
+		$my_stmt->execute();
+		$my_stmt->close();
 		$_SESSION["roomtoken"]=$roomtoken;
 		$room=roominfo();
 		echo return_json(array("code"=>200,"tip"=>"房间创建成功！","roomid"=>$roomid,"state"=>"waiting"));
 		exit;
-	} elseif($check[0]==1) {
-		$check=mysqli_query($db,"SELECT count(*) FROM `room` WHERE binary `password` = '{$a}' AND binary `roomid`='{$roomid}' AND binary `roomtoken`='{$roomtoken}'");
-		$check=mysqli_fetch_row($check);
+	}elseif($result->num_rows==1){
+		$my_stmt=$db->prepare("SELECT * FROM `room` WHERE binary `password` = ? AND binary `roomid`=? AND binary `roomtoken`=?");
+		$my_stmt->bind_param("sss",$a,$roomid,$roomtoken);
+		$my_stmt->execute();
+		$result=$my_stmt->get_result();
+		$my_stmt->close();
 		$room=roominfo();
-		if($check[0]==1) {
+		if($result->num_rows==1){
 			$room=roominfo($roomtoken);
-			if($room["receive"]!="" and $room["send"]!="" and $_SESSION["roomtoken"]!=$roomtoken) {
+			if($room["receive"]!="" and $room["send"]!="" and $_SESSION["roomtoken"]!=$roomtoken){
 				echo return_json(array("code"=>100,"tip"=>"房间已满员"));
 				exit;
-			} else {
+			}else{
 				$_SESSION["roomtoken"]=$roomtoken;
 				echo return_json(array("code"=>200,"tip"=>"房间加入成功！","roomid"=>$room['roomid'],"state"=>$room["state"]));
 				exit;
 			}
-		} else {
+		}else{
 			echo return_json(array("code"=>100,"tip"=>"房间号或密码错误"));
 			exit;
 		}
-	} else {
+	}else{
 		echo return_json(array("code"=>100,"tip"=>"系统错误"));
 		exit;
 	}
@@ -76,10 +85,16 @@ if($_REQUEST["step"]=="input") {
 			echo return_json(array("code"=>100,"tip"=>"已存在".$r_name));
 			exit;
 		} else {
-			mysqli_query($db,"UPDATE `room` SET `{$r_type}`='{$sessid}',`{$r_type_uid}`='{$uid}' WHERE `rid`='{$room['rid']}'");
+			$my_stmt=$db->prepare("UPDATE `room` SET `{$r_type}`=?,`{$r_type_uid}`=? WHERE `rid`=? ");
+			$my_stmt->bind_param("sii",$sessid,$uid,$room["rid"]);
+			$my_stmt->execute();
+			$my_stmt->close();
 			$room=roominfo();
 			if($room["send"]!="" and $room["receive"]!="") {
-				mysqli_query($db,"UPDATE `room` SET `state`='connected' WHERE `rid`='{$room['rid']}'");
+				$my_stmt=$db->prepare("UPDATE `room` SET `state`='connected' WHERE `rid`=? ");
+				$my_stmt->bind_param("i",$room["rid"]);
+				$my_stmt->execute();
+				$my_stmt->close();
 				$room=roominfo();
 			}
 			echo return_json(array("code"=>200,"tip"=>$r_name.'回归成功！',"state"=>$room["state"]));
@@ -91,11 +106,16 @@ if($_REQUEST["step"]=="input") {
 			echo return_json(array("code"=>100,"tip"=>'上一次传输还未完成'));
 			exit;
 		} else {
-			mysqli_query($db,"UPDATE `room` SET `{$r_type}`='{$sessid}',`{$r_type_uid}`='{$uid}' WHERE `rid`='{$room['rid']}'");
-			$_SESSION['roomtype'.$room["rid"]]=$r_type;
+			$my_stmt=$db->prepare("UPDATE `room` SET `{$r_type}`=?,`{$r_type_uid}`=? WHERE `rid`=? ");
+			$my_stmt->bind_param("sii",$sessid,$uid,$room["rid"]);
+			$my_stmt->execute();
+			$my_stmt->close();
 			$room=roominfo();
 			if($room["send"]!="" and $room["receive"]!="") {
-				mysqli_query($db,"UPDATE `room` SET `state`='connected' WHERE `rid`='{$room['rid']}'");
+				$my_stmt=$db->prepare("UPDATE `room` SET `state`='connected' WHERE `rid`=? ");
+				$my_stmt->bind_param("i",$room["rid"]);
+				$my_stmt->execute();
+				$my_stmt->close();
 				$room=roominfo();
 			}
 			echo return_json(array("code"=>200,"tip"=>$r_name.'创建成功！',"state"=>$room["state"]));

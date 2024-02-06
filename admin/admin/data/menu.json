@@ -1,0 +1,141 @@
+[
+	{
+		"id": 1,
+		"title": "首页",
+		"icon": "layui-icon layui-icon-console",
+		"type": 1,
+		"href":"view/panel/panel.php",
+		"openType": "_iframe"
+	},
+	{
+		"id": 2,
+		"title": "用户管理",
+		"icon": "fa fa-male",
+		"type": 0,
+		"children": [
+			{
+				"id": 21,
+				"title": "用户信息",
+				"icon": "fa fa-user",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/user/user_data.php"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "数据管理",
+		"icon": "fa fa-calendar",
+		"type": 0,
+		"href": "",
+		"children": [
+			{
+				"id": 31,
+				"title": "文件数据",
+				"icon": "fa fa-file",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/data/file_data.php"
+			},
+			{
+				"id": 32,
+				"title": "文本数据",
+				"icon": "fa fa-list-alt",
+				"type": 1,
+				"openType": "_component",
+				"href": "view/data/text_data.php"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"title": "网站设置",
+		"icon": "fa fa-gears",
+		"type": 0,
+		"href": "",
+		"children": [
+			{
+				"id": 41,
+				"title": "系统设置",
+				"icon": "fa fa-cog",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/setting/web_setting.php"
+			},
+			{
+				"id": 42,
+				"title": "上传设置",
+				"icon": "fa fa-cloud-upload",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/setting/upload_setting.php"
+			},
+			{
+				"id": 43,
+				"title": "客户端设置",
+				"icon": "fa fa-location-arrow",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/setting/app_setting.php"
+			},
+			{
+				"id": 44,
+				"title": "网站升级",
+				"icon": "fa fa-arrow-circle-up",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/setting/update.php"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"title": "数据监控",
+		"icon": "fa fa-compass",
+		"type": 1,
+		"href": "view/cron/cron.php",
+		"openType": "_iframe"
+	},
+	{
+		"id": 6,
+		"title": "工具箱",
+		"icon": "fa fa-wrench",
+		"type": 0,
+		"href": "",
+		"children": [
+			{
+				"id": 61,
+				"title": "全部图标",
+				"icon": "fa fa-magic",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/tool/icon.php"
+			},
+			{
+				"id": 62,
+				"title": "颜色选择",
+				"icon": "fa fa-eyedropper",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/tool/colorpicker.php"
+			},
+			{
+				"id": 63,
+				"title": "富文本编辑器",
+				"icon": "fa fa-edit",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/tool/editor.php"
+			},
+			{
+				"id": 64,
+				"title": "文件上传",
+				"icon": "fa fa-cloud-upload",
+				"type": 1,
+				"openType": "_iframe",
+				"href": "view/tool/uploader.php"
+			}
+		]
+	}
+]

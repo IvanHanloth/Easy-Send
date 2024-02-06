@@ -17,24 +17,22 @@ if($room==false){
 }
 $type=$_SESSION["roomtype".$room["rid"]];
 if($type!=""){
-    $query=mysqli_query($db,"UPDATE `room` SET `{$type}`='' WHERE `rid`='{$room['rid']}'");
+    $my_stmt=$db->prepare("UPDATE `room` SET `{$type}`='',`state`='waiting' WHERE `rid`=? ");
+    $my_stmt->bind_param("i",$room['rid']);
+    $query=$my_stmt->execute();
+    $my_stmt->close();
     if(!$query){
         echo return_json(array("code"=>100,"tip"=>"退出失败"));
         exit;
     }
 }
 $_SESSION["roomtype".$room["rid"]]="";
-$url=$domain."cron.php";
-/*
-$curl = curl_init();
-$timeout = 10;
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_FOLLOWLOCATION,true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $timeout);
-$content = curl_exec($curl);
-curl_close($curl);
-*/
-file_get_contents($url);
+ob_clean();
+header("Access-Control-Allow-Origin:*");
+header("Content-type:text/json");
 echo return_json(array("code"=>200,"tip"=>"退出成功"));
+ob_flush();
+flush();
+$url=$domain."cron.php";
+file_get_contents($url);
 ?>

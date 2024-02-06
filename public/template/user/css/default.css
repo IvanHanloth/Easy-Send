@@ -109,7 +109,7 @@
 .user_menu li:hover {
 	background: #efefef;
 	z-index: 22;
-	margin: -10px;
+	transform: scale3d(1.08,1.08,1.08);
 	border-radius: 10px;
 }
 

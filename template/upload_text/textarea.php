@@ -5,7 +5,7 @@
 ?><link rel="stylesheet" type="text/css" href="/public/template/upload_text/css/textarea.css">
     <script src="/public/template/upload_text/js/textarea.js"></script>
   
-  <form class="layui-form upload_text_textarea_formbox" action="">
+  <div class="layui-form upload_text_textarea_formbox">
     <div class="layui-form-item layui-form-text layui-anim layui-anim-upbit" id="text">
       <textarea name="text" placeholder="请输入内容" class="layui-textarea upload_text_textarea_textarea" lay-verify="text" data-anim="layui-anim-down" id="text-textarea"></textarea>
     </div>
@@ -25,15 +25,15 @@
     </div>
   </div>
   </div>
-      <button type="submit" class="layui-btn upload_text_textarea_btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" lay-submit="" lay-filter="save" data-anim="layui-anim-down">立即提交</button></div>
+      <button class="layui-btn upload_text_textarea_btn layui-anim layui-anim-upbit <?php echo $theme_config["main_css"]?>" lay-submit="" lay-filter="save" data-anim="layui-anim-down" id="text-upload">立即提交</button></div>
     <div id="text-info" class="info layui-hide layui-anim layui-anim-upbit">
-        <img id="text-qrcode" class="qrcode" src="/public/template/public/img/placeholder.svg"><br>
+        <div id="text-qrcode" class="qrcode"></div><br>
         <span class="code" id="text-code"></span><br>
         <span>剩余查看次数:</span><span style="color:  var(--some_color);" id="text-leave-times"></span><br>
         <span>到期时间:</span><span style="color:  var(--some_color);" id="text-leave-tillday"></span><br><br>
-        <button type="button" class="layui-btn upload_text_textarea_btn <?php echo $theme_config["main_css"]?>" onclick="TextContinue()">继续上传</button>
+        <button type="button" class="layui-btn upload_text_textarea_btn <?php echo $theme_config["main_css"]?>" id="text-continue">继续上传</button>
     </div>
-  </form>
+</div>
   
     <script>
 layui.use( function(){
