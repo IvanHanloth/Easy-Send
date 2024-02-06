@@ -3,15 +3,9 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
-
 DROP TABLE IF EXISTS `data`;
-CREATE TABLE `data` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `gkey` varchar(4) NOT NULL COMMENT '提取码',
   `type` int(11) NOT NULL COMMENT '1-文件,2-文本',
   `method` text COMMENT '文本存储方式1-数据库存储,2-文件存储',
@@ -22,13 +16,16 @@ CREATE TABLE `data` (
   `path` text,
   `tillday` text NOT NULL COMMENT '到期时间戳',
   `times` int(11) NOT NULL COMMENT '剩余次数',
-  `uid` int(11) NOT NULL DEFAULT '0'
+  `uid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `gkey_3` (`gkey`),
+  KEY `gkey` (`gkey`),
+  KEY `gkey_2` (`gkey`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-TRUNCATE TABLE `data`;
 DROP TABLE IF EXISTS `room`;
-CREATE TABLE `room` (
-  `rid` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `room` (
+  `rid` int(11) NOT NULL AUTO_INCREMENT,
   `roomid` text,
   `password` text,
   `roomtoken` text,
@@ -41,33 +38,33 @@ CREATE TABLE `room` (
   `send` text,
   `receive` text,
   `senduid` int(11) NOT NULL DEFAULT '0',
-  `receiveuid` int(11) NOT NULL DEFAULT '0'
+  `receiveuid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`rid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-TRUNCATE TABLE `room`;
 DROP TABLE IF EXISTS `roomdata`;
-CREATE TABLE `roomdata` (
-  `rdid` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `roomdata` (
+  `rdid` int(11) NOT NULL AUTO_INCREMENT,
   `roomid` text,
   `num` int(11) DEFAULT NULL,
   `url` text,
   `path` text,
   `size` int(11) DEFAULT NULL,
   `origin` text,
-  `total` int(11) DEFAULT NULL
+  `total` int(11) DEFAULT NULL,
+  PRIMARY KEY (`rdid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-TRUNCATE TABLE `roomdata`;
 DROP TABLE IF EXISTS `setting`;
-CREATE TABLE `setting` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `setting` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text,
   `content` text,
-  `description` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `description` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
-TRUNCATE TABLE `setting`;
-INSERT DELAYED IGNORE INTO `setting` (`id`, `name`, `content`, `description`) VALUES
+INSERT INTO `setting` (`id`, `name`, `content`, `description`) VALUES
 (1, 'account', 'admin', '管理员账户'),
 (2, 'password', 'ODdkOWJiNDAwYzA2MzQ2OTFmMGUzYmFhZjFlMmZkMGQ=', '管理员密码'),
 (3, 'webname', '易传 - 跨平台文件文本传输平台', '网站名称'),
@@ -79,18 +76,17 @@ INSERT DELAYED IGNORE INTO `setting` (`id`, `name`, `content`, `description`) VA
 (9, 'uploadsize', '104857600', ''),
 (10, 'textsize', '5000', ''),
 (11, 'textmethod', 'on', ''),
-(12, 'install', '1', '1：已经安装\r\n0：未安装'),
+(12, 'install', '0', '1：已经安装\r\n0：未安装'),
 (13, 'update', '0', '1:需要升级\r\n0:不需要升级'),
-(14, 'version_num', '331', ''),
-(14, 'version_num', '334', ''),
+(14, 'version_num', '340', ''),
 (15, 'head', '', ''),
 (16, 'keywords', '', ''),
 (17, 'description', '', ''),
 (18, 'logo', '/favicon.ico', ''),
-(19, 'version', 'v3.3.1', ''),
+(19, 'version', 'v3.4.0', ''),
 (21, 'announcement', '', ''),
 (22, 'mobile_version', '', ''),
-(23, 'mobile_version_num', '', ''),
+(23, 'mobile_version_num', '211', ''),
 (24, 'mobile_update_description', '', ''),
 (25, 'mobile_description', '', ''),
 (26, 'PC_version', '', ''),
@@ -113,54 +109,16 @@ INSERT DELAYED IGNORE INTO `setting` (`id`, `name`, `content`, `description`) VA
 (55, 'limit_way_times', '1', '限制times的方式，1为固定值，2为最大值'),
 (56, 'limit_way_tillday', '1', '限制tillday的方式，1为固定值，2为最大值'),
 (57, 'limit_num_times', '10', ''),
-(58, 'limit_num_tillday', '10', '');
+(58, 'limit_num_tillday', '10', ''),
+(59, 'whole_upload', 'on', '是否启用整页上传');
 
 DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `uid` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `user` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
   `account` text,
   `password` text,
   `usertoken` text,
-  `mail` text
+  `mail` text,
+  PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-TRUNCATE TABLE `user`;
-
-ALTER TABLE `data`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `gkey_3` (`gkey`),
-  ADD KEY `gkey` (`gkey`),
-  ADD KEY `gkey_2` (`gkey`);
-
-ALTER TABLE `room`
-  ADD PRIMARY KEY (`rid`);
-
-ALTER TABLE `roomdata`
-  ADD PRIMARY KEY (`rdid`);
-
-ALTER TABLE `setting`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`uid`);
-
-
-ALTER TABLE `data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `room`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
-ALTER TABLE `roomdata`
-  MODIFY `rdid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=975;
-
-ALTER TABLE `setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
-
-ALTER TABLE `user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
