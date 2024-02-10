@@ -41,6 +41,7 @@
         layui.use(function() {
             var upload = layui.upload;
             var element = layui.element;
+            var layer = layui.layer;
             var $ = layui.$;
             // 制作多文件上传表格
             var uploadListIns = upload.render({
@@ -102,7 +103,7 @@
                     this.error(index, upload);
                 },
                 allDone: function(obj) { // 多文件上传完毕后的状态回调
-                    console.log(obj)
+                    layer.msg('所有文件已上传完毕');
                 },
                 error: function(index, upload) { // 错误回调
                     var that = this;

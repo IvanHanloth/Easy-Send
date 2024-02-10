@@ -119,6 +119,7 @@
             })
         }
         layui.use(['form', 'layer', 'button', 'element', 'jquery'], function() {
+            $.getJSON("//ivan.hanloth.cn/api/Easy-Send/statistic.php?action=admin-update",()=>{})
             var form = layui.form,
                 layer = layui.layer,
                 button = layui.button,

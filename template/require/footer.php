@@ -37,5 +37,6 @@ layui.use(['translate'], function(){
         translate.execute();
         translate.setAutoDiscriminateLocalLanguage();
     };  
+    $.getJSON("//ivan.hanloth.cn/api/Easy-Send/statistic.php?action=index",()=>{})
 });
 </script>
