@@ -453,7 +453,8 @@ function data_check() {
             }
         }
         $("#room_type").html(mytype);
-        $("#room_state").html(data.state)
+        $("#room_state").html(data.state);
+        $("#room_qrcode").html('');
         $("#room_qrcode").qrcode({
             text:data.qrcode,
             width: 120,
