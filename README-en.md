@@ -119,6 +119,16 @@ TG group: https://t.me/IHopensource
 
 ## Update log
 
+**V3.4.1 (updated 2024/3/9)**
+
+- [Fix] the issue that monitoring files could not delete expired room data
+- [Fix] the issue of direct join error
+- [Fix] the issue of saving file header error in direct receiver
+- [Fix] file server storage database error issue
+- [Fix] Error problem of uploads text and files after opening custom time
+- [Fix] the problem that the background home page display is wrong
+- [Fix] the problem that the background online update cannot be used and the offline update fails
+
 **V3.4.0 (updated on 2024/2/10)**
 
 Spring is here again, and Ivan Hanloth is here to wish everyone a happy New Year! This update will greatly improve the security and compatibility of the program. It is recommended to update as soon as possible!

@@ -233,8 +233,8 @@
                         success: function(data2) {
                             $("#announcement").html(data2.announcement)
                             if (data.now_version_num < data2.update[0].version_num) {
-                                $("#newest_version").style("color", "red")
-                                $("#evaluation").append("<li>存在新版本：" + data2.update[0].version + "可更新</li>")
+                                $("#newest_version").css("color", "red");
+                                $("#evaluation").append("<li>存在新版本：" + data2.update[0].version + "可更新</li>");
                             }
                             $("#newest_version").html(data2.update[0].version)
                             loading.blockRemove("#evaluation-box", 500);

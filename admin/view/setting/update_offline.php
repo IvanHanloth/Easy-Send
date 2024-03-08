@@ -162,10 +162,24 @@
                     $("#stepForm").removeClass("layui-hide");
                     $("#error-page").addClass("layui-hide");
                     loading.loadRemove(100);
-                    need = [];
+                    var need = [];
+                    var current={};
                     $("#newest_version").html(data.update[0].version);
                     data.update.forEach(function(item) {
-                        if (item.version_num >= <?php echo get_setting("version_num"); ?>) {
+                        if(item.version_num == <?php echo get_setting("version_num"); ?>){
+                            need.push({
+                                "version": item.version,
+                                "version_num": item.version_num,
+                                "description": item.description,
+                                "sql_url": item.sql_url,
+                                "code_url": item.code_url,
+                                "all_url": item.all_url,
+                                "time:": item.time
+                            });
+                        }
+                    })
+                    data.update.forEach(function(item) {
+                        if (item.version_num > <?php echo get_setting("version_num"); ?>) {
                             need.push({
                                 "version": item.version,
                                 "version_num": item.version_num,
