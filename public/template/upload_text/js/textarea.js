@@ -53,14 +53,14 @@ class TextUpload {
                 return false;
             }
             var tilltime = Date.parse(new Date($("#text_tillday_selector").val()));
-            tillday = tilltime / 1000;
+            var tillday = tilltime / 1000;
             var nowtime = Date.parse(new Date());
-            now = nowtime / 1000;
+            var now = nowtime / 1000;
             if (tillday < now) {
                 layer.msg("到期时间超过下限", { icon: 2, time: 2000 })
                 return false;
             }
-            if (tillday > now + limit_num_tillday * 24 * 60 * 60) {
+            if (tillday > now + this.limit_num_tillday * 24 * 60 * 60) {
                 layer.msg("到期时间超过上限", { icon: 2, time: 2000 })
                 return false;
             }

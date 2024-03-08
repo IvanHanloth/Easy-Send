@@ -10,6 +10,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 include dirname(__FILE__) . "/../../common.php";
 header("Access-Control-Allow-Origin:*");
 header("Content-type:text/json");
+session_start();
 $room = roominfo();
 if ($room == false) {
     echo return_json(array("code" => 100, "tip" => "房间不存在"));

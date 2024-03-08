@@ -8,7 +8,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 */
 header("Access-Control-Allow-Origin:*");
 header("Content-type:text/json");
-
+session_start();
 include dirname(__FILE__)."/../../common.php";
 $room=roominfo();
 if($room==false){

@@ -110,6 +110,7 @@ if($_REQUEST["step"]=="input") {
 			$my_stmt->bind_param("sii",$sessid,$uid,$room["rid"]);
 			$my_stmt->execute();
 			$my_stmt->close();
+			$_SESSION['roomtype'.$room["rid"]]=$r_type;
 			$room=roominfo();
 			if($room["send"]!="" and $room["receive"]!="") {
 				$my_stmt=$db->prepare("UPDATE `room` SET `state`='connected' WHERE `rid`=? ");

@@ -72,7 +72,7 @@ if ($_FILES["file"]["error"] > 0) {
 			$check = $check->fetch_row();
 			$my_stmt->close();
 		};
-		$my_stmt = $db->prepare("INSERT INTO `data` (`id`, `gkey`, `type`, `data`,`origin`,`path`, `tillday`, `times` ,`uid`) VALUES (NULL, ?, '1', ?,?,?, ?, ?, ?)");
+		$my_stmt = $db->prepare("INSERT INTO `data` (`id`, `gkey`, `type`, `data`,`origin`,`path`, `tillday`, `times` ,`uid`,`cloud_way`) VALUES (NULL, ?, '1', ?,?,?, ?, ?, ?,'server')");
 		$my_stmt->bind_param("sssssii", $key, $file_url, $origin_name, $file_path, $tilltime, $times, $uid);
 		$my_stmt->execute();
 		$my_stmt->close();

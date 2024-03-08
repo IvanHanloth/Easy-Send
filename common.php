@@ -320,27 +320,28 @@ function delete_roomdata($rid, $delete_room = false)
     $info = $info->fetch_assoc();
     $my_stmt->close();
     $my_stmt = $db->prepare("SELECT * FROM `roomdata` WHERE binary `roomid`=?");
-    $my_stmt->bind_param("i", $info['roomid']);
+    $my_stmt->bind_param("s", $info['roomid']);
     $my_stmt->execute();
     $result = $my_stmt->get_result();
     $num = $result->num_rows;
-    if ($num == 0) {
-        return true;
-    }
-    $result = $result->fetch_all(MYSQLI_BOTH);
-    $my_stmt->close();
-    for ($i = 0; $i <= $num; $i++) {
-        $delete_file = unlink($result[$i]["path"]);
-        if ($delete_file == TRUE) {
-            $my_stmt = $db->prepare("DELETE FROM `roomdata` WHERE `rdid`=?");
-            $my_stmt->bind_param("i", $result[$i]['rdid']);
-            $my_stmt->execute();
-            $my_stmt->close();
+    if ($num != 0) {
+        //有roomdata条数
+        $result = $result->fetch_all(MYSQLI_BOTH);
+        $my_stmt->close();
+        $delete_file=true;
+        for ($i = 0; $i <= $num; $i++) {
+            $delete_file = unlink($result[$i]["path"]);
+            if ($delete_file) {
+                $my_stmt = $db->prepare("DELETE FROM `roomdata` WHERE `rdid`=?");
+                $my_stmt->bind_param("i", $result[$i]['rdid']);
+                $my_stmt->execute();
+                $my_stmt->close();
+            }
         }
     }
     if ($delete_room) {
         $my_stmt = $db->prepare("DELETE FROM `room` WHERE `rid`=?");
-        $my_stmt->bind_param("i", $rid);
+        $my_stmt->bind_param("s", $rid);
         $my_stmt->execute();
         $my_stmt->close();
     }

@@ -544,7 +544,7 @@ function room_receive() {
                                                     } else {
                                                         localforage.getItem(String(index)).then(function (value) {
                                                             //all_blob.push(value);
-                                                            all_blob[Number(index)] = value
+                                                            all_blob[Number(index-1)] = value
                                                             blob_save(index + 1);
                                                         }).catch(function (err) {
                                                             // 当出错时，此处代码运行

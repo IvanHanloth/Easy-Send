@@ -43,7 +43,7 @@ class FileUpload {
                 layer.msg("未填写提取次数", { icon: 2, time: 2000 })
                 return false;
             }
-            if ($("#file_times_selector").val() > limit_num_times) {
+            if ($("#file_times_selector").val() > this.limit_num_times) {
                 layer.msg("提取次数超过上限", { icon: 2, time: 2000 })
                 return false;
             }
@@ -58,14 +58,14 @@ class FileUpload {
                 return false;
             }
             var tilltime = Date.parse(new Date($("#file_tillday_selector").val()));
-            tillday = tilltime / 1000;
+            var tillday = tilltime / 1000;
             var nowtime = Date.parse(new Date());
-            now = nowtime / 1000;
+            var now = nowtime / 1000;
             if (tillday < now) {
                 layer.msg("到期时间超过下限", { icon: 2, time: 2000 })
                 return false;
             }
-            if (tillday > now + limit_num_tillday * 24 * 60 * 60) {
+            if (tillday > now + this.limit_num_tillday * 24 * 60 * 60) {
                 layer.msg("到期时间超过上限", { icon: 2, time: 2000 })
                 return false;
             }

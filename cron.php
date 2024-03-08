@@ -51,7 +51,7 @@ foreach($result as $data){
         }
         session_id($data[$type]);
         session_start();
-        if($_SESSION["roomtype".$data["rid"]]!=$type or isset($_SESSION["roomtype".$data["rid"]])==false){
+        if($_SESSION["roomtype".$data["rid"]]!=$type or !isset($_SESSION["roomtype".$data["rid"]])){
             $my_stmt=$db->prepare("UPDATE `room` SET `{$type}`='',`state`='waiting' WHERE `rid`=? ");
             $my_stmt->bind_param("s",$data['rid']);
             $my_stmt->execute();
@@ -66,6 +66,12 @@ foreach($result as $data){
     if($data["send"]=="" and $data["receive"]==""){
         $res=delete_roomdata($data["rid"],true);
         $success++;
+    }
+    if($data['starttime']!=""){
+        if($data['starttime']+3600*24<=$now){
+            $res=delete_roomdata($data["rid"],true);
+            $success++;
+        }
     }
 };
 echo "<br>Totally checked ".$total." rooms , deleted ".$success." rooms , failed ".$faile." times";
