@@ -220,8 +220,8 @@
                 if (data.code == 200) {
                     $("#announcement").html(data.announcement)
                     if (data.now_version_num < data.newest_version_num) {
-                        $("#newest_version").style("color", "red")
-                        $("#evaluation").append("<li>存在新版本：" + data.newest_version + "可更新</li>")
+                        $("#newest_version").css("color", "red");
+                        $("#evaluation").append("<li>存在新版本：" + data.newest_version + "可更新</li>");
                     }
                     $("#newest_version").html(data.newest_version)
                     loading.blockRemove("#evaluation-box", 500);
