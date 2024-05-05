@@ -119,13 +119,21 @@ TG group: https://t.me/IHopensource
 
 ## Update log
 
-**V3.4.1 (updated 2024/3/9)**
+**V3.4.2（updated on 2024/5/5）**
+
+- [Optimization] Change the translation api from remote server to client and improve the loading speed
+- [Fix] the issue of warning reporting on php 8.0 and above version
+- [Fix] the continuous loading in user and other page
+
+**V3.4.1 (updated on 2024/3/9)**
 
 - [Fix] the issue that monitoring files could not delete expired room data
 - [Fix] the issue of direct join error
 - [Fix] the issue of saving file header error in direct receiver
 - [Fix] file server storage database error issue
 - [Fix] Error problem of uploads text and files after opening custom time
+- [Fix] the problem that the background home page display is wrong
+- [Fix] the problem that the background online update cannot be used and the offline update fails
 
 **V3.4.0 (updated on 2024/2/10)**
 
@@ -182,7 +190,7 @@ New year new life. On New Year's Day, Ivan Hanloth wishes everyone a happy New Y
 - Added user functions
 - Added QR code scanning function
 - Fixed the problem of background text data statistics error
--Fixed the problem of background error reporting
+- Fixed the problem of background error reporting
 - Fixed the problem of error in modifying the extraction code length in the background
 - Fixed the issue where some functions cannot be turned off due to invalid background switch
 - Optimized error prompts
@@ -191,8 +199,8 @@ New year new life. On New Year's Day, Ivan Hanloth wishes everyone a happy New Y
 
 **V3.1.3 (updated on 2022/11/23)**
 
--Fixed the problem of error reporting in background online update
--Fixed the problem that the upgrade program could not decompress files
+- Fixed the problem of error reporting in background online update
+- Fixed the problem that the upgrade program could not decompress files
 
 **V3.1.2 (updated on 2022/11/22)**
 
