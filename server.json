@@ -1,6 +1,14 @@
 {
-    "announcement": "v3.4.1版本更新啦，快去更新！<br>由于V3.4.0版本在线更新存在问题，更新至v3.4.1版本需要手动下载最新版release包，覆盖admin目录后才可以正常使用在线更新功能<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”<br>项目说明文档：http://doc.hanloth.cn/docs/easy-send-docs-help<br>说明文档备用地址：http://doc.o5g.top/docs/easy-send-docs-help",
+    "announcement": "v3.4.2版本更新啦，快去更新！<br>由于V3.4.0版本在线更新存在问题，更新至v3.4.1版本需要手动下载最新版release包，覆盖admin目录后才可以正常使用在线更新功能<br>使用过程中出现问题可前往项目页面提出issue<br>开源项目QQ群：390108536，快加入与作者和大佬们交流讨论叭<br>跪求给项目点个小小的“star”<br>项目说明文档：http://doc.hanloth.cn/docs/easy-send-docs-help<br>说明文档备用地址：http://doc.o5g.top/docs/easy-send-docs-help",
     "update": [{
+            "version_num": 342,
+            "version": "V3.4.2",
+            "description": "【优化】网站翻译修改为客户端翻译，提高速度<br>【修复】php8.0+版本出现警告的问题<br>【修复】修复用户中心等页面持续加载的问题",
+            "sql_url": "https://IvanHanloth.github.io/Easy-Send/file/sql/v3.4.2-sql.zip",
+            "code_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.4.2-code.zip",
+            "time": "2024/5/5",
+            "all_url": "https://IvanHanloth.github.io/Easy-Send/file/code/v3.4.2-all.zip"
+        },{
             "version_num": 341,
             "version": "V3.4.1",
             "description": "【修复】监控文件无法删除过期房间数据的问题<br>【修复】直传加入出错问题<br>【修复】直传接收端保存文件头部出错问题<br>【修复】文件服务器存储数据库出错的问题<br>【修复】开启自定义时间后上传文本、文件报错问题<br>【修复】直传二维码显示出错问题<br>【修复】后台首页显示出错问题<br>【修复】后台在线更新无法使用、离线更新出错问题<br>",
