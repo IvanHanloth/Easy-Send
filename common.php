@@ -7,6 +7,7 @@ Gitee:https://gitee.com/IvanHanloth/Easy-Send
 2022/10/16
 */
 require dirname(__FILE__) . "/./info.php";
+error_reporting(0);
 
 /*
 

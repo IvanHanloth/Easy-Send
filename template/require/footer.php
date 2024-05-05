@@ -24,19 +24,9 @@ echo $footer;
 <span id="translate"></span>
 </div>
 <script src="/public/template/public/js/clipboard.js"></script>
+<script src="//res.zvo.cn/translate/translate.js"></script>
 <script>
-  layui.extend({
-    translate: '{/}https://mail_osc.gitee.io/translate_layui/layui_exts/translate/translate' // {/}的意思即代表采用自有路径，即不跟随 base 路径
-
-})
-//使用拓展模块
-layui.use(['translate'], function(){
-    var translate = layui.translate;
-    //当页面加载完后执行翻译操作
-    window.onload = function () {
-        translate.execute();
-        translate.setAutoDiscriminateLocalLanguage();
-    };  
-    $.getJSON("//ivan.hanloth.cn/api/Easy-Send/statistic.php?action=index",()=>{})
-});
+translate.language.setLocal('chinese_simplified'); 
+translate.service.use('client.edge'); 
+translate.execute();
 </script>

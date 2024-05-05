@@ -6,6 +6,7 @@ Github:https://github.com/IvanHanloth/Easy-Send
 Gitee:https://gitee.com/IvanHanloth/Easy-Send
 2024/2/6
 */
+error_reporting(0);
 include dirname(__FILE__)."/./config.php";
 // 检查连接配置是否有效
 if (empty($dbconfig['host']) || empty($dbconfig['account']) || empty($dbconfig['password']) || empty($dbconfig['name']) || empty($dbconfig['port'])) {
@@ -18,7 +19,7 @@ if (empty($dbconfig['host']) || empty($dbconfig['account']) || empty($dbconfig['
 }
 
     $current_page_url = 'http';
-    if ($_SERVER["HTTPS"] == "on") {
+    if (isset($_SERVER["HTTPS"]) and $_SERVER["HTTPS"] == "on") {
         $current_page_url .= "s";
     }
     $current_page_url .= "://";
