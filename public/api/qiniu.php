@@ -23,17 +23,24 @@ $auth = new Auth($accessKey, $secretKey);
 
 
 if ($action == "upload") {
+	$user = userinfo();
+	if (!$user) {
+		$uid = 0;
+	} else {
+		$uid = $user["uid"];
+	}
 	$expires = 3600;
 	$policy = null;
 	$policy = array(
 		'callbackUrl' => $domain . 'public/api/qiniu.php?action=callback',
-		'callbackBody' => 'filename=$(key)&action=$(x:action)&times=$(x:times)&tillday=$(x:tillday)'
+		'callbackBody' => "filename=$(key)&action=$(x:action)&times=$(x:times)&tillday=$(x:tillday)&uid={$uid}"
 	);
 	$upToken = $auth->uploadToken($qiniu_bucket, null, $expires, $policy, true);
 	$rand = random(8);
 	echo return_json(array("token" => $upToken, "rand" => $rand, "bucket" => $qiniu_bucket));
 } elseif ($action == "callback") {
 	$file_name = $origin_name = $_REQUEST["filename"];
+	$uid=$_REQUEST['uid'];
 	//剩余时长
 	if ($limit_way_tillday == 1) { //固定值
 		$tillday = time() + $settime * 24 * 60 * 60;
