@@ -119,6 +119,11 @@ TG group: https://t.me/IHopensource
 
 ## Update log
 
+**V3.4.2（updated on 2024/5/25）**
+
+- [Fix] the issue of inserting into database when qiniu callbacking 
+- [Fix] the issue of status examine state change in admin panel
+
 **V3.4.2（updated on 2024/5/5）**
 
 - [Optimization] Change the translation api from remote server to client and improve the loading speed
